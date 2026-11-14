@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.arslan.shizuwall.receivers.FirewallControlReceiver
 import com.arslan.shizuwall.shizuku.ShizukuShellExecutor
 import com.arslan.shizuwall.ui.MainActivity
+import com.arslan.shizuwall.utils.BroadcastAuth
 import com.arslan.shizuwall.utils.FirewallUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -74,11 +75,14 @@ class ShizuWallApp : Application() {
 
         Log.d(TAG, "Shizuku server $serverId started, enabling firewall")
         sendBroadcast(
-            Intent(this, FirewallControlReceiver::class.java).apply {
-                action = MainActivity.ACTION_FIREWALL_CONTROL
-                putExtra(MainActivity.EXTRA_FIREWALL_ENABLED, true)
-                putExtra(FirewallControlReceiver.EXTRA_AUTOMATION_EVENT, true)
-            }
+            BroadcastAuth.attachToken(
+                this,
+                Intent(this, FirewallControlReceiver::class.java).apply {
+                    action = MainActivity.ACTION_FIREWALL_CONTROL
+                    putExtra(MainActivity.EXTRA_FIREWALL_ENABLED, true)
+                    putExtra(FirewallControlReceiver.EXTRA_AUTOMATION_EVENT, true)
+                }
+            )
         )
     }
 

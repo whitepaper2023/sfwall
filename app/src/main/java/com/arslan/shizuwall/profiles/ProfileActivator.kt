@@ -6,6 +6,7 @@ import com.arslan.shizuwall.model.Profile
 import com.arslan.shizuwall.receivers.ProfileControlReceiver
 import com.arslan.shizuwall.shell.ShellExecutorProvider
 import com.arslan.shizuwall.ui.MainActivity
+import com.arslan.shizuwall.utils.BroadcastAuth
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -23,7 +24,7 @@ object ProfileActivator {
             putExtra(ProfileControlReceiver.EXTRA_FORCE_ENABLE, true)
             addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES or Intent.FLAG_RECEIVER_FOREGROUND)
         }
-        appContext.sendBroadcast(intent)
+        appContext.sendBroadcast(BroadcastAuth.attachToken(appContext, intent))
     }
 
     fun activateFromTile(context: Context, profile: Profile) {

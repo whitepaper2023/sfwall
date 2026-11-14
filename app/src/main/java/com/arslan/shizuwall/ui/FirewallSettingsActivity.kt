@@ -1,7 +1,9 @@
 package com.arslan.shizuwall.ui
 
+import android.appwidget.AppWidgetManager
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -29,7 +31,10 @@ import com.arslan.shizuwall.firewall.FirewallTargets
 import com.arslan.shizuwall.receivers.FirewallControlReceiver
 import com.arslan.shizuwall.services.AppMonitorService
 import com.arslan.shizuwall.utils.AppKey
+import com.arslan.shizuwall.utils.BroadcastAuth
 import com.arslan.shizuwall.utils.FirewallUtils
+import com.arslan.shizuwall.widgets.FirewallWidgetProvider
+import com.arslan.shizuwall.widgets.ProfileWidgetProvider
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.CoroutineScope
@@ -425,9 +430,16 @@ class FirewallSettingsActivity : BaseActivity() {
         val installedComponent = "$packageName/${com.arslan.shizuwall.receivers.AppInstalledReceiver::class.java.name}"
         val installed = "-a ${MainActivity.ACTION_APP_INSTALLED} -n $installedComponent --es $extraCsv"
 
+        val tokenArg = "--es ${BroadcastAuth.EXTRA_TOKEN}"
+
         val dialogView = layoutInflater.inflate(R.layout.dialog_adb_broadcast_usage, null)
         dialogView.findViewById<TextView>(R.id.tvBroadcastExtrasValue).text =
-            getString(R.string.adb_broadcast_extras_summary, extraEnabled, extraCsv)
+            getString(
+                R.string.adb_broadcast_extras_summary,
+                extraEnabled,
+                extraCsv,
+                BroadcastAuth.EXTRA_TOKEN
+            )
 
         val clipboardManager = getSystemService(ClipboardManager::class.java)
 
@@ -444,22 +456,54 @@ class FirewallSettingsActivity : BaseActivity() {
             return source
         }
 
+        // Commands that carry the automation token; refreshed when it is regenerated.
+        val tokenRows = listOf(
+            row(R.id.tvCmdEnableSelected, R.id.btnCopyCmdEnableSelected, "adb_enable_selected"),
+            row(R.id.tvCmdDisableSelected, R.id.btnCopyCmdDisableSelected, "adb_disable_selected"),
+            row(R.id.tvCmdEnableCsv, R.id.btnCopyCmdEnableCsv, "adb_enable_csv"),
+            row(R.id.tvCmdDisableCsv, R.id.btnCopyCmdDisableCsv, "adb_disable_csv"),
+            row(R.id.tvCmdAppInstalled, R.id.btnCopyCmdAppInstalled, "adb_app_installed"),
+            row(R.id.tvCmdAppInstalledProfile, R.id.btnCopyCmdAppInstalledProfile, "adb_app_installed_profile")
+        )
+        val tokenView = row(R.id.tvBroadcastTokenValue, R.id.btnCopyBroadcastToken, "adb_token")
+
+        fun refreshTokenCommands(token: String) {
+            val arg = "$tokenArg \"$token\""
+            val commands = listOf(
+                "$control true $arg",
+                "$control false $arg",
+                "$control true $csv $arg",
+                "$control false $csv $arg",
+                "adb shell am broadcast $installed \"com.example.newapp\" $arg",
+                "adb shell am broadcast --user 0 $installed \"150:com.example.newapp\" $arg"
+            )
+            tokenRows.forEachIndexed { index, view -> view.text = commands[index] }
+            tokenView.text = token
+        }
+
+        dialogView.findViewById<View>(R.id.btnRegenerateBroadcastToken).setOnClickListener {
+            refreshTokenCommands(BroadcastAuth.regenerateToken(this))
+            // The widgets' click PendingIntents carry the token; refresh them
+            // so they keep working with the new one.
+            val appWidgetManager = AppWidgetManager.getInstance(this)
+            val firewallIds = appWidgetManager.getAppWidgetIds(ComponentName(this, FirewallWidgetProvider::class.java))
+            for (id in firewallIds) FirewallWidgetProvider.updateAppWidget(this, appWidgetManager, id)
+            ProfileWidgetProvider.refreshAll(this)
+            Toast.makeText(this, getString(R.string.adb_broadcast_token_regenerated), Toast.LENGTH_SHORT).show()
+        }
+
         val selectableTextViews = listOf(
             row(R.id.tvBroadcastActionValue, R.id.btnCopyBroadcastAction, "adb_action", action),
             row(R.id.tvBroadcastComponentValue, R.id.btnCopyBroadcastComponent, "adb_component", component),
-            row(R.id.tvCmdEnableSelected, R.id.btnCopyCmdEnableSelected, "adb_enable_selected", "$control true"),
-            row(R.id.tvCmdDisableSelected, R.id.btnCopyCmdDisableSelected, "adb_disable_selected", "$control false"),
-            row(R.id.tvCmdEnableCsv, R.id.btnCopyCmdEnableCsv, "adb_enable_csv", "$control true $csv"),
-            row(R.id.tvCmdDisableCsv, R.id.btnCopyCmdDisableCsv, "adb_disable_csv", "$control false $csv"),
-            row(R.id.tvCmdAppInstalled, R.id.btnCopyCmdAppInstalled, "adb_app_installed",
-                "adb shell am broadcast $installed \"com.example.newapp\""),
-            row(R.id.tvCmdAppInstalledProfile, R.id.btnCopyCmdAppInstalledProfile, "adb_app_installed_profile",
-                "adb shell am broadcast --user 0 $installed \"150:com.example.newapp\""),
+            *tokenRows.toTypedArray(),
+            tokenView,
             row(R.id.tvDevCmdEnableFramework, R.id.btnCopyDevCmdEnableFramework, "dev_enable_firewall_framework"),
             row(R.id.tvDevCmdBlockPackage, R.id.btnCopyDevCmdBlockPackage, "dev_block_specific_app"),
             row(R.id.tvDevCmdUnblockPackage, R.id.btnCopyDevCmdUnblockPackage, "dev_unblock_specific_app"),
             row(R.id.tvDevCmdDisableFramework, R.id.btnCopyDevCmdDisableFramework, "dev_disable_firewall_framework")
         )
+
+        refreshTokenCommands(BroadcastAuth.token(this))
 
         dialogView.setOnTouchListener { _, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {

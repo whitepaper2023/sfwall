@@ -84,19 +84,22 @@ Android clears these rules on reboot.
 
 Every broadcast needs an active backend. `apps` is a CSV list of app keys: a bare package name targets user 0, a prefixed one such as `150:com.example.app` targets the copy in that work profile or clone space.
 
+Every broadcast must also carry the per-device automation token as `--es token "<token>"`; broadcasts without a valid token are ignored. The token is shown in the app under Settings → Firewall → ADB Broadcast Usage (and in each profile's **Automation** dialog), where it can be copied and regenerated. Regenerating the token invalidates previously copied commands.
+
 ### Firewall: `shizuwall.CONTROL`
 
 | Extra | Type | |
 |---|---|---|
 | `state` | boolean, required | `true` = block, `false` = unblock |
 | `apps` | string, optional | Apps to block or unblock. Without it the broadcast toggles the whole firewall. |
+| `token` | string, required | Per-device automation token (see above). |
 
 ```bash
 # Firewall on (state false turns it off)
-adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true
+adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true --es token "<token>"
 
 # Block an app and its work-profile copy (state false unblocks them)
-adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true --es apps "com.example.app,150:com.example.app"
+adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true --es apps "com.example.app,150:com.example.app" --es token "<token>"
 ```
 
 With `apps`, the selection in the app follows: `state true` selects the apps and turns the firewall on if it was off, `state false` unselects them and leaves the firewall on. In whitelist mode `apps` addresses the allow list, so the two states are reversed.
@@ -106,7 +109,7 @@ With `apps`, the selection in the app follows: `state true` selects the apps and
 Reports a newly installed app, so the new-app policy and notification apply to it as if ShizuWall had detected the install itself. ShizuWall only sees installs in its own profile, so this is how to cover the others.
 
 ```bash
-adb shell am broadcast -a shizuwall.APP_INSTALLED -n com.arslan.shizuwall/.receivers.AppInstalledReceiver --es apps "com.example.newapp"
+adb shell am broadcast -a shizuwall.APP_INSTALLED -n com.arslan.shizuwall/.receivers.AppInstalledReceiver --es apps "com.example.newapp" --es token "<token>"
 ```
 
 No rule is applied while the firewall is off. Apps without the `INTERNET` permission are ignored.
@@ -120,11 +123,12 @@ Activates a saved profile: its app selection, firewall mode, per-app modes and *
 | `profile` | string | Profile name, as shown in the profiles sheet. |
 | `profile_id` | string | Internal id; checked first and unaffected by renames. The profile's **Automation** dialog shows the ready-made command. |
 | `force_enable` | boolean, optional | Turn the firewall on after switching even if it was off. |
+| `token` | string, required | Per-device automation token (see above). |
 
 One of `profile` or `profile_id` is required. If neither matches, nothing changes and a toast reports it.
 
 ```bash
-adb shell am broadcast -a shizuwall.PROFILE -n com.arslan.shizuwall/.receivers.ProfileControlReceiver --es profile "Work"
+adb shell am broadcast -a shizuwall.PROFILE -n com.arslan.shizuwall/.receivers.ProfileControlReceiver --es profile "Work" --es token "<token>"
 ```
 
 ## Disclaimer

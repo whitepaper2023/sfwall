@@ -23,6 +23,7 @@ import com.arslan.shizuwall.shell.RootShellExecutor
 import com.arslan.shizuwall.shell.ShellExecutorProvider
 import com.arslan.shizuwall.shell.ShellResult
 import com.arslan.shizuwall.ui.MainActivity
+import com.arslan.shizuwall.utils.BroadcastAuth
 import com.arslan.shizuwall.widgets.FirewallWidgetProvider
 import com.arslan.shizuwall.widgets.ProfileWidgetProvider
 import kotlinx.coroutines.Dispatchers
@@ -73,12 +74,12 @@ object FirewallUtils {
             }
         }
         if (autoFirewalled || (enabled && mode == FirewallMode.WHITELIST)) {
-            context.sendBroadcast(Intent(context, FirewallControlReceiver::class.java).apply {
+            context.sendBroadcast(BroadcastAuth.attachToken(context, Intent(context, FirewallControlReceiver::class.java).apply {
                 action = MainActivity.ACTION_FIREWALL_CONTROL
                 putExtra(MainActivity.EXTRA_FIREWALL_ENABLED, true)
                 putExtra(MainActivity.EXTRA_PACKAGES_CSV, packageName)
                 putExtra(FirewallControlReceiver.EXTRA_AUTOMATION_EVENT, true)
-            })
+            }))
         }
         return autoFirewalled
     }
@@ -86,10 +87,10 @@ object FirewallUtils {
     fun reapply(context: Context, prefs: SharedPreferences, key: String? = null) {
         val selected = prefs.getStringSet(MainActivity.KEY_SELECTED_APPS, emptySet()).orEmpty()
         if (!loadFirewallEnabled(prefs) || (firewallMode(prefs) != FirewallMode.WHITELIST && key !in selected)) return
-        context.sendBroadcast(Intent(context, FirewallControlReceiver::class.java).apply {
+        context.sendBroadcast(BroadcastAuth.attachToken(context, Intent(context, FirewallControlReceiver::class.java).apply {
             action = MainActivity.ACTION_FIREWALL_CONTROL
             putExtra(MainActivity.EXTRA_FIREWALL_ENABLED, true)
-        })
+        }))
     }
 
     fun loadActivePackages(prefs: SharedPreferences): Set<String> {

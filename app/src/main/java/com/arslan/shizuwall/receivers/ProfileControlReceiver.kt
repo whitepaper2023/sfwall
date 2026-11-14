@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.arslan.shizuwall.R
 import com.arslan.shizuwall.profiles.ProfilesStore
 import com.arslan.shizuwall.ui.MainActivity
+import com.arslan.shizuwall.utils.BroadcastAuth
 import com.arslan.shizuwall.utils.FirewallUtils
 import com.arslan.shizuwall.widgets.FirewallWidgetProvider
 import kotlinx.coroutines.CoroutineScope
@@ -23,6 +24,10 @@ class ProfileControlReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action != MainActivity.ACTION_PROFILE_CONTROL) return
+        if (!BroadcastAuth.isAuthorized(context, intent)) {
+            android.util.Log.w(TAG, "Rejected automation broadcast without a valid token")
+            return
+        }
 
         val name = intent.getStringExtra(MainActivity.EXTRA_PROFILE_NAME)
         val id = intent.getStringExtra(MainActivity.EXTRA_PROFILE_ID)
@@ -62,7 +67,7 @@ class ProfileControlReceiver : BroadcastReceiver() {
                         putExtra(FirewallControlReceiver.EXTRA_AUTOMATION_EVENT, true)
                         addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES or Intent.FLAG_RECEIVER_FOREGROUND)
                     }
-                    context.sendBroadcast(enableIntent)
+                    context.sendBroadcast(BroadcastAuth.attachToken(context, enableIntent))
                 } else {
                     val updateIntent = Intent(context, FirewallWidgetProvider::class.java).apply {
                         action = MainActivity.ACTION_FIREWALL_STATE_CHANGED

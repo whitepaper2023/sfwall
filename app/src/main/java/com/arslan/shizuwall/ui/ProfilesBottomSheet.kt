@@ -17,6 +17,7 @@ import com.arslan.shizuwall.model.Profile
 import com.arslan.shizuwall.profiles.ProfileTileSlots
 import com.arslan.shizuwall.profiles.ProfilesStore
 import com.arslan.shizuwall.receivers.ProfileControlReceiver
+import com.arslan.shizuwall.utils.BroadcastAuth
 import com.arslan.shizuwall.widgets.ProfileWidgetProvider
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -249,11 +250,14 @@ class ProfilesBottomSheet(
     private fun showAutomationDialog(profile: Profile) {
         val action = MainActivity.ACTION_PROFILE_CONTROL
         val component = "${context.packageName}/${ProfileControlReceiver::class.java.name}"
+        val token = BroadcastAuth.token(context)
         val extra = "${MainActivity.EXTRA_PROFILE_NAME}=${profile.name}\n" +
             "${MainActivity.EXTRA_PROFILE_ID}=${profile.id}\n" +
-            "${ProfileControlReceiver.EXTRA_FORCE_ENABLE}=true"
+            "${ProfileControlReceiver.EXTRA_FORCE_ENABLE}=true\n" +
+            "${BroadcastAuth.EXTRA_TOKEN}=$token"
         val adbCmd = "adb shell am broadcast -a $action -n $component " +
-            "--es ${MainActivity.EXTRA_PROFILE_NAME} \"${profile.name}\""
+            "--es ${MainActivity.EXTRA_PROFILE_NAME} \"${profile.name}\" " +
+            "--es ${BroadcastAuth.EXTRA_TOKEN} \"$token\""
 
         val density = context.resources.displayMetrics.density
         fun dp(v: Int) = (v * density).toInt()

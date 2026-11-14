@@ -51,6 +51,10 @@
     <string name="adb_broadcast_field_action">Action</string>
     <string name="adb_broadcast_field_component">Component</string>
     <string name="adb_broadcast_field_extras">Extras</string>
+    <string name="adb_broadcast_field_token">Automation token</string>
+    <string name="adb_broadcast_token_note">Automation broadcasts must include this token. Broadcasts without a valid token are ignored. Regenerating the token breaks existing automation commands until they are updated.</string>
+    <string name="adb_broadcast_token_regenerate">Regenerate token</string>
+    <string name="adb_broadcast_token_regenerated">Token regenerated. Update your automation apps with the new token.</string>
     <string name="adb_broadcast_examples_title">Common commands</string>
     <string name="adb_broadcast_example_enable_selected">Enable firewall</string>
     <string name="adb_broadcast_example_disable_selected">Disable firewall</string>
@@ -65,7 +69,9 @@
     <string name="adb_broadcast_dev_disable_framework">Disable firewall framework</string>
     <string name="adb_broadcast_extras_summary" formatted="false">%1$s (boolean): true = enable, false = disable
 
-%2$s (string, optional): comma-separated app list. If omitted, the firewall is turned on or off as a whole using the apps selected in ShizuWall. If given, only those apps are blocked or unblocked. Prefix an app with a user id for work profile or clone apps, for example 150:com.example.app. Apps sent this way are selected or unselected in ShizuWall too, and blocking one turns the firewall on if it was off.</string>
+%2$s (string, optional): comma-separated app list. If omitted, the firewall is turned on or off as a whole using the apps selected in ShizuWall. If given, only those apps are blocked or unblocked. Prefix an app with a user id for work profile or clone apps, for example 150:com.example.app. Apps sent this way are selected or unselected in ShizuWall too, and blocking one turns the firewall on if it was off.
+
+%3$s (string, required): automation token shown above. Broadcasts without a valid token are ignored.</string>
     <string name="ok">OK</string>
     <string name="no_apps_selected">No apps selected</string>
     <string name="shizuku_not_running">Shizuku not running</string>

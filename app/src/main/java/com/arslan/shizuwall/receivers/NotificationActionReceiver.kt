@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.arslan.shizuwall.R
 import com.arslan.shizuwall.shell.ShellExecutorProvider
 import com.arslan.shizuwall.ui.MainActivity
+import com.arslan.shizuwall.utils.BroadcastAuth
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -58,7 +59,7 @@ class NotificationActionReceiver : BroadcastReceiver() {
             putExtra(MainActivity.EXTRA_PACKAGES_CSV, packageName)
             putExtra(FirewallControlReceiver.EXTRA_AUTOMATION_EVENT, true)
         }
-        context.sendBroadcast(controlIntent)
+        context.sendBroadcast(BroadcastAuth.attachToken(context, controlIntent))
         Toast.makeText(context, context.getString(R.string.firewalling_app, packageName), Toast.LENGTH_SHORT).show()
     }
 

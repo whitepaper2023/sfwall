@@ -11,6 +11,7 @@ import com.arslan.shizuwall.FirewallMode
 import com.arslan.shizuwall.R
 import com.arslan.shizuwall.receivers.FirewallControlReceiver
 import com.arslan.shizuwall.ui.MainActivity
+import com.arslan.shizuwall.utils.BroadcastAuth
 import com.arslan.shizuwall.utils.FirewallUtils
 
 class FirewallWidgetProvider : AppWidgetProvider() {
@@ -29,6 +30,10 @@ class FirewallWidgetProvider : AppWidgetProvider() {
     override fun onReceive(context: Context, intent: Intent) {
         super.onReceive(context, intent)
         if (intent.action == ACTION_WIDGET_CLICK) {
+            if (!BroadcastAuth.isAuthorized(context, intent)) {
+                android.util.Log.w(TAG, "Rejected widget click without a valid token")
+                return
+            }
             val sharedPreferences = context.getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE)
             val newState = !FirewallUtils.loadFirewallEnabled(sharedPreferences)
 
@@ -57,7 +62,7 @@ class FirewallWidgetProvider : AppWidgetProvider() {
                 action = MainActivity.ACTION_FIREWALL_CONTROL
                 putExtra(MainActivity.EXTRA_FIREWALL_ENABLED, newState)
             }
-            context.sendBroadcast(toggleIntent)
+            context.sendBroadcast(BroadcastAuth.attachToken(context, toggleIntent))
         } else if (intent.action == MainActivity.ACTION_FIREWALL_STATE_CHANGED) {
             val appWidgetManager = AppWidgetManager.getInstance(context)
             val componentName = android.content.ComponentName(context, FirewallWidgetProvider::class.java)
@@ -67,6 +72,7 @@ class FirewallWidgetProvider : AppWidgetProvider() {
     }
 
     companion object {
+        private const val TAG = "FirewallWidgetProvider"
         const val ACTION_WIDGET_CLICK = "com.arslan.shizuwall.ACTION_WIDGET_CLICK"
 
         fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
@@ -86,6 +92,7 @@ class FirewallWidgetProvider : AppWidgetProvider() {
 
             val intent = Intent(context, FirewallWidgetProvider::class.java).apply {
                 action = ACTION_WIDGET_CLICK
+                putExtra(BroadcastAuth.EXTRA_TOKEN, BroadcastAuth.token(context))
             }
             val pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
             views.setOnClickPendingIntent(R.id.widget_layout, pendingIntent)

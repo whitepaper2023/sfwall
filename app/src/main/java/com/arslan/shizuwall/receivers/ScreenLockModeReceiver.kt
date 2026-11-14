@@ -7,6 +7,7 @@ import android.util.Log
 import com.arslan.shizuwall.FirewallMode
 import com.arslan.shizuwall.firewall.FirewallTargets
 import com.arslan.shizuwall.ui.MainActivity
+import com.arslan.shizuwall.utils.BroadcastAuth
 
 class ScreenLockModeReceiver {
 
@@ -96,6 +97,6 @@ class ScreenLockModeReceiver {
             putExtra(MainActivity.EXTRA_PACKAGES_CSV, csv)
             putExtra(FirewallControlReceiver.EXTRA_AUTOMATION_EVENT, true)
         }
-        context.sendBroadcast(controlIntent)
+        context.sendBroadcast(BroadcastAuth.attachToken(context, controlIntent))
     }
 }

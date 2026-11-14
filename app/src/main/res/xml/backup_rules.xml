@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Auto Backup rules (Android 11 and below; Android 12+ uses data_extraction_rules.xml).
+     The automation token (ShizuWallSecrets) and the LADB daemon token
+     (daemon_prefs) must never leave the device in a backup. Everything
+     else (firewall settings, block list, profiles) keeps backing up. -->
+<full-backup-content>
+    <exclude domain="sharedpref" path="ShizuWallSecrets.xml" />
+    <exclude domain="sharedpref" path="daemon_prefs.xml" />
+</full-backup-content>

@@ -12,6 +12,7 @@ import com.arslan.shizuwall.profiles.ProfileActivator
 import com.arslan.shizuwall.profiles.ProfileIcons
 import com.arslan.shizuwall.profiles.ProfilesStore
 import com.arslan.shizuwall.ui.MainActivity
+import com.arslan.shizuwall.utils.BroadcastAuth
 
 class ProfileWidgetProvider : AppWidgetProvider() {
 
@@ -33,6 +34,10 @@ class ProfileWidgetProvider : AppWidgetProvider() {
         super.onReceive(context, intent)
         when (intent.action) {
             ACTION_WIDGET_CLICK -> {
+                if (!BroadcastAuth.isAuthorized(context, intent)) {
+                    android.util.Log.w(TAG, "Rejected widget click without a valid token")
+                    return
+                }
                 val appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, -1)
                 val profile = profileFor(context, appWidgetId) ?: return
                 ProfileActivator.activateAndEnable(context, profile)
@@ -42,6 +47,7 @@ class ProfileWidgetProvider : AppWidgetProvider() {
     }
 
     companion object {
+        private const val TAG = "ProfileWidgetProvider"
         const val ACTION_WIDGET_CLICK = "com.arslan.shizuwall.ACTION_PROFILE_WIDGET_CLICK"
 
         private fun prefs(context: Context) =
@@ -82,6 +88,7 @@ class ProfileWidgetProvider : AppWidgetProvider() {
             val intent = Intent(context, ProfileWidgetProvider::class.java).apply {
                 action = ACTION_WIDGET_CLICK
                 putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
+                putExtra(BroadcastAuth.EXTRA_TOKEN, BroadcastAuth.token(context))
             }
             val pendingIntent = PendingIntent.getBroadcast(
                 context,

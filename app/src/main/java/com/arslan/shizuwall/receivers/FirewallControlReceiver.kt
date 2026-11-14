@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.arslan.shizuwall.FirewallMode
 import com.arslan.shizuwall.R
 import com.arslan.shizuwall.ui.MainActivity
+import com.arslan.shizuwall.utils.BroadcastAuth
 import com.arslan.shizuwall.utils.FirewallUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -34,6 +35,10 @@ class FirewallControlReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action != MainActivity.ACTION_FIREWALL_CONTROL) return
+        if (!BroadcastAuth.isAuthorized(context, intent)) {
+            android.util.Log.w(TAG, "Rejected automation broadcast without a valid token")
+            return
+        }
 
         val pending = goAsync()
         val enabled = intent.getBooleanExtra(MainActivity.EXTRA_FIREWALL_ENABLED, false)
