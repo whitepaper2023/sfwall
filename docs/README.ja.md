@@ -1,8 +1,8 @@
 <div align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.arslan.shizuwall">
-    <img src="../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="ShizuWall Icon" width="72" />
+  <a href="https://github.com/whitepaper2023/sfwall">
+    <img src="../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="SfWall Icon" width="72" />
   </a>
-  <h1>ShizuWall</h1>
+  <h1>SfWall</h1>
   <strong>VPN 不要の Android ファイアウォール。</strong><br/>
   プライバシー第一・完全ローカル。Shizuku / ローカル ADB デーモン / Root で動作します。
 </div>
@@ -22,21 +22,13 @@
 </p>
 <div style="height: 20px;">&nbsp;</div>
 <p align="center">
-  <a href="https://tooomm.github.io/github-release-stats/?username=AhmetCanArslan&repository=ShizuWall">
-    <img alt="Downloads (GitHub)" src="https://img.shields.io/github/downloads/AhmetCanArslan/ShizuWall/total?color=ff9500&label=Total%20Downloads%20(GitHub)&logo=github&logoColor=white&style=flat-square" />
+  <a href="https://tooomm.github.io/github-release-stats/?username=whitepaper2023&repository=sfwall">
+    <img alt="Downloads (GitHub)" src="https://img.shields.io/github/downloads/whitepaper2023/sfwall/total?color=ff9500&label=Total%20Downloads%20(GitHub)&logo=github&logoColor=white&style=flat-square" />
   </a>
-  <img alt="Repo size" src="https://img.shields.io/github/repo-size/AhmetCanArslan/ShizuWall?style=flat-square" />
+  <img alt="Repo size" src="https://img.shields.io/github/repo-size/whitepaper2023/sfwall?style=flat-square" />
   <img alt="Minimum SDK" src="https://img.shields.io/badge/Minimum%20SDK-30%20(Android%2011)-839192?style=flat-square&logo=android&logoColor=white" />
 </p>
 
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.arslan.shizuwall">
-    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="250" />
-  </a>
-  <a href="https://f-droid.org/packages/com.arslan.shizuwall/">
-    <img alt="Get it on F-Droid" src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" width="250" />
-  </a>
-</p>
 
 <p align="center">
   <a href="https://www.buymeacoffee.com/ahmetcanarslan">
@@ -53,7 +45,7 @@ Android 11 以上と、次のいずれかのバックエンド:
 - **LibADB**: ワイヤレスデバッグでペアリング、パソコン不要
 - **Root**
 
-## ShizuWall を選ぶ理由
+## SfWall を選ぶ理由
 
 - **VPN 不要**: パケットの傍受も常駐トンネルもありません。
 - **アプリ単位の制御**: 仕事用プロファイルやクローンのコピーも含め、アプリごとに通信をブロックします。
@@ -64,12 +56,12 @@ Android 11 以上と、次のいずれかのバックエンド:
 ## スクリーンショット
 
 <p align="center">
-  <img src="../assets/screenshots/v4.6/1.png" alt="ShizuWall" width="30%" />
+  <img src="../assets/screenshots/v4.6/1.png" alt="SfWall" width="30%" />
 </p>
 
 ## 仕組み
 
-ShizuWall は Android の connectivity **chain 3** を利用します。これはパッケージ単位でネットワークアクセスを制御するプラットフォームの仕組みです:
+SfWall は Android の connectivity **chain 3** を利用します。これはパッケージ単位でネットワークアクセスを制御するプラットフォームの仕組みです:
 
 ```bash
 cmd connectivity set-chain3-enabled true                                # ファイアウォール ON
@@ -84,7 +76,7 @@ cmd connectivity set-chain3-enabled false                               # ファ
 
 どのブロードキャストにも有効なバックエンドが必要です。`apps` はアプリキーの CSV リストです。パッケージ名だけの場合はユーザー 0、`150:com.example.app` のようにプレフィックス付きの場合はその仕事用プロファイルまたはクローン領域のコピーを指します。
 
-### ファイアウォール: `shizuwall.CONTROL`
+### ファイアウォール: `sfwall.CONTROL`
 
 | Extra | 型 | |
 |---|---|---|
@@ -93,25 +85,25 @@ cmd connectivity set-chain3-enabled false                               # ファ
 
 ```bash
 # ファイアウォールを ON にする（state false で OFF）
-adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true
+adb shell am broadcast -a sfwall.CONTROL -n com.lu.sfwall/.receivers.FirewallControlReceiver --ez state true
 
 # アプリとその仕事用プロファイルのコピーをブロックする
-adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true --es apps "com.example.app,150:com.example.app"
+adb shell am broadcast -a sfwall.CONTROL -n com.lu.sfwall/.receivers.FirewallControlReceiver --ez state true --es apps "com.example.app,150:com.example.app"
 ```
 
 `apps` を付けるとアプリ内の選択も追従します。`state true` はアプリを選択し、ファイアウォールが OFF なら ON にします。`state false` は選択を解除し、ファイアウォールは ON のままです。ホワイトリストモードでは `apps` は許可リストを指すため、2 つの状態は逆になります。
 
-### 新しいアプリ: `shizuwall.APP_INSTALLED`
+### 新しいアプリ: `sfwall.APP_INSTALLED`
 
-新しくインストールされたアプリを通知し、ShizuWall 自身がインストールを検出した場合と同じように新規アプリのポリシーと通知を適用させます。ShizuWall は自身のプロファイル内のインストールしか検出できないため、他のプロファイルはこの方法でカバーします。
+新しくインストールされたアプリを通知し、SfWall 自身がインストールを検出した場合と同じように新規アプリのポリシーと通知を適用させます。SfWall は自身のプロファイル内のインストールしか検出できないため、他のプロファイルはこの方法でカバーします。
 
 ```bash
-adb shell am broadcast -a shizuwall.APP_INSTALLED -n com.arslan.shizuwall/.receivers.AppInstalledReceiver --es apps "com.example.newapp"
+adb shell am broadcast -a sfwall.APP_INSTALLED -n com.lu.sfwall/.receivers.AppInstalledReceiver --es apps "com.example.newapp"
 ```
 
 ファイアウォールがオフの間はルールは適用されません。`INTERNET` 権限のないアプリは無視されます。
 
-### プロファイル: `shizuwall.PROFILE`
+### プロファイル: `sfwall.PROFILE`
 
 保存済みのプロファイルを適用します。アプリの選択、ファイアウォールモード、アプリごとのモード、*システムアプリを表示* の設定を書き込みます。
 
@@ -124,14 +116,14 @@ adb shell am broadcast -a shizuwall.APP_INSTALLED -n com.arslan.shizuwall/.recei
 `profile` と `profile_id` のいずれかが必須です。どちらも一致しない場合は何も変更されず、トーストで通知されます。
 
 ```bash
-adb shell am broadcast -a shizuwall.PROFILE -n com.arslan.shizuwall/.receivers.ProfileControlReceiver --es profile "Work"
+adb shell am broadcast -a sfwall.PROFILE -n com.lu.sfwall/.receivers.ProfileControlReceiver --es profile "Work"
 ```
 
 ## 免責事項
 
-ShizuWall は**現状有姿**で、いかなる保証もなく提供されます。高度なシステム権限を利用するため、システムの不安定化、データ損失、ネットワーク遮断による副作用について開発者は責任を負いません。ブロックするアプリは必ず確認してください。
+SfWall は**現状有姿**で、いかなる保証もなく提供されます。高度なシステム権限を利用するため、システムの不安定化、データ損失、ネットワーク遮断による副作用について開発者は責任を負いません。ブロックするアプリは必ず確認してください。
 
-**公式の入手先は Google Play、F-Droid、およびこのリポジトリのみです。** それ以外の APK は無関係であり、自己責任でご利用ください。ShizuWall には公式ウェブサイトはありません。
+それ以外の APK は無関係であり、自己責任でご利用ください。SfWall には公式ウェブサイトはありません。
 
 `INTERNET` 権限はワイヤレスデバッグのペアリング（LibADB）にのみ使用します。
 
@@ -143,4 +135,4 @@ ShizuWall は**現状有姿**で、いかなる保証もなく提供されます
 
 - [Shizuku](https://github.com/RikkaApps/Shizuku): 特権コマンドの実行。
 - [LibADB](https://github.com/MuntashirAkon/libadb-android): ワイヤレスデバッグとデーモン接続。
-- [Exodus Privacy](https://exodus-privacy.eu.org/): トラッカーシグネチャデータベース。ShizuWall は縮小版を同梱しており、彼らの API には一切接続しません。
+- [Exodus Privacy](https://exodus-privacy.eu.org/): トラッカーシグネチャデータベース。SfWall は縮小版を同梱しており、彼らの API には一切接続しません。

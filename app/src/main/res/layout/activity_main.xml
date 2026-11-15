@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.arslan.shizuwall.ui.WavyBorderView
+    <com.lu.sfwall.ui.WavyBorderView
         android:id="@+id/firewallProgress"
         android:layout_width="70dp"
         android:layout_height="50dp"

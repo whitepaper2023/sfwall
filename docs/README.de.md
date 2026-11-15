@@ -1,8 +1,8 @@
 <div align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.arslan.shizuwall">
-    <img src="../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="ShizuWall Icon" width="72" />
+  <a href="https://github.com/whitepaper2023/sfwall">
+    <img src="../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="SfWall Icon" width="72" />
   </a>
-  <h1>ShizuWall</h1>
+  <h1>SfWall</h1>
   <strong>Android-Firewall ohne VPN.</strong><br/>
   Datenschutz zuerst, rein lokal, betrieben über Shizuku / lokalen ADB-Daemon / Root.
 </div>
@@ -22,21 +22,13 @@
 </p>
 <div style="height: 20px;">&nbsp;</div>
 <p align="center">
-  <a href="https://tooomm.github.io/github-release-stats/?username=AhmetCanArslan&repository=ShizuWall">
-    <img alt="Downloads (GitHub)" src="https://img.shields.io/github/downloads/AhmetCanArslan/ShizuWall/total?color=ff9500&label=Total%20Downloads%20(GitHub)&logo=github&logoColor=white&style=flat-square" />
+  <a href="https://tooomm.github.io/github-release-stats/?username=whitepaper2023&repository=sfwall">
+    <img alt="Downloads (GitHub)" src="https://img.shields.io/github/downloads/whitepaper2023/sfwall/total?color=ff9500&label=Total%20Downloads%20(GitHub)&logo=github&logoColor=white&style=flat-square" />
   </a>
-  <img alt="Repo size" src="https://img.shields.io/github/repo-size/AhmetCanArslan/ShizuWall?style=flat-square" />
+  <img alt="Repo size" src="https://img.shields.io/github/repo-size/whitepaper2023/sfwall?style=flat-square" />
   <img alt="Minimum SDK" src="https://img.shields.io/badge/Minimum%20SDK-30%20(Android%2011)-839192?style=flat-square&logo=android&logoColor=white" />
 </p>
 
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.arslan.shizuwall">
-    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="250" />
-  </a>
-  <a href="https://f-droid.org/packages/com.arslan.shizuwall/">
-    <img alt="Get it on F-Droid" src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" width="250" />
-  </a>
-</p>
 
 <p align="center">
   <a href="https://www.buymeacoffee.com/ahmetcanarslan">
@@ -53,7 +45,7 @@ Android 11+ und eines dieser Backends:
 - **LibADB**: koppelt über Wireless Debugging, ohne Computer
 - **Root**
 
-## Warum ShizuWall
+## Warum SfWall
 
 - **Kein VPN**: kein Abfangen von Paketen, kein dauerhafter Tunnel.
 - **Steuerung pro App**: sperrt den Netzwerkzugriff pro App, einschließlich Arbeitsprofil- und Klon-Kopien.
@@ -64,12 +56,12 @@ Android 11+ und eines dieser Backends:
 ## Screenshot
 
 <p align="center">
-  <img src="../assets/screenshots/v4.6/1.png" alt="ShizuWall" width="30%" />
+  <img src="../assets/screenshots/v4.6/1.png" alt="SfWall" width="30%" />
 </p>
 
 ## Funktionsweise
 
-ShizuWall steuert Androids Connectivity-**Chain 3**, einen Plattformmechanismus, der den Netzwerkzugriff pro Paket regelt:
+SfWall steuert Androids Connectivity-**Chain 3**, einen Plattformmechanismus, der den Netzwerkzugriff pro Paket regelt:
 
 ```bash
 cmd connectivity set-chain3-enabled true                                # Firewall an
@@ -84,7 +76,7 @@ Android löscht diese Regeln beim Neustart.
 
 Jeder Broadcast benötigt ein aktives Backend. `apps` ist eine CSV-Liste von App-Schlüsseln: Ein bloßer Paketname zielt auf Nutzer 0, ein Schlüssel mit Präfix wie `150:com.example.app` auf die Kopie in diesem Arbeitsprofil oder Klon-Bereich.
 
-### Firewall: `shizuwall.CONTROL`
+### Firewall: `sfwall.CONTROL`
 
 | Extra | Typ | |
 |---|---|---|
@@ -93,26 +85,26 @@ Jeder Broadcast benötigt ein aktives Backend. `apps` ist eine CSV-Liste von App
 
 ```bash
 # Firewall einschalten (state false schaltet sie aus)
-adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true
+adb shell am broadcast -a sfwall.CONTROL -n com.lu.sfwall/.receivers.FirewallControlReceiver --ez state true
 
 # Eine App und ihre Arbeitsprofil-Kopie sperren
-adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true --es apps "com.example.app,150:com.example.app"
+adb shell am broadcast -a sfwall.CONTROL -n com.lu.sfwall/.receivers.FirewallControlReceiver --ez state true --es apps "com.example.app,150:com.example.app"
 ```
 
 - Mit `apps` folgt die Auswahl in der App: `state true` wählt die Apps aus und schaltet die Firewall ein, falls sie aus war; `state false` wählt sie ab und lässt die Firewall an. Im Whitelist-Modus adressiert `apps` die Erlaubnisliste, die beiden Zustände sind also vertauscht.
 - Ist **Apps in anderen Profilen anzeigen** aus, gilt ein bloßer Paketname auch für seine Klone. Ist es an, wird jedes Profil nur über sein Präfix adressiert.
 
-### Neue App: `shizuwall.APP_INSTALLED`
+### Neue App: `sfwall.APP_INSTALLED`
 
-Meldet eine neu installierte App, sodass Richtlinie und Benachrichtigung für neue Apps so angewendet werden, als hätte ShizuWall die Installation selbst erkannt. ShizuWall sieht nur Installationen im eigenen Profil; so lassen sich die anderen abdecken.
+Meldet eine neu installierte App, sodass Richtlinie und Benachrichtigung für neue Apps so angewendet werden, als hätte SfWall die Installation selbst erkannt. SfWall sieht nur Installationen im eigenen Profil; so lassen sich die anderen abdecken.
 
 ```bash
-adb shell am broadcast -a shizuwall.APP_INSTALLED -n com.arslan.shizuwall/.receivers.AppInstalledReceiver --es apps "com.example.newapp"
+adb shell am broadcast -a sfwall.APP_INSTALLED -n com.lu.sfwall/.receivers.AppInstalledReceiver --es apps "com.example.newapp"
 ```
 
 Solange die Firewall aus ist, wird keine Regel angewendet. Apps ohne die Berechtigung `INTERNET` werden ignoriert.
 
-### Profil: `shizuwall.PROFILE`
+### Profil: `sfwall.PROFILE`
 
 Aktiviert ein gespeichertes Profil: schreibt dessen App-Auswahl, Firewall-Modus, App-spezifische Modi und die Einstellung *System-Apps anzeigen*.
 
@@ -125,14 +117,14 @@ Aktiviert ein gespeichertes Profil: schreibt dessen App-Auswahl, Firewall-Modus,
 Entweder `profile` oder `profile_id` ist erforderlich. Passt keines, ändert sich nichts und ein Toast meldet es.
 
 ```bash
-adb shell am broadcast -a shizuwall.PROFILE -n com.arslan.shizuwall/.receivers.ProfileControlReceiver --es profile "Work"
+adb shell am broadcast -a sfwall.PROFILE -n com.lu.sfwall/.receivers.ProfileControlReceiver --es profile "Work"
 ```
 
 ## Haftungsausschluss
 
-ShizuWall wird **„wie besehen“** ohne Gewährleistung bereitgestellt. Es nutzt weitreichende Systemberechtigungen; der Entwickler haftet nicht für Systeminstabilität, Datenverlust oder Nebenwirkungen blockierter Netzwerkzugriffe. Prüfe immer, welche Apps du blockierst.
+SfWall wird **„wie besehen“** ohne Gewährleistung bereitgestellt. Es nutzt weitreichende Systemberechtigungen; der Entwickler haftet nicht für Systeminstabilität, Datenverlust oder Nebenwirkungen blockierter Netzwerkzugriffe. Prüfe immer, welche Apps du blockierst.
 
-**Offizielle Quellen sind nur Google Play, F-Droid und dieses Repository.** APKs von anderswo sind nicht zugehörig und werden auf eigenes Risiko verwendet. ShizuWall hat keine offizielle Website.
+APKs von anderswo sind nicht zugehörig und werden auf eigenes Risiko verwendet. SfWall hat keine offizielle Website.
 
 `INTERNET` wird nur für das Koppeln über Wireless Debugging (LibADB) angefordert.
 
@@ -144,4 +136,4 @@ ShizuWall wird **„wie besehen“** ohne Gewährleistung bereitgestellt. Es nut
 
 - [Shizuku](https://github.com/RikkaApps/Shizuku): Ausführung privilegierter Befehle.
 - [LibADB](https://github.com/MuntashirAkon/libadb-android): kabelloses Debugging und Daemon-Verbindung.
-- [Exodus Privacy](https://exodus-privacy.eu.org/): Tracker-Signaturdatenbank. ShizuWall liefert eine gekürzte Kopie mit und kontaktiert deren API nie.
+- [Exodus Privacy](https://exodus-privacy.eu.org/): Tracker-Signaturdatenbank. SfWall liefert eine gekürzte Kopie mit und kontaktiert deren API nie.

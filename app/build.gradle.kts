@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.arslan.shizuwall"
+    namespace = "com.lu.sfwall"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.arslan.shizuwall"
+        applicationId = "com.lu.sfwall"
         minSdk = 30
         targetSdk = 36
         versionCode = 55
@@ -40,7 +40,7 @@ android {
             isMinifyEnabled = false
             isShrinkResources = false
             applicationIdSuffix = ".debug"
-            manifestPlaceholders["appLabel"] = "ShizuWall Debug"
+            manifestPlaceholders["appLabel"] = "SfWall Debug"
         }
     }
 
@@ -92,7 +92,7 @@ android {
     applicationVariants.all {
         outputs.all {
             val output = this as com.android.build.gradle.internal.api.ApkVariantOutputImpl
-            val appName = "ShizuWall"
+            val appName = "SfWall"
             val version = versionName
             val type = buildType.name
             output.outputFileName = "$appName-$version-$type.apk"
@@ -212,7 +212,7 @@ abstract class CompileDaemonDexTask : DefaultTask() {
 }
 
 val compileDaemonDex = tasks.register<CompileDaemonDexTask>("compileDaemonDex") {
-    javaSource.set(layout.projectDirectory.file("src/main/java/com/arslan/shizuwall/daemon/SystemDaemon.java"))
+    javaSource.set(layout.projectDirectory.file("src/main/java/com/lu/sfwall/daemon/SystemDaemon.java"))
     sdkDirectory.set(layout.dir(provider { android.sdkDirectory }))
     buildToolsVersion.set(provider { android.buildToolsVersion })
     compileSdkVersion.set(provider { android.compileSdk!! })

@@ -65,9 +65,9 @@
 -keepclassmembers class rikka.shizuku.** { *; }
 -dontwarn rikka.shizuku.**
 
--keep class com.arslan.shizuwall.shizuku.ShizuWallUserService { *; }
--keep interface com.arslan.shizuwall.shizuku.IShizuWallUserService { *; }
--keep class com.arslan.shizuwall.shizuku.IShizuWallUserService$* { *; }
+-keep class com.lu.sfwall.shizuku.SfWallUserService { *; }
+-keep interface com.lu.sfwall.shizuku.ISfWallUserService { *; }
+-keep class com.lu.sfwall.shizuku.ISfWallUserService$* { *; }
 
 -dontwarn javax.annotation.**
 -dontwarn com.google.errorprone.annotations.**

@@ -1,8 +1,8 @@
 <div align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.arslan.shizuwall">
-    <img src="../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="ShizuWall Icon" width="72" />
+  <a href="https://github.com/whitepaper2023/sfwall">
+    <img src="../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="SfWall Icon" width="72" />
   </a>
-  <h1>ShizuWall</h1>
+  <h1>SfWall</h1>
   <strong>VPN kullanmayan Android güvenlik duvarı.</strong><br/>
   Gizlilik odaklı, tamamen yerel; Shizuku / yerel ADB arka plan servisi / Root ile çalışır.
 </div>
@@ -22,21 +22,13 @@
 </p>
 <div style="height: 20px;">&nbsp;</div>
 <p align="center">
-  <a href="https://tooomm.github.io/github-release-stats/?username=AhmetCanArslan&repository=ShizuWall">
-    <img alt="Downloads (GitHub)" src="https://img.shields.io/github/downloads/AhmetCanArslan/ShizuWall/total?color=ff9500&label=Total%20Downloads%20(GitHub)&logo=github&logoColor=white&style=flat-square" />
+  <a href="https://tooomm.github.io/github-release-stats/?username=whitepaper2023&repository=sfwall">
+    <img alt="Downloads (GitHub)" src="https://img.shields.io/github/downloads/whitepaper2023/sfwall/total?color=ff9500&label=Total%20Downloads%20(GitHub)&logo=github&logoColor=white&style=flat-square" />
   </a>
-  <img alt="Repo size" src="https://img.shields.io/github/repo-size/AhmetCanArslan/ShizuWall?style=flat-square" />
+  <img alt="Repo size" src="https://img.shields.io/github/repo-size/whitepaper2023/sfwall?style=flat-square" />
   <img alt="Minimum SDK" src="https://img.shields.io/badge/Minimum%20SDK-30%20(Android%2011)-839192?style=flat-square&logo=android&logoColor=white" />
 </p>
 
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.arslan.shizuwall">
-    <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="250" />
-  </a>
-  <a href="https://f-droid.org/packages/com.arslan.shizuwall/">
-    <img alt="Get it on F-Droid" src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" width="250" />
-  </a>
-</p>
 
 <p align="center">
   <a href="https://www.buymeacoffee.com/ahmetcanarslan">
@@ -52,7 +44,7 @@ Android 11+ ve şu arka uçlardan biri:
 - **LibADB**: Kablosuz Hata Ayıklama ile eşleşir, bilgisayar gerekmez
 - **Root**
 
-## Neden ShizuWall
+## Neden SfWall
 
 - **VPN yok**: paket yakalama yok, kalıcı tünel yok.
 - **Uygulama bazlı denetim**: iş profili ve klon kopyaları dahil, ağ erişimini uygulama bazında engeller.
@@ -63,12 +55,12 @@ Android 11+ ve şu arka uçlardan biri:
 ## Ekran Görüntüsü
 
 <p align="center">
-  <img src="../assets/screenshots/v4.6/1.png" alt="ShizuWall" width="30%" />
+  <img src="../assets/screenshots/v4.6/1.png" alt="SfWall" width="30%" />
 </p>
 
 ## Nasıl Çalışır
 
-ShizuWall, ağ erişimini paket bazında denetleyen bir platform mekanizması olan Android'in connectivity **chain 3** zincirini kullanır:
+SfWall, ağ erişimini paket bazında denetleyen bir platform mekanizması olan Android'in connectivity **chain 3** zincirini kullanır:
 
 ```bash
 cmd connectivity set-chain3-enabled true                                # güvenlik duvarı açık
@@ -83,7 +75,7 @@ Android bu kuralları yeniden başlatmada temizler.
 
 Her yayın için etkin bir arka uç gerekir. `apps`, virgülle ayrılmış uygulama anahtarları listesidir: yalın paket adı kullanıcı 0'ı, `150:com.example.app` gibi ön ekli bir anahtar ise o iş profilindeki veya klon alanındaki kopyayı hedefler.
 
-### Güvenlik duvarı: `shizuwall.CONTROL`
+### Güvenlik duvarı: `sfwall.CONTROL`
 
 | Ekstra | Tür | |
 |---|---|---|
@@ -92,25 +84,25 @@ Her yayın için etkin bir arka uç gerekir. `apps`, virgülle ayrılmış uygul
 
 ```bash
 # Güvenlik duvarını aç (state false kapatır)
-adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true
+adb shell am broadcast -a sfwall.CONTROL -n com.lu.sfwall/.receivers.FirewallControlReceiver --ez state true
 
 # Bir uygulamayı ve iş profilindeki kopyasını engelle
-adb shell am broadcast -a shizuwall.CONTROL -n com.arslan.shizuwall/.receivers.FirewallControlReceiver --ez state true --es apps "com.example.app,150:com.example.app"
+adb shell am broadcast -a sfwall.CONTROL -n com.lu.sfwall/.receivers.FirewallControlReceiver --ez state true --es apps "com.example.app,150:com.example.app"
 ```
 
 `apps` verildiğinde uygulamadaki seçim de güncellenir: `state true` uygulamaları seçer ve kapalıysa güvenlik duvarını açar, `state false` seçimi kaldırır ve güvenlik duvarını açık bırakır. Beyaz liste modunda `apps` izin listesini hedefler, bu yüzden iki durum ters çalışır.
 
-### Yeni uygulama: `shizuwall.APP_INSTALLED`
+### Yeni uygulama: `sfwall.APP_INSTALLED`
 
-Yeni kurulan bir uygulamayı bildirir; böylece yeni uygulama politikası ve bildirimi, kurulumu ShizuWall kendisi algılamış gibi uygulanır. ShizuWall yalnızca kendi profilindeki kurulumları görür; diğer profilleri kapsamanın yolu budur.
+Yeni kurulan bir uygulamayı bildirir; böylece yeni uygulama politikası ve bildirimi, kurulumu SfWall kendisi algılamış gibi uygulanır. SfWall yalnızca kendi profilindeki kurulumları görür; diğer profilleri kapsamanın yolu budur.
 
 ```bash
-adb shell am broadcast -a shizuwall.APP_INSTALLED -n com.arslan.shizuwall/.receivers.AppInstalledReceiver --es apps "com.example.newapp"
+adb shell am broadcast -a sfwall.APP_INSTALLED -n com.lu.sfwall/.receivers.AppInstalledReceiver --es apps "com.example.newapp"
 ```
 
 Güvenlik duvarı kapalıyken kural uygulanmaz. `INTERNET` izni olmayan uygulamalar yok sayılır.
 
-### Profil: `shizuwall.PROFILE`
+### Profil: `sfwall.PROFILE`
 
 Kayıtlı bir profili etkinleştirir: uygulama seçimini, güvenlik duvarı modunu, uygulama bazlı modları ve *Sistem uygulamalarını göster* ayarını yazar.
 
@@ -123,14 +115,14 @@ Kayıtlı bir profili etkinleştirir: uygulama seçimini, güvenlik duvarı modu
 `profile` veya `profile_id` değerlerinden biri zorunludur. İkisi de eşleşmezse hiçbir şey değişmez ve bir bildirim (toast) bunu haber verir.
 
 ```bash
-adb shell am broadcast -a shizuwall.PROFILE -n com.arslan.shizuwall/.receivers.ProfileControlReceiver --es profile "Work"
+adb shell am broadcast -a sfwall.PROFILE -n com.lu.sfwall/.receivers.ProfileControlReceiver --es profile "Work"
 ```
 
 ## Feragatname
 
-ShizuWall hiçbir garanti verilmeksizin **"olduğu gibi"** sunulur. Gelişmiş sistem izinlerine dayanır; geliştirici sistem kararsızlığı, veri kaybı veya engellenen ağ erişiminin yan etkilerinden sorumlu değildir. Hangi uygulamaları engellediğinizi daima doğrulayın.
+SfWall hiçbir garanti verilmeksizin **"olduğu gibi"** sunulur. Gelişmiş sistem izinlerine dayanır; geliştirici sistem kararsızlığı, veri kaybı veya engellenen ağ erişiminin yan etkilerinden sorumlu değildir. Hangi uygulamaları engellediğinizi daima doğrulayın.
 
-**Resmî kaynaklar yalnızca Google Play, F-Droid ve bu depodur.** Başka yerlerden edinilen APK'lar projeyle ilişkili değildir ve kendi riskinizle kullanılır. ShizuWall'ın herhangi bir web sitesi yoktur.
+Başka yerlerden edinilen APK'lar projeyle ilişkili değildir ve kendi riskinizle kullanılır. SfWall'ın herhangi bir web sitesi yoktur.
 
 `INTERNET` izni yalnızca kablosuz hata ayıklama eşleştirmesi (LibADB) için istenir.
 
@@ -142,4 +134,4 @@ ShizuWall hiçbir garanti verilmeksizin **"olduğu gibi"** sunulur. Gelişmiş s
 
 - [Shizuku](https://github.com/RikkaApps/Shizuku): ayrıcalıklı komut çalıştırma.
 - [LibADB](https://github.com/MuntashirAkon/libadb-android): kablosuz hata ayıklama ve arka plan servisi bağlantısı.
-- [Exodus Privacy](https://exodus-privacy.eu.org/): izleyici imza veritabanı. ShizuWall kırpılmış bir kopyayı paketler ve API'lerine hiçbir zaman bağlanmaz.
+- [Exodus Privacy](https://exodus-privacy.eu.org/): izleyici imza veritabanı. SfWall kırpılmış bir kopyayı paketler ve API'lerine hiçbir zaman bağlanmaz.

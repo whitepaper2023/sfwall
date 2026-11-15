@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShizuWall</string>
+    <string name="app_name">SfWall</string>
     <string name="settings_category_appearance_title">Apariencia</string>
     <string name="settings_category_appearance_desc">Tema, colores, fuente, idioma</string>
     <string name="settings_category_firewall_title">Comportamiento del cortafuegos</string>
@@ -8,7 +8,7 @@
     <string name="settings_category_backend_desc">Shizuku, LADB, Root</string>
     <string name="settings_category_notifications_title">Notificaciones y botón flotante</string>
     <string name="settings_category_notifications_desc">Monitorización, alertas, botón flotante</string>
-    <string name="github_url">https://github.com/ahmetcanarslan/shizuwall</string>
+    <string name="github_url">https://github.com/whitepaper2023/sfwall</string>
     <string name="buymeacoffee_url">https://buymeacoffee.com/ahmetcanarslan</string>
     <string name="donate">Donar</string>
     <string name="show_system_apps">Mostrar aplicaciones del sistema</string>
@@ -38,10 +38,10 @@
     <string name="reset">Restablecer</string>
     <string name="cancel">Cancelar</string>
     <string name="android11_unsupported_title">Compatibilidad con Android 11</string>
-    <string name="android11_unsupported_message">Algunos dispositivos con Android 11 no son compatibles con ShizuWall. Si ves un error como:\n - no command found set chain3 - \nsignifica que tu dispositivo no es compatible y no hay nada que hacer por el momento.</string>
+    <string name="android11_unsupported_message">Algunos dispositivos con Android 11 no son compatibles con SfWall. Si ves un error como:\n - no command found set chain3 - \nsignifica que tu dispositivo no es compatible y no hay nada que hacer por el momento.</string>
     <string name="dont_show_again">No volver a mostrar</string>
     <string name="device_unsupported_title">Dispositivo no compatible</string>
-    <string name="device_unsupported_message">Tu versión de Android no ofrece la cadena de firewall de conectividad en la que se basa ShizuWall. Es habitual en Android 11–12 y en algunas ROM de fabricante como MIUI/HyperOS. El propio sistema rechaza el comando, por lo que cambiar entre Shizuku, LADB y root no servirá.</string>
+    <string name="device_unsupported_message">Tu versión de Android no ofrece la cadena de firewall de conectividad en la que se basa SfWall. Es habitual en Android 11–12 y en algunas ROM de fabricante como MIUI/HyperOS. El propio sistema rechaza el comando, por lo que cambiar entre Shizuku, LADB y root no servirá.</string>
     <string name="firewall_cleanup_warning">Advertencia: Falló la limpieza del firewall. Por favor, REINICIA tu dispositivo para restaurar el acceso a internet.</string>
     <string name="app_reset_complete">Restablecimiento completado. Cerrando…</string>
     <string name="reset_app_failed">Error al restablecer la aplicación: %s</string>
@@ -63,13 +63,13 @@
     <string name="adb_broadcast_dev_disable_framework">Deshabilitar framework del firewall</string>
     <string name="adb_broadcast_extras_summary" formatted="false">%1$s (boolean): true = activar, false = desactivar
 
-%2$s (string, opcional): lista de paquetes separada por comas. Si se omite, la app usa los paquetes seleccionados guardados en ShizuWall.</string>
+%2$s (string, opcional): lista de paquetes separada por comas. Si se omite, la app usa los paquetes seleccionados guardados en SfWall.</string>
     <string name="ok">Aceptar</string>
     <string name="no_apps_selected">No hay aplicaciones seleccionadas</string>
     <string name="shizuku_not_running">Shizuku no se está ejecutando</string>
     <string name="shizuku_permission_required">Se requiere permiso de Shizuku</string>
     <string name="firewall">Cortafuegos</string>
-    <string name="welcome_title">Bienvenido a ShizuWall</string>
+    <string name="welcome_title">Bienvenido a SfWall</string>
     <string name="welcome_message">Bloquea conexiones de red no deseadas sin root ni vpn</string>
     <string name="next">Siguiente</string>
     <string name="grant_permission">Otorgar permiso</string>
@@ -80,7 +80,7 @@
     <string name="sorting_onboarding_title">Ordenar y filtrar</string>
     <string name="sorting_onboarding_message">Toca el icono de ordenación para cambiar el orden de las apps. Ahí también puedes elegir si se muestran las apps del sistema y las apps de perfiles.</string>
     <string name="onboarding_mode_selection_title">Elige el modo de trabajo</string>
-    <string name="onboarding_mode_selection_message">ShizuWall puede funcionar en tres modos. Se recomienda Shizuku para la mayoría de los usuarios. Si tu dispositivo no es compatible con Shizuku, puedes elegir el modo LADB o Root. El modo de trabajo puede cambiar después.</string>
+    <string name="onboarding_mode_selection_message">SfWall puede funcionar en tres modos. Se recomienda Shizuku para la mayoría de los usuarios. Si tu dispositivo no es compatible con Shizuku, puedes elegir el modo LADB o Root. El modo de trabajo puede cambiar después.</string>
     <string name="get_started">Comenzar</string>
     <string name="shizuku_service_dead">El servicio Shizuku ha muerto</string>
     <string name="shizuku_update_required">Actualización de Shizuku requerida</string>
@@ -140,10 +140,10 @@
     <string name="working_mode_ladb">LADB</string>
     <string name="app_monitor_service">Notificaciones de nuevas apps</string>
     <string name="app_monitor_service_description">Mostrar una notificación cuando se instala una nueva app</string>
-    <string name="app_monitor_whitelist_dependency">En modo lista blanca este servicio es también el que bloquea las apps recién instaladas. Si las notificaciones de apps nuevas, el bloqueo automático de apps nuevas y la notificación de estado del firewall están desactivados, el servicio se detiene y las apps nuevas siguen permitidas hasta que el firewall se apague y se encienda de nuevo, o hasta que una app de automatización notifique la instalación con el broadcast shizuwall.APP_INSTALLED.</string>
+    <string name="app_monitor_whitelist_dependency">En modo lista blanca este servicio es también el que bloquea las apps recién instaladas. Si las notificaciones de apps nuevas, el bloqueo automático de apps nuevas y la notificación de estado del firewall están desactivados, el servicio se detiene y las apps nuevas siguen permitidas hasta que el firewall se apague y se encienda de nuevo, o hasta que una app de automatización notifique la instalación con el broadcast sfwall.APP_INSTALLED.</string>
     <string name="auto_firewall_new_apps">Bloquear nuevas apps automáticamente</string>
     <string name="auto_firewall_new_apps_description">Bloquear automáticamente las apps recién instaladas (excepto en modo lista blanca)</string>
-    <string name="new_app_monitor_main_profile_only">La detección de apps nuevas solo cubre el perfil principal y necesita el servicio de monitor en segundo plano, que sigue activo mientras esta opción esté activada. Las instalaciones en un perfil de trabajo, espacio clonado o espacio privado aún se pueden notificar con el broadcast shizuwall.APP_INSTALLED.</string>
+    <string name="new_app_monitor_main_profile_only">La detección de apps nuevas solo cubre el perfil principal y necesita el servicio de monitor en segundo plano, que sigue activo mientras esta opción esté activada. Las instalaciones en un perfil de trabajo, espacio clonado o espacio privado aún se pueden notificar con el broadcast sfwall.APP_INSTALLED.</string>
     <string name="firewall_status_notification">Notificación de estado del cortafuegos</string>
     <string name="firewall_status_notification_description">Mostrar una notificación permanente con el estado actual del cortafuegos</string>
     <string name="firewall_status_notification_enabled_title">Cortafuegos activado</string>
@@ -195,7 +195,7 @@
     <string name="ladb_status_connected">LADB conectado a Depuración inalámbrica</string>
     <string name="ladb_status_disconnected">Desconectado</string>
     <string name="ladb_error_title">Error de LADB</string>
-    <string name="ladb_hint_connection_refused">Conexión rechazada suele significar que la Depuración inalámbrica está APAGADA o el puerto es incorrecto. Usa el puerto de Opciones de desarrollador → Depuración inalámbrica → Dirección IP y puerto (no el de vinculación). Asegúrate de que ShizuWall esté permitido allí.</string>
+    <string name="ladb_hint_connection_refused">Conexión rechazada suele significar que la Depuración inalámbrica está APAGADA o el puerto es incorrecto. Usa el puerto de Opciones de desarrollador → Depuración inalámbrica → Dirección IP y puerto (no el de vinculación). Asegúrate de que SfWall esté permitido allí.</string>
 
     <string name="ladb_pairing_channel_name">Vinculación LADB</string>
     <string name="ladb_pairing_notification_title">Ingresa el código de vinculación</string>
@@ -209,7 +209,7 @@
     <string name="ladb_pairing_result_success_title">LADB vinculado</string>
     <string name="ladb_pairing_result_success_text">Vinculación exitosa. Ya puedes conectar.</string>
     <string name="ladb_pairing_result_failed_title">Fallo en vinculación LADB</string>
-    <string name="ladb_pairing_result_failed_text">Abre ShizuWall para ver el registro de errores.</string>
+    <string name="ladb_pairing_result_failed_text">Abre SfWall para ver el registro de errores.</string>
     <string name="ladb_pairing_result_missing_code">Falta el código de vinculación. Ingrésalo desde Depuración inalámbrica.</string>
     <string name="ladb_pairing_result_missing_port">Falta el puerto de vinculación. Ingresa: PUERTO CÓDIGO.</string>
     <string name="ladb_notification_permission_required">Se requiere permiso de notificación para mostrar el aviso de código.</string>
@@ -238,7 +238,7 @@
     <string name="failed_to_unblock_count">Error al desbloquear %d apps</string>
     <string name="failed_to_unblock_app">Fallo al desbloquear %s</string>
     <string name="notification_permission_required_title">Permiso de notificación requerido</string>
-    <string name="notification_permission_required_message">ShizuWall necesita permiso de notificación para mostrar el aviso de vinculación.\n\nSin este permiso, no podrás ingresar el código fácilmente.</string>
+    <string name="notification_permission_required_message">SfWall necesita permiso de notificación para mostrar el aviso de vinculación.\n\nSin este permiso, no podrás ingresar el código fácilmente.</string>
     <string name="cannot_continue">No se puede continuar</string>
     <string name="notification_permission_required_ladb">Se requiere permiso de notificación para vincular LADB. Esto nos permite mostrar información importante.\n\nPor favor, otorga el permiso.</string>
     <string name="enter_pairing_code_hint">Ingresa el código de vinculación en la notificación.</string>
@@ -287,7 +287,7 @@
     <string name="firewall_mode_smart_foreground_description">Solo permitir la app en primer plano</string>
     
     <string name="firewall_mode_focus_tracker">Rastreador de enfoque</string>
-    <string name="firewall_mode_focus_tracker_description">Activar el cortafuegos cuando ShizuWall no esté activo, y desactivarlo cuando esté activo.</string>
+    <string name="firewall_mode_focus_tracker_description">Activar el cortafuegos cuando SfWall no esté activo, y desactivarlo cuando esté activo.</string>
     <string name="smart_foreground_notification_channel_name">Primer Plano Inteligente (Servicio)</string>
     <string name="smart_foreground_notification_channel_description">Servicio en segundo plano para monitorear la app en primer plano</string>
     <string name="smart_foreground_active">Primer Plano Inteligente Activo</string>
@@ -314,9 +314,9 @@
     <string name="firewall_mode_whitelist_details">La selección se invierte: todas las aplicaciones están bloqueadas por defecto y solo las que marcas conservan el acceso a la red. Ten en cuenta que, si «Mostrar aplicaciones del sistema» está desactivado, las aplicaciones del sistema no se bloquean en este modo.</string>
     <string name="firewall_mode_screen_lock_details">Las aplicaciones seleccionadas se bloquean al bloquear la pantalla y se desbloquean al desbloquearla. Puedes definir un retardo para que apagados breves de pantalla no activen el bloqueo. Un servicio en segundo plano vigila el estado de bloqueo, por lo que sigue funcionando tras reiniciar.</string>
     <string name="firewall_mode_smart_foreground_details">Solo la aplicación que estás usando en ese momento conserva el acceso a la red. Las demás aplicaciones seleccionadas siguen bloqueadas y el acceso cambia en cuanto pasas a otra aplicación. Un servicio en segundo plano comprueba la aplicación en primer plano una vez por segundo aproximadamente, así que debe seguir activo y consume algo más de batería.</string>
-    <string name="firewall_mode_focus_tracker_details">El firewall sigue a la propia ShizuWall: salir o minimizar ShizuWall enciende el firewall y volver a abrirla lo apaga. Útil cuando quieres que el bloqueo se pause justo mientras cambias ajustes.</string>
+    <string name="firewall_mode_focus_tracker_details">El firewall sigue a la propia SfWall: salir o minimizar SfWall enciende el firewall y volver a abrirla lo apaga. Útil cuando quieres que el bloqueo se pause justo mientras cambias ajustes.</string>
     <string name="firewall_mode_hybrid_details">Cada aplicación tiene su propio modo en lugar de una regla para todas. Por aplicación puedes elegir Bloqueo predeterminado (siempre bloqueada), Primer plano inteligente (permitida solo mientras se usa) o Bloqueo de pantalla (bloqueada con la pantalla bloqueada). Todas estas reglas funcionan a la vez.</string>
-    <string name="firewall_mode_details_foreground_note">Primer plano inteligente, Híbrido y Seguimiento de foco necesitan detectar la aplicación en primer plano. Esto funciona a través de Shizuku o del acceso de uso, que ShizuWall se concede a sí misma mediante el shell privilegiado en los modos LADB y Root.</string>
+    <string name="firewall_mode_details_foreground_note">Primer plano inteligente, Híbrido y Seguimiento de foco necesitan detectar la aplicación en primer plano. Esto funciona a través de Shizuku o del acceso de uso, que SfWall se concede a sí misma mediante el shell privilegiado en los modos LADB y Root.</string>
     <string name="firewall_mode_hybrid">Modo Híbrido</string>
     <string name="firewall_mode_hybrid_description">Configurar modo individualmente por aplicación</string>
     <string name="hybrid_mode_default_block">Bloqueo Predeterminado</string>
@@ -334,7 +334,7 @@
     <string name="apply_root_rules_after_reboot">Aplicar reglas del firewall después del reinicio</string>
     <string name="apply_root_rules_after_reboot_description">Volver a aplicar las últimas reglas activas del firewall con root cuando termine el arranque</string>
     <string name="working_mode_root">Root (su)</string>
-    <string name="root_not_found_message">No se encontró acceso root. Permite a ShizuWall acceder a los permisos root.</string>
+    <string name="root_not_found_message">No se encontró acceso root. Permite a SfWall acceder a los permisos root.</string>
     <string name="double_tap_or_long_press">Doble toque para seleccionar varias aplicaciones, pulsación larga para deseleccionar varias aplicaciones</string>
     <string name="ladb_daemon_restart_required_title">Reiniciar el daemon de LADB</string>
     <string name="ladb_daemon_restart_required_message">No se pudo activar el firewall porque el daemon de LADB falló en la autorización o dejó de responder. Abre la configuración de LADB, activa el Modo avanzado y luego usa Detener daemon e Iniciar daemon.</string>
@@ -430,7 +430,7 @@
     <string name="app_info_internet_no">Sin permiso de internet</string>
     <string name="app_info_mobile_only">Bloquear solo con datos móviles</string>
     <string name="app_info_wifi_only">Bloquear solo con Wi‑Fi</string>
-    <string name="app_info_wifi_only_summary">No compatible. ShizuWall no usa VPN ni reglas basadas en root, por lo que no se puede bloquear solo el Wi‑Fi.</string>
+    <string name="app_info_wifi_only_summary">No compatible. SfWall no usa VPN ni reglas basadas en root, por lo que no se puede bloquear solo el Wi‑Fi.</string>
     <string name="app_info_block_all">Bloquear todas las redes</string>
     <string name="app_info_block_all_summary">Se bloquean tanto el Wi‑Fi como los datos móviles.</string>
     <string name="app_info_mobile_only_summary">El Wi‑Fi sigue permitido mientras esta app está bloqueada. Solo se bloquean las redes de uso medido: datos móviles y Wi‑Fi marcadas como de uso medido, como los puntos de acceso.</string>
@@ -442,7 +442,7 @@
     <string name="app_info_trackers_none">No se encontraron rastreadores conocidos</string>
     <string name="app_info_trackers_count">%1$d rastreadores encontrados</string>
     <string name="app_info_trackers_failed">No se pudo analizar esta app</string>
-    <string name="app_info_trackers_note">Detectados analizando el código de la app. ShizuWall no usa VPN ni inspecciona el tráfico: estos rastreadores quedan cortados mientras la app esté bloqueada.</string>
+    <string name="app_info_trackers_note">Detectados analizando el código de la app. SfWall no usa VPN ni inspecciona el tráfico: estos rastreadores quedan cortados mientras la app esté bloqueada.</string>
     <string name="tracker_data_attribution">Datos de rastreadores: Exodus Privacy, ODbL 1.0</string>
     <string name="show_other_profiles">Mostrar apps de otros perfiles</string>
     <string name="main_profile">Perfil principal</string>
@@ -476,22 +476,22 @@
     <string name="remember_deleted_apps">Recordar apps eliminadas</string>
     <string name="remember_deleted_apps_description">Conservar el estado de bloqueo de las apps eliminadas o desactivadas y restaurarlo cuando vuelvan</string>
     <string name="foreground_detection_unavailable">Detección de primer plano no disponible</string>
-    <string name="foreground_detection_unavailable_message">ShizuWall no pudo contactar con el asistente privilegiado que informa qué app está en primer plano, así que los modos Smart Foreground, Hybrid y Focus Tracker no pueden gestionar apps. Comprueba que tu modo de trabajo (Shizuku, LADB o Root) esté configurado y en ejecución.</string>
+    <string name="foreground_detection_unavailable_message">SfWall no pudo contactar con el asistente privilegiado que informa qué app está en primer plano, así que los modos Smart Foreground, Hybrid y Focus Tracker no pueden gestionar apps. Comprueba que tu modo de trabajo (Shizuku, LADB o Root) esté configurado y en ejecución.</string>
     <string name="empty_app_list_title">No hay aplicaciones</string>
     <string name="empty_app_list_message">Solo se muestran las aplicaciones instaladas por el usuario. Activa las aplicaciones del sistema para ver todo lo instalado en este dispositivo.</string>
     <string name="empty_app_list_action">Mostrar aplicaciones del sistema</string>
     <string name="empty_app_list_search_title">Sin resultados</string>
     <string name="empty_app_list_search_message">Ninguna aplicación coincide con tu búsqueda.</string>
     <string name="backend_banner_title">Configuración necesaria</string>
-    <string name="backend_banner_message_shizuku">ShizuWall necesita que Shizuku esté en ejecución y con el permiso concedido antes de poder bloquear aplicaciones.</string>
-    <string name="backend_banner_message_ladb">ShizuWall necesita que el demonio ADB local esté en ejecución antes de poder bloquear aplicaciones. Vincula el dispositivo con la depuración inalámbrica para iniciarlo.</string>
-    <string name="backend_banner_message_root">ShizuWall necesita acceso root antes de poder bloquear aplicaciones.</string>
+    <string name="backend_banner_message_shizuku">SfWall necesita que Shizuku esté en ejecución y con el permiso concedido antes de poder bloquear aplicaciones.</string>
+    <string name="backend_banner_message_ladb">SfWall necesita que el demonio ADB local esté en ejecución antes de poder bloquear aplicaciones. Vincula el dispositivo con la depuración inalámbrica para iniciarlo.</string>
+    <string name="backend_banner_message_root">SfWall necesita acceso root antes de poder bloquear aplicaciones.</string>
     <string name="backend_banner_action">Configurar</string>
     <string name="app_unsupported_system_uid">Esta app se ejecuta con un UID de sistema (menor que 10000). Android exime a los UID de sistema de las reglas de firewall por app, por lo que no se puede bloquear.</string>
     <string name="settings_category_security_title">Seguridad</string>
     <string name="settings_category_security_desc">Bloqueo de la app, PIN y biometría</string>
     <string name="app_lock_title">Bloqueo de la app</string>
-    <string name="app_lock_description">Pedir un PIN o biometría para abrir ShizuWall</string>
+    <string name="app_lock_description">Pedir un PIN o biometría para abrir SfWall</string>
     <string name="app_lock_use_biometrics">Usar biometría</string>
     <string name="app_lock_use_biometrics_description">Desbloquear con huella o rostro en lugar de escribir el PIN</string>
     <string name="app_lock_change_pin">Cambiar PIN</string>
@@ -501,15 +501,15 @@
     <string name="app_lock_pin_mismatch">Los PIN no coinciden</string>
     <string name="app_lock_pin_length_required">Introduce %1$d dígitos</string>
     <string name="app_lock_pin_length">Longitud del PIN</string>
-    <string name="app_lock_pin_not_recoverable">El PIN no se puede recuperar. Si lo olvidas, la única salida es borrar los datos de la app ShizuWall, lo que elimina todos los ajustes y perfiles.</string>
-    <string name="app_lock_scope_warning">Este bloqueo solo impide abrir ShizuWall. Las reglas del cortafuegos están en Android, así que aún pueden cambiarse desde apps de macros, difusiones ADB, el mosaico de Ajustes rápidos o el widget.</string>
+    <string name="app_lock_pin_not_recoverable">El PIN no se puede recuperar. Si lo olvidas, la única salida es borrar los datos de la app SfWall, lo que elimina todos los ajustes y perfiles.</string>
+    <string name="app_lock_scope_warning">Este bloqueo solo impide abrir SfWall. Las reglas del cortafuegos están en Android, así que aún pueden cambiarse desde apps de macros, difusiones ADB, el mosaico de Ajustes rápidos o el widget.</string>
     <string name="app_lock_biometric_offer_title">¿Desbloquear con biometría?</string>
-    <string name="app_lock_biometric_offer_message">Si lo activas, cualquiera que pueda desbloquear este dispositivo con su huella o rostro podrá abrir ShizuWall y cambiar el cortafuegos. Déjalo desactivado si el dispositivo es compartido y solo tú debes controlar el cortafuegos.</string>
+    <string name="app_lock_biometric_offer_message">Si lo activas, cualquiera que pueda desbloquear este dispositivo con su huella o rostro podrá abrir SfWall y cambiar el cortafuegos. Déjalo desactivado si el dispositivo es compartido y solo tú debes controlar el cortafuegos.</string>
     <string name="app_lock_biometric_offer_enable">Usar biometría</string>
     <string name="app_lock_biometric_offer_pin_only">Solo PIN</string>
     <string name="app_lock_wrong_pin">PIN incorrecto</string>
     <string name="app_lock_locked_out">Demasiados intentos. Inténtalo en %1$d s</string>
-    <string name="app_lock_biometric_title">Desbloquear ShizuWall</string>
+    <string name="app_lock_biometric_title">Desbloquear SfWall</string>
     <string name="app_lock_use_pin">Usar PIN</string>
     <string name="app_lock_pin_saved">PIN guardado</string>
     <string name="app_lock_delete">Borrar</string>

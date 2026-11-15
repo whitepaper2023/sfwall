@@ -1,4 +1,4 @@
-App lock: protect ShizuWall with a PIN or biometrics #141
+App lock: protect SfWall with a PIN or biometrics #141
 New "What's new" dialog after an update, also available in settings #143
 Show system apps and Show other profiles moved to the Firewall behaviour screen #145
 Empty app list state and backend banners that explain what to do next

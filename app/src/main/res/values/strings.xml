@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShizuWall</string>
+    <string name="app_name">SfWall</string>
     <string name="settings_category_appearance_title">Appearance</string>
     <string name="settings_category_appearance_desc">Theme, colors, font, language</string>
     <string name="settings_category_firewall_title">Firewall behavior</string>
@@ -8,7 +8,7 @@
     <string name="settings_category_backend_desc">Shizuku, LADB, Root</string>
     <string name="settings_category_notifications_title">Notifications &amp; floating button</string>
     <string name="settings_category_notifications_desc">Monitoring, alerts, overlay button</string>
-    <string name="github_url">https://github.com/ahmetcanarslan/shizuwall</string>
+    <string name="github_url">https://github.com/whitepaper2023/sfwall</string>
     <string name="buymeacoffee_url">https://buymeacoffee.com/ahmetcanarslan</string>
     <string name="donate">Donate</string>
     <string name="show_system_apps">Show system apps</string>
@@ -34,16 +34,20 @@
     <string name="export_failed">Export failed: %s</string>
     <string name="import_successful">Import successful. Please restart the app.</string>
     <string name="import_failed">Import failed: %s</string>
+    <string name="backup_import_confirm_title">Import backup?</string>
+    <string name="backup_import_confirm_message">This will replace your current profiles and app selection with the backup: %1$d apps, %2$d profiles. %3$d apps in the backup are not installed on this device and will be skipped.</string>
+    <string name="backup_import_confirm_apply">Import</string>
+    <string name="backup_import_summary">Backup imported: %1$d apps, %2$d profiles restored, %3$d skipped.</string>
     <string name="exit_confirm_message">Press back again to exit</string>
     <string name="reset_app_title">Reset App</string>
     <string name="reset_app_message">Are you sure you want to reset the app? This will disable the firewall (if active), clear all data, and close the app.</string>
     <string name="reset">Reset</string>
     <string name="cancel">Cancel</string>
     <string name="android11_unsupported_title">Android 11 compatibility</string>
-    <string name="android11_unsupported_message">Some devices on Android 11 dont support ShizuWall. If you see an error like:\n - no command found set chain3 - \nit means your device is not supported and there is nothing to do at the moment.</string>
+    <string name="android11_unsupported_message">Some devices on Android 11 dont support SfWall. If you see an error like:\n - no command found set chain3 - \nit means your device is not supported and there is nothing to do at the moment.</string>
     <string name="dont_show_again">Dont show again</string>
     <string name="device_unsupported_title">Device not supported</string>
-    <string name="device_unsupported_message">Your Android build does not provide the connectivity firewall chain ShizuWall relies on. This is common on Android 11–12 and on some OEM ROMs such as MIUI/HyperOS. The system rejects the command itself, so switching between Shizuku, LADB and root will not help.</string>
+    <string name="device_unsupported_message">Your Android build does not provide the connectivity firewall chain SfWall relies on. This is common on Android 11–12 and on some OEM ROMs such as MIUI/HyperOS. The system rejects the command itself, so switching between Shizuku, LADB and root will not help.</string>
     <string name="firewall_cleanup_warning">Warning: Firewall cleanup failed. Please REBOOT your device to restore internet access.</string>
     <string name="app_reset_complete">App reset complete. Closing…</string>
     <string name="reset_app_failed">Failed to reset app: %s</string>
@@ -51,6 +55,10 @@
     <string name="adb_broadcast_field_action">Action</string>
     <string name="adb_broadcast_field_component">Component</string>
     <string name="adb_broadcast_field_extras">Extras</string>
+    <string name="adb_broadcast_field_token">Automation token</string>
+    <string name="adb_broadcast_token_note">Automation broadcasts must include this token. Broadcasts without a valid token are ignored. Regenerating the token breaks existing automation commands until they are updated.</string>
+    <string name="adb_broadcast_token_regenerate">Regenerate token</string>
+    <string name="adb_broadcast_token_regenerated">Token regenerated. Update your automation apps with the new token.</string>
     <string name="adb_broadcast_examples_title">Common commands</string>
     <string name="adb_broadcast_example_enable_selected">Enable firewall</string>
     <string name="adb_broadcast_example_disable_selected">Disable firewall</string>
@@ -65,13 +73,15 @@
     <string name="adb_broadcast_dev_disable_framework">Disable firewall framework</string>
     <string name="adb_broadcast_extras_summary" formatted="false">%1$s (boolean): true = enable, false = disable
 
-%2$s (string, optional): comma-separated app list. If omitted, the firewall is turned on or off as a whole using the apps selected in ShizuWall. If given, only those apps are blocked or unblocked. Prefix an app with a user id for work profile or clone apps, for example 150:com.example.app. Apps sent this way are selected or unselected in ShizuWall too, and blocking one turns the firewall on if it was off.</string>
+%2$s (string, optional): comma-separated app list. If omitted, the firewall is turned on or off as a whole using the apps selected in SfWall. If given, only those apps are blocked or unblocked. Prefix an app with a user id for work profile or clone apps, for example 150:com.example.app. Apps sent this way are selected or unselected in SfWall too, and blocking one turns the firewall on if it was off.
+
+%3$s (string, required): automation token shown above. Broadcasts without a valid token are ignored.</string>
     <string name="ok">OK</string>
     <string name="no_apps_selected">No apps selected</string>
     <string name="shizuku_not_running">Shizuku not running</string>
     <string name="shizuku_permission_required">Shizuku permission required</string>
     <string name="firewall">Firewall</string>
-    <string name="welcome_title">Welcome to ShizuWall</string>
+    <string name="welcome_title">Welcome to SfWall</string>
     <string name="welcome_message">Block unwanted network connections without root or vpn</string>
     <string name="next">Next</string>
     <string name="notification_permission_background_request">Please grant permission to keep running in the background.</string>
@@ -83,7 +93,7 @@
     <string name="sorting_onboarding_title">Sorting &amp; Filtering</string>
     <string name="sorting_onboarding_message">Tap the sorting icon to change how apps are ordered. You can also choose there whether system apps and profile apps are shown.</string>
     <string name="onboarding_mode_selection_title">Choose Working Mode</string>
-    <string name="onboarding_mode_selection_message">ShizuWall can work in three modes. Shizuku is recommended for most users. If your device doesn\'t support Shizuku you can choose LADB or Root mode. Working Mode can be changed later</string>
+    <string name="onboarding_mode_selection_message">SfWall can work in three modes. Shizuku is recommended for most users. If your device doesn\'t support Shizuku you can choose LADB or Root mode. Working Mode can be changed later</string>
     <string name="get_started">Get Started</string>
     <string name="shizuku_service_dead">Shizuku service is dead</string>
     <string name="shizuku_update_required">Shizuku Update Required</string>
@@ -145,13 +155,13 @@
     <string name="working_mode_shizuku">Shizuku</string>
     <string name="working_mode_ladb">LADB</string>
     <string name="working_mode_root">Root (su)</string>
-    <string name="root_not_found_message">Root not found, please allow ShizuWall for accessing root permissions.</string>
+    <string name="root_not_found_message">Root not found, please allow SfWall for accessing root permissions.</string>
     <string name="app_monitor_service">New App Notifications</string>
     <string name="app_monitor_service_description">Show a notification when a new app is installed</string>
-    <string name="app_monitor_whitelist_dependency">In Whitelist mode this service is also what blocks newly installed apps. If new-app notifications, auto-firewall for new apps and the firewall status notification are all off, the service stops and new apps stay allowed until the firewall is turned off and on again, or until an automation app reports the install with the shizuwall.APP_INSTALLED broadcast.</string>
+    <string name="app_monitor_whitelist_dependency">In Whitelist mode this service is also what blocks newly installed apps. If new-app notifications, auto-firewall for new apps and the firewall status notification are all off, the service stops and new apps stay allowed until the firewall is turned off and on again, or until an automation app reports the install with the sfwall.APP_INSTALLED broadcast.</string>
     <string name="auto_firewall_new_apps">Auto-Firewall New Apps</string>
     <string name="auto_firewall_new_apps_description">Automatically block newly installed apps (except in Whitelist mode)</string>
-    <string name="new_app_monitor_main_profile_only">New app detection covers the main profile only and needs the background app monitor service, which stays running while this option is on. Installs in a work profile, clone space or private space can still be reported with the shizuwall.APP_INSTALLED broadcast.</string>
+    <string name="new_app_monitor_main_profile_only">New app detection covers the main profile only and needs the background app monitor service, which stays running while this option is on. Installs in a work profile, clone space or private space can still be reported with the sfwall.APP_INSTALLED broadcast.</string>
     <string name="firewall_status_notification">Firewall Status Notification</string>
     <string name="firewall_status_notification_description">Show a permanent notification with the current firewall status</string>
     <string name="firewall_status_notification_enabled_title">Firewall enabled</string>
@@ -170,8 +180,8 @@
     <string name="language">Language</string>
     <string name="language_system_default">System default</string>
     <string name="adb_broadcast_usage_description">Quick guide to use adb to control firewall</string>
-    <string name="export_settings">Export settings</string>
-    <string name="import_settings">Import settings</string>
+    <string name="export_settings">Export backup</string>
+    <string name="import_settings">Import backup</string>
     <string name="github">GitHub</string>
     <string name="settings">Settings</string>
     <string name="selected_count_zero">0</string>
@@ -204,7 +214,7 @@
     <string name="ladb_status_connected">Ladb Connected to Wireless Debugging</string>
     <string name="ladb_status_disconnected">Disconnected</string>
     <string name="ladb_error_title">LADB error</string>
-    <string name="ladb_hint_connection_refused">Connection refused usually means Wireless debugging is OFF or you are using the wrong port. Use the port shown in Developer options → Wireless debugging → IP address &amp; port (not the pairing port). Also make sure ShizuWall is allowed in Wireless debugging.</string>
+    <string name="ladb_hint_connection_refused">Connection refused usually means Wireless debugging is OFF or you are using the wrong port. Use the port shown in Developer options → Wireless debugging → IP address &amp; port (not the pairing port). Also make sure SfWall is allowed in Wireless debugging.</string>
 
     <string name="ladb_pairing_channel_name">LADB pairing</string>
     <string name="ladb_pairing_notification_title">Enter pairing code</string>
@@ -218,7 +228,7 @@
     <string name="ladb_pairing_result_success_title">LADB paired</string>
     <string name="ladb_pairing_result_success_text">Pairing succeeded. You can now connect.</string>
     <string name="ladb_pairing_result_failed_title">LADB pairing failed</string>
-    <string name="ladb_pairing_result_failed_text">Open ShizuWall to see the error log.</string>
+    <string name="ladb_pairing_result_failed_text">Open SfWall to see the error log.</string>
     <string name="ladb_pairing_result_missing_code">Missing pairing code. Enter it from Wireless debugging → Pair device.</string>
     <string name="ladb_pairing_result_missing_port">Missing pairing port. Enter: PORT CODE (from Wireless debugging → Pair device).</string>
     <string name="ladb_notification_permission_required">Notification permission is required to show the pairing code prompt.</string>
@@ -255,7 +265,7 @@
     <string name="failed_to_unblock_count">Failed to unblock %d apps</string>
     <string name="failed_to_unblock_app">Failed to unblock %s</string>
     <string name="notification_permission_required_title">Notification Permission Required</string>
-    <string name="notification_permission_required_message">ShizuWall needs notification permission to show the pairing code notification.\n\nWithout this permission, you won\'t be able to enter the pairing code easily.</string>
+    <string name="notification_permission_required_message">SfWall needs notification permission to show the pairing code notification.\n\nWithout this permission, you won\'t be able to enter the pairing code easily.</string>
     <string name="cannot_continue">Cannot Continue</string>
     <string name="notification_permission_required_ladb">Notification permission is required to use the LADB pairing feature. This permission allows us to show important pairing information.\n\nPlease grant notification permission to proceed.</string>
     <string name="enter_pairing_code_hint">Enter pairing code from wireless debugging page into notification.</string>
@@ -308,7 +318,7 @@
     <string name="firewall_mode_smart_foreground_description">Only allow the app currently in foreground</string>
     
     <string name="firewall_mode_focus_tracker">Focus Tracker</string>
-    <string name="firewall_mode_focus_tracker_description">Enable firewall when ShizuWall is unfocused, and disable when focused.</string>
+    <string name="firewall_mode_focus_tracker_description">Enable firewall when SfWall is unfocused, and disable when focused.</string>
 
     <string name="firewall_mode_details_button">How do these modes work?</string>
     <string name="firewall_mode_details_title">How firewall modes work</string>
@@ -317,9 +327,9 @@
     <string name="firewall_mode_whitelist_details">The selection is inverted: every app is blocked by default and only the apps you tick keep network access. Note that when "Show system apps" is off, system apps are not firewalled in this mode.</string>
     <string name="firewall_mode_screen_lock_details">The selected apps are blocked when the screen locks and unblocked when you unlock. You can set a delay so short screen-offs do not trigger blocking. A background service watches the lock state, so it keeps working after a reboot.</string>
     <string name="firewall_mode_smart_foreground_details">Only the app you are using right now keeps network access. Every other selected app stays blocked, and access switches over as soon as you move to another app. A background service checks the foreground app about once per second, so it must stay running and uses a little extra battery.</string>
-    <string name="firewall_mode_focus_tracker_details">The firewall follows ShizuWall itself: leaving or minimising ShizuWall turns the firewall on, opening it again turns the firewall off. Useful when you want the blocking to pause exactly while you are changing settings.</string>
+    <string name="firewall_mode_focus_tracker_details">The firewall follows SfWall itself: leaving or minimising SfWall turns the firewall on, opening it again turns the firewall off. Useful when you want the blocking to pause exactly while you are changing settings.</string>
     <string name="firewall_mode_hybrid_details">Each app gets its own mode instead of one rule for all. Per app you can pick Default Block (always blocked), Smart Foreground (allowed only while in use), or Screen Lock (blocked while the screen is locked). All of these rules run at the same time.</string>
-    <string name="firewall_mode_details_foreground_note">Smart Foreground, Hybrid and Focus Tracker need to detect the foreground app. This works through Shizuku, or through usage access, which ShizuWall grants itself via the privileged shell in LADB and Root modes.</string>
+    <string name="firewall_mode_details_foreground_note">Smart Foreground, Hybrid and Focus Tracker need to detect the foreground app. This works through Shizuku, or through usage access, which SfWall grants itself via the privileged shell in LADB and Root modes.</string>
     <string name="firewall_mode_hybrid">Hybrid Mode</string>
     <string name="firewall_mode_hybrid_description">Configure mode individually per app</string>
     <string name="hybrid_mode_default_block">Default Block</string>
@@ -430,7 +440,7 @@
     <string name="app_info_internet_no">No internet permission</string>
     <string name="app_info_mobile_only">Block only on mobile data</string>
     <string name="app_info_wifi_only">Block only on Wi‑Fi</string>
-    <string name="app_info_wifi_only_summary">Not supported. ShizuWall uses neither a VPN nor root-based rules, so Wi‑Fi cannot be blocked on its own.</string>
+    <string name="app_info_wifi_only_summary">Not supported. SfWall uses neither a VPN nor root-based rules, so Wi‑Fi cannot be blocked on its own.</string>
     <string name="app_info_block_all">Block all networks</string>
     <string name="app_info_block_all_summary">Wi‑Fi and mobile data are both blocked.</string>
     <string name="app_info_mobile_only_summary">Wi‑Fi stays allowed while this app is blocked. Only metered networks are blocked: mobile data and Wi‑Fi marked as metered, such as hotspots.</string>
@@ -442,7 +452,7 @@
     <string name="app_info_trackers_none">No known trackers found</string>
     <string name="app_info_trackers_count">%1$d trackers found</string>
     <string name="app_info_trackers_failed">This app could not be scanned</string>
-    <string name="app_info_trackers_note">Found by scanning the app\'s code. ShizuWall uses no VPN and never inspects traffic. These trackers are cut off while this app is blocked.</string>
+    <string name="app_info_trackers_note">Found by scanning the app\'s code. SfWall uses no VPN and never inspects traffic. These trackers are cut off while this app is blocked.</string>
     <string name="tracker_data_attribution">Tracker data: Exodus Privacy, ODbL 1.0</string>
     <string name="show_other_profiles">Show apps in other profiles</string>
     <string name="main_profile">Main profile</string>
@@ -476,22 +486,22 @@
     <string name="remember_deleted_apps">Remember deleted apps</string>
     <string name="remember_deleted_apps_description">Keep the block state of removed or disabled apps and restore it when they come back</string>
     <string name="foreground_detection_unavailable">Foreground detection unavailable</string>
-    <string name="foreground_detection_unavailable_message">ShizuWall could not reach the privileged helper that reports which app is in the foreground, so Smart Foreground, Hybrid and Focus Tracker cannot manage apps. Check that your working mode (Shizuku, LADB or Root) is set up and running.</string>
+    <string name="foreground_detection_unavailable_message">SfWall could not reach the privileged helper that reports which app is in the foreground, so Smart Foreground, Hybrid and Focus Tracker cannot manage apps. Check that your working mode (Shizuku, LADB or Root) is set up and running.</string>
     <string name="empty_app_list_title">No apps to show</string>
     <string name="empty_app_list_message">Only user-installed apps are listed. Turn on system apps to see everything installed on this device.</string>
     <string name="empty_app_list_action">Show system apps</string>
     <string name="empty_app_list_search_title">No results</string>
     <string name="empty_app_list_search_message">No app matches your search.</string>
     <string name="backend_banner_title">Setup required</string>
-    <string name="backend_banner_message_shizuku">ShizuWall needs Shizuku running and permission granted before it can block any app.</string>
-    <string name="backend_banner_message_ladb">ShizuWall needs the local ADB daemon running before it can block any app. Pair with Wireless debugging to start it.</string>
-    <string name="backend_banner_message_root">ShizuWall needs root access before it can block any app.</string>
+    <string name="backend_banner_message_shizuku">SfWall needs Shizuku running and permission granted before it can block any app.</string>
+    <string name="backend_banner_message_ladb">SfWall needs the local ADB daemon running before it can block any app. Pair with Wireless debugging to start it.</string>
+    <string name="backend_banner_message_root">SfWall needs root access before it can block any app.</string>
     <string name="backend_banner_action">Set up</string>
     <string name="app_unsupported_system_uid">This app runs under a system UID (below 10000). Android exempts system UIDs from per-app firewall rules, so it cannot be blocked.</string>
     <string name="settings_category_security_title">Security</string>
     <string name="settings_category_security_desc">App lock, PIN and biometrics</string>
     <string name="app_lock_title">App lock</string>
-    <string name="app_lock_description">Require a PIN or biometrics to open ShizuWall</string>
+    <string name="app_lock_description">Require a PIN or biometrics to open SfWall</string>
     <string name="app_lock_use_biometrics">Use biometrics</string>
     <string name="app_lock_use_biometrics_description">Unlock with a fingerprint or face instead of typing the PIN</string>
     <string name="app_lock_change_pin">Change PIN</string>
@@ -501,21 +511,21 @@
     <string name="app_lock_pin_mismatch">PINs don\'t match</string>
     <string name="app_lock_pin_length_required">Enter %1$d digits</string>
     <string name="app_lock_pin_length">PIN length</string>
-    <string name="app_lock_pin_not_recoverable">Your PIN can’t be recovered. If you forget it, the only way back in is to clear ShizuWall’s app data, which deletes all settings and profiles.</string>
-    <string name="app_lock_scope_warning">This lock only stops someone from opening ShizuWall. The firewall rules live in Android, so they can still be changed from macro apps, ADB broadcasts, the Quick Settings tile or the home screen widget.</string>
+    <string name="app_lock_pin_not_recoverable">Your PIN can’t be recovered. If you forget it, the only way back in is to clear SfWall’s app data, which deletes all settings and profiles.</string>
+    <string name="app_lock_scope_warning">This lock only stops someone from opening SfWall. The firewall rules live in Android, so they can still be changed from macro apps, ADB broadcasts, the Quick Settings tile or the home screen widget.</string>
     <string name="app_lock_biometric_offer_title">Use biometrics to unlock?</string>
-    <string name="app_lock_biometric_offer_message">If you turn this on, anyone who can unlock this device with their fingerprint or face can also open ShizuWall and change the firewall. Keep it off if the device is shared and only you should control the firewall.</string>
+    <string name="app_lock_biometric_offer_message">If you turn this on, anyone who can unlock this device with their fingerprint or face can also open SfWall and change the firewall. Keep it off if the device is shared and only you should control the firewall.</string>
     <string name="app_lock_biometric_offer_enable">Use biometrics</string>
     <string name="app_lock_biometric_offer_pin_only">PIN only</string>
     <string name="app_lock_wrong_pin">Wrong PIN</string>
     <string name="app_lock_locked_out">Too many attempts. Try again in %1$d s</string>
-    <string name="app_lock_biometric_title">Unlock ShizuWall</string>
+    <string name="app_lock_biometric_title">Unlock SfWall</string>
     <string name="app_lock_use_pin">Use PIN</string>
     <string name="app_lock_pin_saved">PIN saved</string>
     <string name="app_lock_delete">Delete</string>
     <string name="app_lock_submit">Confirm</string>
     <string name="contact_developer_email" translatable="false">ahmetcanarslandev@gmail.com</string>
-    <string name="contact_developer_subject" translatable="false">"ShizuWall - "</string>
+    <string name="contact_developer_subject" translatable="false">"SfWall - "</string>
     <string name="contact_developer">Contact Developer</string>
     <string name="contact_developer_description">Send feedback or report a problem</string>
     <string name="contact_developer_no_app">No email app found</string>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShizuWall</string>
+    <string name="app_name">SfWall</string>
     <string name="settings_category_appearance_title">दिखावट</string>
     <string name="settings_category_appearance_desc">थीम, रंग, फ़ॉन्ट, भाषा</string>
     <string name="settings_category_firewall_title">फ़ायरवॉल व्यवहार</string>
@@ -8,7 +8,7 @@
     <string name="settings_category_backend_desc">Shizuku, LADB, रूट</string>
     <string name="settings_category_notifications_title">सूचनाएँ और फ़्लोटिंग बटन</string>
     <string name="settings_category_notifications_desc">निगरानी, अलर्ट, ओवरले बटन</string>
-    <string name="github_url">https://github.com/ahmetcanarslan/shizuwall</string>
+    <string name="github_url">https://github.com/whitepaper2023/sfwall</string>
     <string name="buymeacoffee_url">https://buymeacoffee.com/ahmetcanarslan</string>
     <string name="donate">दान करें</string>
     <string name="show_system_apps">सिस्टम ऐप्स दिखाएँ</string>
@@ -40,10 +40,10 @@
     <string name="reset">रीसेट</string>
     <string name="cancel">रद्द करें</string>
     <string name="android11_unsupported_title">Android 11 संगतता</string>
-    <string name="android11_unsupported_message">Android 11 वाले कुछ डिवाइस ShizuWall का समर्थन नहीं करते। यदि आपको ऐसी त्रुटि दिखे:\n - no command found set chain3 - \nतो इसका मतलब है कि आपका डिवाइस समर्थित नहीं है और फ़िलहाल कुछ नहीं किया जा सकता।</string>
+    <string name="android11_unsupported_message">Android 11 वाले कुछ डिवाइस SfWall का समर्थन नहीं करते। यदि आपको ऐसी त्रुटि दिखे:\n - no command found set chain3 - \nतो इसका मतलब है कि आपका डिवाइस समर्थित नहीं है और फ़िलहाल कुछ नहीं किया जा सकता।</string>
     <string name="dont_show_again">फिर से न दिखाएँ</string>
     <string name="device_unsupported_title">डिवाइस समर्थित नहीं है</string>
-    <string name="device_unsupported_message">आपका Android बिल्ड वह कनेक्टिविटी फ़ायरवॉल चेन प्रदान नहीं करता जिस पर ShizuWall निर्भर है। यह Android 11–12 और MIUI/HyperOS जैसे कुछ निर्माता ROM पर आम है। सिस्टम स्वयं कमांड को अस्वीकार करता है, इसलिए Shizuku, LADB और root के बीच बदलने से मदद नहीं मिलेगी।</string>
+    <string name="device_unsupported_message">आपका Android बिल्ड वह कनेक्टिविटी फ़ायरवॉल चेन प्रदान नहीं करता जिस पर SfWall निर्भर है। यह Android 11–12 और MIUI/HyperOS जैसे कुछ निर्माता ROM पर आम है। सिस्टम स्वयं कमांड को अस्वीकार करता है, इसलिए Shizuku, LADB और root के बीच बदलने से मदद नहीं मिलेगी।</string>
     <string name="firewall_cleanup_warning">चेतावनी: फ़ायरवॉल सफ़ाई विफल रही। इंटरनेट पहुँच बहाल करने के लिए कृपया अपना डिवाइस रीबूट करें।</string>
     <string name="app_reset_complete">ऐप रीसेट पूरा हुआ। बंद हो रहा है…</string>
     <string name="reset_app_failed">ऐप रीसेट विफल: %s</string>
@@ -65,13 +65,13 @@
     <string name="adb_broadcast_dev_disable_framework">फ़ायरवॉल फ़्रेमवर्क बंद करें</string>
     <string name="adb_broadcast_extras_summary" formatted="false">%1$s (boolean): true = चालू, false = बंद
 
-%2$s (string, वैकल्पिक): अल्पविराम से अलग किए गए पैकेजों की सूची। छोड़ने पर ऐप ShizuWall में सहेजे गए चयनित पैकेजों का उपयोग करता है।</string>
+%2$s (string, वैकल्पिक): अल्पविराम से अलग किए गए पैकेजों की सूची। छोड़ने पर ऐप SfWall में सहेजे गए चयनित पैकेजों का उपयोग करता है।</string>
     <string name="ok">ठीक है</string>
     <string name="no_apps_selected">कोई ऐप चयनित नहीं</string>
     <string name="shizuku_not_running">Shizuku चल नहीं रहा है</string>
     <string name="shizuku_permission_required">Shizuku अनुमति आवश्यक है</string>
     <string name="firewall">फ़ायरवॉल</string>
-    <string name="welcome_title">ShizuWall में आपका स्वागत है</string>
+    <string name="welcome_title">SfWall में आपका स्वागत है</string>
     <string name="welcome_message">रूट या VPN के बिना अनचाहे नेटवर्क कनेक्शन ब्लॉक करें</string>
     <string name="next">आगे</string>
     <string name="notification_permission_background_request">कृपया बैकग्राउंड में चलते रहने के लिए अनुमति दें।</string>
@@ -83,7 +83,7 @@
     <string name="sorting_onboarding_title">सॉर्टिंग और फ़िल्टरिंग</string>
     <string name="sorting_onboarding_message">ऐप्स का क्रम बदलने के लिए सॉर्टिंग आइकन पर टैप करें। वहीं से आप यह भी चुन सकते हैं कि सिस्टम ऐप्स और प्रोफ़ाइल ऐप्स दिखें या नहीं।</string>
     <string name="onboarding_mode_selection_title">कार्य मोड चुनें</string>
-    <string name="onboarding_mode_selection_message">ShizuWall तीन मोड में काम कर सकता है। अधिकांश उपयोगकर्ताओं के लिए Shizuku अनुशंसित है। यदि आपका डिवाइस Shizuku का समर्थन नहीं करता तो आप LADB या रूट मोड चुन सकते हैं। कार्य मोड बाद में बदला जा सकता है</string>
+    <string name="onboarding_mode_selection_message">SfWall तीन मोड में काम कर सकता है। अधिकांश उपयोगकर्ताओं के लिए Shizuku अनुशंसित है। यदि आपका डिवाइस Shizuku का समर्थन नहीं करता तो आप LADB या रूट मोड चुन सकते हैं। कार्य मोड बाद में बदला जा सकता है</string>
     <string name="get_started">शुरू करें</string>
     <string name="shizuku_service_dead">Shizuku सेवा बंद हो गई है</string>
     <string name="shizuku_update_required">Shizuku अपडेट आवश्यक</string>
@@ -145,13 +145,13 @@
     <string name="working_mode_shizuku">Shizuku</string>
     <string name="working_mode_ladb">LADB</string>
     <string name="working_mode_root">रूट (su)</string>
-    <string name="root_not_found_message">रूट नहीं मिला, कृपया ShizuWall को रूट अनुमतियाँ प्रदान करें।</string>
+    <string name="root_not_found_message">रूट नहीं मिला, कृपया SfWall को रूट अनुमतियाँ प्रदान करें।</string>
     <string name="app_monitor_service">नए ऐप की सूचनाएँ</string>
     <string name="app_monitor_service_description">नया ऐप इंस्टॉल होने पर सूचना दिखाएँ</string>
-    <string name="app_monitor_whitelist_dependency">व्हाइटलिस्ट मोड में नए इंस्टॉल किए गए ऐप्स को भी यही सेवा ब्लॉक करती है। यदि नए ऐप की सूचनाएँ, नए ऐप्स पर स्वतः फ़ायरवॉल और फ़ायरवॉल स्थिति सूचना सभी बंद हैं, तो सेवा रुक जाती है और नए ऐप्स तब तक अनुमत रहते हैं जब तक फ़ायरवॉल बंद करके फिर चालू न किया जाए, या कोई ऑटोमेशन ऐप shizuwall.APP_INSTALLED ब्रॉडकास्ट से इंस्टॉल की सूचना न दे।</string>
+    <string name="app_monitor_whitelist_dependency">व्हाइटलिस्ट मोड में नए इंस्टॉल किए गए ऐप्स को भी यही सेवा ब्लॉक करती है। यदि नए ऐप की सूचनाएँ, नए ऐप्स पर स्वतः फ़ायरवॉल और फ़ायरवॉल स्थिति सूचना सभी बंद हैं, तो सेवा रुक जाती है और नए ऐप्स तब तक अनुमत रहते हैं जब तक फ़ायरवॉल बंद करके फिर चालू न किया जाए, या कोई ऑटोमेशन ऐप sfwall.APP_INSTALLED ब्रॉडकास्ट से इंस्टॉल की सूचना न दे।</string>
     <string name="auto_firewall_new_apps">नए ऐप्स पर स्वतः फ़ायरवॉल</string>
     <string name="auto_firewall_new_apps_description">नए इंस्टॉल किए गए ऐप्स को स्वतः ब्लॉक करें (व्हाइटलिस्ट मोड को छोड़कर)</string>
-    <string name="new_app_monitor_main_profile_only">नए ऐप की पहचान केवल मुख्य प्रोफ़ाइल को कवर करती है और इसके लिए बैकग्राउंड मॉनिटर सेवा चाहिए, जो यह विकल्प चालू रहने तक चलती रहती है। वर्क प्रोफ़ाइल, क्लोन स्पेस या प्राइवेट स्पेस में हुए इंस्टॉल shizuwall.APP_INSTALLED ब्रॉडकास्ट से बताए जा सकते हैं।</string>
+    <string name="new_app_monitor_main_profile_only">नए ऐप की पहचान केवल मुख्य प्रोफ़ाइल को कवर करती है और इसके लिए बैकग्राउंड मॉनिटर सेवा चाहिए, जो यह विकल्प चालू रहने तक चलती रहती है। वर्क प्रोफ़ाइल, क्लोन स्पेस या प्राइवेट स्पेस में हुए इंस्टॉल sfwall.APP_INSTALLED ब्रॉडकास्ट से बताए जा सकते हैं।</string>
     <string name="firewall_status_notification">फ़ायरवॉल स्थिति सूचना</string>
     <string name="firewall_status_notification_description">वर्तमान फ़ायरवॉल स्थिति के साथ स्थायी सूचना दिखाएँ</string>
     <string name="firewall_status_notification_enabled_title">फ़ायरवॉल चालू</string>
@@ -204,7 +204,7 @@
     <string name="ladb_status_connected">LADB वायरलेस डीबगिंग से कनेक्ट है</string>
     <string name="ladb_status_disconnected">डिस्कनेक्ट</string>
     <string name="ladb_error_title">LADB त्रुटि</string>
-    <string name="ladb_hint_connection_refused">"Connection refused" का आमतौर पर मतलब है कि वायरलेस डीबगिंग बंद है या आप गलत पोर्ट उपयोग कर रहे हैं। डेवलपर विकल्प → वायरलेस डीबगिंग → IP पता और पोर्ट में दिखाया गया पोर्ट उपयोग करें (पेयरिंग पोर्ट नहीं)। साथ ही सुनिश्चित करें कि वायरलेस डीबगिंग में ShizuWall को अनुमति है।</string>
+    <string name="ladb_hint_connection_refused">"Connection refused" का आमतौर पर मतलब है कि वायरलेस डीबगिंग बंद है या आप गलत पोर्ट उपयोग कर रहे हैं। डेवलपर विकल्प → वायरलेस डीबगिंग → IP पता और पोर्ट में दिखाया गया पोर्ट उपयोग करें (पेयरिंग पोर्ट नहीं)। साथ ही सुनिश्चित करें कि वायरलेस डीबगिंग में SfWall को अनुमति है।</string>
 
     <string name="ladb_pairing_channel_name">LADB पेयरिंग</string>
     <string name="ladb_pairing_notification_title">पेयरिंग कोड दर्ज करें</string>
@@ -218,7 +218,7 @@
     <string name="ladb_pairing_result_success_title">LADB पेयर हो गया</string>
     <string name="ladb_pairing_result_success_text">पेयरिंग सफल रही। अब आप कनेक्ट कर सकते हैं।</string>
     <string name="ladb_pairing_result_failed_title">LADB पेयरिंग विफल</string>
-    <string name="ladb_pairing_result_failed_text">त्रुटि लॉग देखने के लिए ShizuWall खोलें।</string>
+    <string name="ladb_pairing_result_failed_text">त्रुटि लॉग देखने के लिए SfWall खोलें।</string>
     <string name="ladb_pairing_result_missing_code">पेयरिंग कोड गायब है। इसे वायरलेस डीबगिंग → डिवाइस पेयर करें से दर्ज करें।</string>
     <string name="ladb_pairing_result_missing_port">पेयरिंग पोर्ट गायब है। दर्ज करें: पोर्ट कोड (वायरलेस डीबगिंग → डिवाइस पेयर करें से)।</string>
     <string name="ladb_notification_permission_required">पेयरिंग कोड संकेत दिखाने के लिए सूचना अनुमति आवश्यक है।</string>
@@ -255,7 +255,7 @@
     <string name="failed_to_unblock_count">%d ऐप्स अनब्लॉक नहीं हो सके</string>
     <string name="failed_to_unblock_app">%s अनब्लॉक नहीं हो सका</string>
     <string name="notification_permission_required_title">सूचना अनुमति आवश्यक</string>
-    <string name="notification_permission_required_message">पेयरिंग कोड सूचना दिखाने के लिए ShizuWall को सूचना अनुमति चाहिए।\n\nइस अनुमति के बिना आप पेयरिंग कोड आसानी से दर्ज नहीं कर पाएँगे।</string>
+    <string name="notification_permission_required_message">पेयरिंग कोड सूचना दिखाने के लिए SfWall को सूचना अनुमति चाहिए।\n\nइस अनुमति के बिना आप पेयरिंग कोड आसानी से दर्ज नहीं कर पाएँगे।</string>
     <string name="cannot_continue">जारी नहीं रख सकते</string>
     <string name="notification_permission_required_ladb">LADB पेयरिंग सुविधा का उपयोग करने के लिए सूचना अनुमति आवश्यक है। यह अनुमति हमें महत्वपूर्ण पेयरिंग जानकारी दिखाने देती है।\n\nआगे बढ़ने के लिए कृपया सूचना अनुमति दें।</string>
     <string name="enter_pairing_code_hint">वायरलेस डीबगिंग पेज से पेयरिंग कोड सूचना में दर्ज करें।</string>
@@ -308,7 +308,7 @@
     <string name="firewall_mode_smart_foreground_description">केवल उस ऐप को अनुमति दें जो अभी फ़ोरग्राउंड में है</string>
 
     <string name="firewall_mode_focus_tracker">फ़ोकस ट्रैकर</string>
-    <string name="firewall_mode_focus_tracker_description">ShizuWall फ़ोकस में न हो तो फ़ायरवॉल चालू करें, और फ़ोकस में हो तो बंद करें।</string>
+    <string name="firewall_mode_focus_tracker_description">SfWall फ़ोकस में न हो तो फ़ायरवॉल चालू करें, और फ़ोकस में हो तो बंद करें।</string>
 
     <string name="firewall_mode_details_button">ये मोड कैसे काम करते हैं?</string>
     <string name="firewall_mode_details_title">फ़ायरवॉल मोड कैसे काम करते हैं</string>
@@ -317,9 +317,9 @@
     <string name="firewall_mode_whitelist_details">चयन उलट जाता है: हर ऐप डिफ़ॉल्ट रूप से ब्लॉक रहता है और केवल आपके चुने ऐप्स की नेटवर्क पहुँच बनी रहती है। ध्यान दें कि "सिस्टम ऐप्स दिखाएँ" बंद होने पर इस मोड में सिस्टम ऐप्स फ़ायरवॉल नहीं किए जाते।</string>
     <string name="firewall_mode_screen_lock_details">स्क्रीन लॉक होने पर चयनित ऐप्स ब्लॉक हो जाते हैं और अनलॉक करने पर अनब्लॉक। आप एक देरी सेट कर सकते हैं ताकि थोड़ी देर स्क्रीन बंद होने पर ब्लॉकिंग न हो। एक बैकग्राउंड सेवा लॉक स्थिति पर नज़र रखती है, इसलिए यह रीबूट के बाद भी काम करती रहती है।</string>
     <string name="firewall_mode_smart_foreground_details">केवल वही ऐप जो आप अभी उपयोग कर रहे हैं, नेटवर्क पहुँच बनाए रखता है। बाकी सभी चयनित ऐप्स ब्लॉक रहते हैं, और जैसे ही आप दूसरे ऐप पर जाते हैं पहुँच वहीं चली जाती है। एक बैकग्राउंड सेवा लगभग हर सेकंड फ़ोरग्राउंड ऐप जाँचती है, इसलिए उसे चलते रहना होता है और थोड़ी अतिरिक्त बैटरी लगती है।</string>
-    <string name="firewall_mode_focus_tracker_details">फ़ायरवॉल स्वयं ShizuWall का अनुसरण करता है: ShizuWall से बाहर जाने या उसे छोटा करने पर फ़ायरवॉल चालू हो जाता है, दोबारा खोलने पर बंद। यह तब उपयोगी है जब आप चाहें कि सेटिंग्स बदलते समय ही ब्लॉकिंग रुके।</string>
+    <string name="firewall_mode_focus_tracker_details">फ़ायरवॉल स्वयं SfWall का अनुसरण करता है: SfWall से बाहर जाने या उसे छोटा करने पर फ़ायरवॉल चालू हो जाता है, दोबारा खोलने पर बंद। यह तब उपयोगी है जब आप चाहें कि सेटिंग्स बदलते समय ही ब्लॉकिंग रुके।</string>
     <string name="firewall_mode_hybrid_details">सभी के लिए एक नियम के बजाय हर ऐप का अपना मोड होता है। हर ऐप के लिए आप डिफ़ॉल्ट ब्लॉक (हमेशा ब्लॉक), स्मार्ट फ़ोरग्राउंड (केवल उपयोग के दौरान अनुमति) या स्क्रीन लॉक (स्क्रीन लॉक रहते ब्लॉक) चुन सकते हैं। ये सभी नियम एक साथ चलते हैं।</string>
-    <string name="firewall_mode_details_foreground_note">स्मार्ट फ़ोरग्राउंड, हाइब्रिड और फ़ोकस ट्रैकर को फ़ोरग्राउंड ऐप का पता लगाना होता है। यह Shizuku के ज़रिए होता है, या उपयोग पहुँच (usage access) के ज़रिए, जिसे ShizuWall LADB और रूट मोड में विशेषाधिकार प्राप्त शेल से स्वयं प्रदान कर लेता है।</string>
+    <string name="firewall_mode_details_foreground_note">स्मार्ट फ़ोरग्राउंड, हाइब्रिड और फ़ोकस ट्रैकर को फ़ोरग्राउंड ऐप का पता लगाना होता है। यह Shizuku के ज़रिए होता है, या उपयोग पहुँच (usage access) के ज़रिए, जिसे SfWall LADB और रूट मोड में विशेषाधिकार प्राप्त शेल से स्वयं प्रदान कर लेता है।</string>
     <string name="firewall_mode_hybrid">हाइब्रिड मोड</string>
     <string name="firewall_mode_hybrid_description">हर ऐप के लिए अलग-अलग मोड कॉन्फ़िगर करें</string>
     <string name="hybrid_mode_default_block">डिफ़ॉल्ट ब्लॉक</string>
@@ -429,7 +429,7 @@
     <string name="app_info_internet_no">इंटरनेट अनुमति नहीं है</string>
     <string name="app_info_mobile_only">केवल मोबाइल डेटा पर ब्लॉक करें</string>
     <string name="app_info_wifi_only">केवल Wi‑Fi पर ब्लॉक करें</string>
-    <string name="app_info_wifi_only_summary">समर्थित नहीं। ShizuWall VPN या रूट-आधारित नियमों का उपयोग नहीं करता, इसलिए केवल Wi‑Fi को ब्लॉक नहीं किया जा सकता।</string>
+    <string name="app_info_wifi_only_summary">समर्थित नहीं। SfWall VPN या रूट-आधारित नियमों का उपयोग नहीं करता, इसलिए केवल Wi‑Fi को ब्लॉक नहीं किया जा सकता।</string>
     <string name="app_info_block_all">सभी नेटवर्क ब्लॉक करें</string>
     <string name="app_info_block_all_summary">Wi‑Fi और मोबाइल डेटा दोनों ब्लॉक होते हैं।</string>
     <string name="app_info_mobile_only_summary">इस ऐप के ब्लॉक रहने पर भी Wi‑Fi की अनुमति रहती है। केवल मीटर्ड नेटवर्क ब्लॉक होते हैं: मोबाइल डेटा और हॉटस्पॉट जैसे मीटर्ड चिह्नित Wi‑Fi।</string>
@@ -441,7 +441,7 @@
     <string name="app_info_trackers_none">कोई ज्ञात ट्रैकर नहीं मिला</string>
     <string name="app_info_trackers_count">%1$d ट्रैकर मिले</string>
     <string name="app_info_trackers_failed">इस ऐप को स्कैन नहीं किया जा सका</string>
-    <string name="app_info_trackers_note">ऐप के कोड को स्कैन करके पाए गए। ShizuWall कोई VPN उपयोग नहीं करता और कभी ट्रैफ़िक की जाँच नहीं करता। यह ऐप ब्लॉक रहने तक ये ट्रैकर कट जाते हैं।</string>
+    <string name="app_info_trackers_note">ऐप के कोड को स्कैन करके पाए गए। SfWall कोई VPN उपयोग नहीं करता और कभी ट्रैफ़िक की जाँच नहीं करता। यह ऐप ब्लॉक रहने तक ये ट्रैकर कट जाते हैं।</string>
     <string name="tracker_data_attribution">ट्रैकर डेटा: Exodus Privacy, ODbL 1.0</string>
     <string name="show_other_profiles">अन्य प्रोफ़ाइलों के ऐप्स दिखाएँ</string>
     <string name="main_profile">मुख्य प्रोफ़ाइल</string>
@@ -475,22 +475,22 @@
     <string name="remember_deleted_apps">हटाए गए ऐप्स याद रखें</string>
     <string name="remember_deleted_apps_description">हटाए या अक्षम किए गए ऐप्स की ब्लॉक स्थिति सहेजें और लौटने पर बहाल करें</string>
     <string name="foreground_detection_unavailable">अग्रभूमि पहचान उपलब्ध नहीं</string>
-    <string name="foreground_detection_unavailable_message">ShizuWall उस विशेषाधिकार प्राप्त हेल्पर तक नहीं पहुँच सका जो बताता है कि कौन सा ऐप अग्रभूमि में है, इसलिए Smart Foreground, Hybrid और Focus Tracker ऐप्स को प्रबंधित नहीं कर सकते। जाँचें कि आपका वर्किंग मोड (Shizuku, LADB या Root) सेट और चालू है।</string>
+    <string name="foreground_detection_unavailable_message">SfWall उस विशेषाधिकार प्राप्त हेल्पर तक नहीं पहुँच सका जो बताता है कि कौन सा ऐप अग्रभूमि में है, इसलिए Smart Foreground, Hybrid और Focus Tracker ऐप्स को प्रबंधित नहीं कर सकते। जाँचें कि आपका वर्किंग मोड (Shizuku, LADB या Root) सेट और चालू है।</string>
     <string name="empty_app_list_title">दिखाने के लिए कोई ऐप नहीं</string>
     <string name="empty_app_list_message">केवल उपयोगकर्ता द्वारा इंस्टॉल किए गए ऐप्स दिखाए जाते हैं। इस डिवाइस पर मौजूद सब कुछ देखने के लिए सिस्टम ऐप्स चालू करें।</string>
     <string name="empty_app_list_action">सिस्टम ऐप्स दिखाएं</string>
     <string name="empty_app_list_search_title">कोई परिणाम नहीं</string>
     <string name="empty_app_list_search_message">आपकी खोज से कोई ऐप मेल नहीं खाता।</string>
     <string name="backend_banner_title">सेटअप आवश्यक है</string>
-    <string name="backend_banner_message_shizuku">किसी भी ऐप को ब्लॉक करने से पहले ShizuWall को चालू Shizuku और दी गई अनुमति चाहिए।</string>
-    <string name="backend_banner_message_ladb">किसी भी ऐप को ब्लॉक करने से पहले ShizuWall को चालू लोकल ADB डेमन चाहिए। इसे शुरू करने के लिए वायरलेस डीबगिंग से पेयर करें।</string>
-    <string name="backend_banner_message_root">किसी भी ऐप को ब्लॉक करने से पहले ShizuWall को रूट एक्सेस चाहिए।</string>
+    <string name="backend_banner_message_shizuku">किसी भी ऐप को ब्लॉक करने से पहले SfWall को चालू Shizuku और दी गई अनुमति चाहिए।</string>
+    <string name="backend_banner_message_ladb">किसी भी ऐप को ब्लॉक करने से पहले SfWall को चालू लोकल ADB डेमन चाहिए। इसे शुरू करने के लिए वायरलेस डीबगिंग से पेयर करें।</string>
+    <string name="backend_banner_message_root">किसी भी ऐप को ब्लॉक करने से पहले SfWall को रूट एक्सेस चाहिए।</string>
     <string name="backend_banner_action">सेटअप करें</string>
     <string name="app_unsupported_system_uid">यह ऐप सिस्टम UID (10000 से कम) पर चलता है। Android सिस्टम UID को प्रति-ऐप फ़ायरवॉल नियमों से छूट देता है, इसलिए इसे ब्लॉक नहीं किया जा सकता।</string>
     <string name="settings_category_security_title">सुरक्षा</string>
     <string name="settings_category_security_desc">ऐप लॉक, PIN और बायोमेट्रिक्स</string>
     <string name="app_lock_title">ऐप लॉक</string>
-    <string name="app_lock_description">ShizuWall खोलने के लिए PIN या बायोमेट्रिक्स ज़रूरी करें</string>
+    <string name="app_lock_description">SfWall खोलने के लिए PIN या बायोमेट्रिक्स ज़रूरी करें</string>
     <string name="app_lock_use_biometrics">बायोमेट्रिक्स इस्तेमाल करें</string>
     <string name="app_lock_use_biometrics_description">PIN टाइप करने के बजाय फ़िंगरप्रिंट या चेहरे से अनलॉक करें</string>
     <string name="app_lock_change_pin">PIN बदलें</string>
@@ -500,15 +500,15 @@
     <string name="app_lock_pin_mismatch">PIN मेल नहीं खाते</string>
     <string name="app_lock_pin_length_required">%1$d अंक दर्ज करें</string>
     <string name="app_lock_pin_length">PIN की लंबाई</string>
-    <string name="app_lock_pin_not_recoverable">PIN वापस नहीं पाया जा सकता। भूलने पर एकमात्र रास्ता ShizuWall का ऐप डेटा मिटाना है, जिससे सभी सेटिंग और प्रोफाइल मिट जाएंगे।</string>
-    <string name="app_lock_scope_warning">यह लॉक केवल ShizuWall खोलने से रोकता है। फ़ायरवॉल नियम Android में रहते हैं, इसलिए उन्हें मैक्रो ऐप, ADB ब्रॉडकास्ट, क्विक सेटिंग्स टाइल या विजेट से बदला जा सकता है।</string>
+    <string name="app_lock_pin_not_recoverable">PIN वापस नहीं पाया जा सकता। भूलने पर एकमात्र रास्ता SfWall का ऐप डेटा मिटाना है, जिससे सभी सेटिंग और प्रोफाइल मिट जाएंगे।</string>
+    <string name="app_lock_scope_warning">यह लॉक केवल SfWall खोलने से रोकता है। फ़ायरवॉल नियम Android में रहते हैं, इसलिए उन्हें मैक्रो ऐप, ADB ब्रॉडकास्ट, क्विक सेटिंग्स टाइल या विजेट से बदला जा सकता है।</string>
     <string name="app_lock_biometric_offer_title">बायोमेट्रिक्स से अनलॉक करें?</string>
-    <string name="app_lock_biometric_offer_message">इसे चालू करने पर, जो भी इस डिवाइस को अपनी फ़िंगरप्रिंट या चेहरे से अनलॉक कर सकता है, वह ShizuWall खोलकर फ़ायरवॉल भी बदल सकता है। अगर डिवाइस साझा है और फ़ायरवॉल केवल आपको नियंत्रित करना है तो इसे बंद रखें।</string>
+    <string name="app_lock_biometric_offer_message">इसे चालू करने पर, जो भी इस डिवाइस को अपनी फ़िंगरप्रिंट या चेहरे से अनलॉक कर सकता है, वह SfWall खोलकर फ़ायरवॉल भी बदल सकता है। अगर डिवाइस साझा है और फ़ायरवॉल केवल आपको नियंत्रित करना है तो इसे बंद रखें।</string>
     <string name="app_lock_biometric_offer_enable">बायोमेट्रिक्स इस्तेमाल करें</string>
     <string name="app_lock_biometric_offer_pin_only">केवल PIN</string>
     <string name="app_lock_wrong_pin">गलत PIN</string>
     <string name="app_lock_locked_out">बहुत ज़्यादा कोशिशें। %1$d सेकंड बाद फिर कोशिश करें</string>
-    <string name="app_lock_biometric_title">ShizuWall अनलॉक करें</string>
+    <string name="app_lock_biometric_title">SfWall अनलॉक करें</string>
     <string name="app_lock_use_pin">PIN इस्तेमाल करें</string>
     <string name="app_lock_pin_saved">PIN सेव हो गया</string>
     <string name="app_lock_delete">मिटाएँ</string>

@@ -3,9 +3,9 @@
 DEX_PATH="/data/local/tmp/daemon.dex"
 PID_FILE="/data/local/tmp/daemon.pid"
 LOG_FILE="/data/local/tmp/daemon.log"
-TOKEN_FILE="/data/local/tmp/shizuwall.token"
+TOKEN_FILE="/data/local/tmp/sfwall.token"
 
-echo "=== ShizuWall Daemon Startup ==="
+echo "=== SfWall Daemon Startup ==="
 echo "Date: $(date)"
 echo "DEX Path: $DEX_PATH"
 
@@ -33,14 +33,14 @@ if [ -f "$PID_FILE" ]; then
     rm -f "$PID_FILE"
 fi
 
-pkill -f 'com.arslan.shizuwall.daemon.SystemDaemon' 2>/dev/null || true
+pkill -f 'com.lu.sfwall.daemon.SystemDaemon' 2>/dev/null || true
 sleep 1
 
 : > "$LOG_FILE"
 
 echo "Starting app_process..."
 nohup env CLASSPATH="$DEX_PATH" /system/bin/app_process /system/bin \
-    com.arslan.shizuwall.daemon.SystemDaemon >> "$LOG_FILE" 2>&1 &
+    com.lu.sfwall.daemon.SystemDaemon >> "$LOG_FILE" 2>&1 &
 
 PID=$!
 echo "$PID" > "$PID_FILE"

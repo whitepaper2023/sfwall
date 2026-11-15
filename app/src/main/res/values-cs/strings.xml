@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShizuWall</string>
+    <string name="app_name">SfWall</string>
     <string name="settings_category_appearance_title">Vzhled</string>
     <string name="settings_category_appearance_desc">Motiv, barvy, písmo, jazyk</string>
     <string name="settings_category_firewall_title">Chování firewallu</string>
@@ -8,7 +8,7 @@
     <string name="settings_category_backend_desc">Shizuku, LADB, Root</string>
     <string name="settings_category_notifications_title">Oznámení a plovoucí tlačítko</string>
     <string name="settings_category_notifications_desc">Sledování, upozornění, plovoucí tlačítko</string>
-    <string name="github_url">https://github.com/ahmetcanarslan/shizuwall</string>
+    <string name="github_url">https://github.com/whitepaper2023/sfwall</string>
     <string name="buymeacoffee_url">https://buymeacoffee.com/ahmetcanarslan</string>
     <string name="donate">Podpořit</string>
     <string name="show_system_apps">Zobrazit systémové aplikace</string>
@@ -40,10 +40,10 @@
     <string name="reset">Resetovat</string>
     <string name="cancel">Zrušit</string>
     <string name="android11_unsupported_title">Android 11 kompatibilita</string>
-    <string name="android11_unsupported_message">Některá zařízení s Androidem 11 nepodporují ShizuWall. Pokud se zobrazí chyba typu:\n - nebyl nalezen příkaz set chain3 - \nit znamená to, že vaše zařízení není podporováno a v tuto chvíli s tím nelze nic dělat.</string>
+    <string name="android11_unsupported_message">Některá zařízení s Androidem 11 nepodporují SfWall. Pokud se zobrazí chyba typu:\n - nebyl nalezen příkaz set chain3 - \nit znamená to, že vaše zařízení není podporováno a v tuto chvíli s tím nelze nic dělat.</string>
     <string name="dont_show_again">Znovu nezobrazovat</string>
     <string name="device_unsupported_title">Zařízení není podporováno</string>
-    <string name="device_unsupported_message">Vaše sestavení Androidu neposkytuje řetězec síťového firewallu, na kterém ShizuWall závisí. To je běžné u Androidu 11–12 a u některých ROM výrobců, například MIUI/HyperOS. Příkaz odmítá samotný systém, takže přepínání mezi Shizuku, LADB a root nepomůže.</string>
+    <string name="device_unsupported_message">Vaše sestavení Androidu neposkytuje řetězec síťového firewallu, na kterém SfWall závisí. To je běžné u Androidu 11–12 a u některých ROM výrobců, například MIUI/HyperOS. Příkaz odmítá samotný systém, takže přepínání mezi Shizuku, LADB a root nepomůže.</string>
     <string name="firewall_cleanup_warning">Upozornění: Reset brány firewall se nezdařil. Restartujte zařízení, aby se obnovil přístup k internetu.</string>
     <string name="app_reset_complete">Resetování aplikace je kompletní. Zavírání…</string>
     <string name="reset_app_failed">Reset aplikacei selhal: %s</string>
@@ -65,13 +65,13 @@
     <string name="adb_broadcast_dev_disable_framework">Zakázat framework firewallu</string>
     <string name="adb_broadcast_extras_summary" formatted="false">%1$s (boolean): true = povolit, false = zakázat
 
-%2$s (string, volitelné): seznam balíčků oddělených čárkami. Pokud je vynecháno, aplikace použije vybrané balíčky uložené v ShizuWall.</string>
+%2$s (string, volitelné): seznam balíčků oddělených čárkami. Pokud je vynecháno, aplikace použije vybrané balíčky uložené v SfWall.</string>
     <string name="ok">OK</string>
     <string name="no_apps_selected">Žádné aplikace nevybrány</string>
     <string name="shizuku_not_running">Shizuku neběží</string>
     <string name="shizuku_permission_required">Oprávnění Shizuku vyžadováno.</string>
     <string name="firewall">Brána firewall</string>
-    <string name="welcome_title">Vítejte v ShizuWall</string>
+    <string name="welcome_title">Vítejte v SfWall</string>
     <string name="welcome_message">Blokovat nežádoucí síťová připojení bez rootu nebo VPN</string>
     <string name="next">Další</string>
     <string name="grant_permission">Povolit oprávnění</string>
@@ -82,7 +82,7 @@
     <string name="sorting_onboarding_title">Řazení a filtrování</string>
     <string name="sorting_onboarding_message">Klepnutím na ikonu řazení změníte pořadí aplikací. Zde můžete také zvolit, zda se mají zobrazovat systémové aplikace a aplikace profilů.</string>
     <string name="onboarding_mode_selection_title">Zvolte Pracovní režim</string>
-    <string name="onboarding_mode_selection_message">ShizuWall může pracovat ve třech režimech. Pro většinu uživatelů se doporučuje Shizuku. Pokud vaše zařízení nepodporuje Shizuku, můžete zvolit režim LADB nebo Root. Pracovní režim lze změnit později.</string>
+    <string name="onboarding_mode_selection_message">SfWall může pracovat ve třech režimech. Pro většinu uživatelů se doporučuje Shizuku. Pokud vaše zařízení nepodporuje Shizuku, můžete zvolit režim LADB nebo Root. Pracovní režim lze změnit později.</string>
     <string name="get_started">Začněte</string>
     <string name="shizuku_service_dead">Shizuku služba je mrtvá</string>
     <string name="shizuku_update_required">Je vyžadována Shizuku aktualizace</string>
@@ -144,13 +144,13 @@
     <string name="working_mode_shizuku">Shizuku</string>
     <string name="working_mode_ladb">LADB</string>
     <string name="working_mode_root">Root (su)</string>
-    <string name="root_not_found_message">Root nenalezen, prosím povolte ShizuWall přístup k rootu.</string>
+    <string name="root_not_found_message">Root nenalezen, prosím povolte SfWall přístup k rootu.</string>
     <string name="app_monitor_service">Oznámení o nových aplikacích</string>
     <string name="app_monitor_service_description">Zobrazit oznámení při instalaci nové aplikace</string>
-    <string name="app_monitor_whitelist_dependency">V režimu whitelist je to právě tato služba, která blokuje i nově nainstalované aplikace. Pokud jsou oznámení o nových aplikacích, automatické blokování nových aplikací i oznámení o stavu firewallu vypnutá, služba se zastaví a nové aplikace zůstanou povolené, dokud firewall nevypnete a znovu nezapnete nebo dokud automatizační aplikace nenahlásí instalaci broadcastem shizuwall.APP_INSTALLED.</string>
+    <string name="app_monitor_whitelist_dependency">V režimu whitelist je to právě tato služba, která blokuje i nově nainstalované aplikace. Pokud jsou oznámení o nových aplikacích, automatické blokování nových aplikací i oznámení o stavu firewallu vypnutá, služba se zastaví a nové aplikace zůstanou povolené, dokud firewall nevypnete a znovu nezapnete nebo dokud automatizační aplikace nenahlásí instalaci broadcastem sfwall.APP_INSTALLED.</string>
     <string name="auto_firewall_new_apps">Automaticky blokovat nové aplikace</string>
     <string name="auto_firewall_new_apps_description">Automaticky blokovat nově nainstalované aplikace (kromě režimu whitelist)</string>
-    <string name="new_app_monitor_main_profile_only">Detekce nových aplikací pokrývá pouze hlavní profil a vyžaduje službu sledování na pozadí, která běží, dokud je tato volba zapnutá. Instalace v pracovním profilu, klonovaném nebo soukromém prostoru lze přesto nahlásit broadcastem shizuwall.APP_INSTALLED.</string>
+    <string name="new_app_monitor_main_profile_only">Detekce nových aplikací pokrývá pouze hlavní profil a vyžaduje službu sledování na pozadí, která běží, dokud je tato volba zapnutá. Instalace v pracovním profilu, klonovaném nebo soukromém prostoru lze přesto nahlásit broadcastem sfwall.APP_INSTALLED.</string>
     <string name="firewall_status_notification">Oznámení o stavu firewallu</string>
     <string name="firewall_status_notification_description">Zobrazit trvalé oznámení s aktuálním stavem firewallu</string>
     <string name="firewall_status_notification_enabled_title">Firewall zapnut</string>
@@ -202,7 +202,7 @@
     <string name="ladb_status_connected">Ladb připojený k bezdrátovému ladění</string>
     <string name="ladb_status_disconnected">Odpojeno</string>
     <string name="ladb_error_title">LADB chyba</string>
-    <string name="ladb_hint_connection_refused">Odmítnutí připojení obvykle znamená, že bezdrátové ladění je vypnuté nebo používáte nesprávný port. Použijte port uvedený v možnostech pro vývojáře → Bezdrátové ladění → IP adresa a port (nikoli port pro párování). Ujistěte se také, že je ShizuWall povolen v bezdrátovém ladění.</string>
+    <string name="ladb_hint_connection_refused">Odmítnutí připojení obvykle znamená, že bezdrátové ladění je vypnuté nebo používáte nesprávný port. Použijte port uvedený v možnostech pro vývojáře → Bezdrátové ladění → IP adresa a port (nikoli port pro párování). Ujistěte se také, že je SfWall povolen v bezdrátovém ladění.</string>
 
     <string name="ladb_pairing_channel_name">LADB párování</string>
     <string name="ladb_pairing_notification_title">Vložte párovací kód</string>
@@ -216,7 +216,7 @@
     <string name="ladb_pairing_result_success_title">LADB spárováno</string>
     <string name="ladb_pairing_result_success_text">Párování bylo úspěšné. Nyní se můžete připojit.</string>
     <string name="ladb_pairing_result_failed_title">Párování LADB selhalo</string>
-    <string name="ladb_pairing_result_failed_text">Otevřete ShizuWall a podívejte se na protokol chyb.</string>
+    <string name="ladb_pairing_result_failed_text">Otevřete SfWall a podívejte se na protokol chyb.</string>
     <string name="ladb_pairing_result_missing_code">Chybí párovací kód. Zadejte jej v části Bezdrátové ladění → Spárovat zařízení.</string>
     <string name="ladb_pairing_result_missing_port">Chybějící párovací port. Zadejte: PORTU (z bezdrátového ladění → Párování zařízení).</string>
     <string name="ladb_notification_permission_required">K zobrazení výzvy k zadání párovacího kódu je nutné povolení k zasílání oznámení.</string>
@@ -253,7 +253,7 @@
     <string name="failed_to_unblock_count">Nepodařilo se odblokovat %d aplikací</string>
     <string name="failed_to_unblock_app">Selhalo odblokování %s</string>
     <string name="notification_permission_required_title">Vyžaduje se povolení k zasílání oznámení</string>
-    <string name="notification_permission_required_message">ShizuWall potřebuje oprávnění k zasílání oznámení, aby mohl zobrazit oznámení s párovacím kódem. Bez tohoto oprávnění nebudete moci snadno zadat párovací kód.</string>
+    <string name="notification_permission_required_message">SfWall potřebuje oprávnění k zasílání oznámení, aby mohl zobrazit oznámení s párovacím kódem. Bez tohoto oprávnění nebudete moci snadno zadat párovací kód.</string>
     <string name="cannot_continue">Nelze pokračovat</string>
     <string name="notification_permission_required_ladb">K použití funkce párování LADB je nutné povolení pro zasílání oznámení. Toto povolení nám umožňuje zobrazovat důležité informace o párování. \n\nProsím, udělejte povolení pro zasílání oznámení, abyste mohli pokračovat.</string>
     <string name="enter_pairing_code_hint">Zadejte párovací kód ze stránky bezdrátového ladění do oznámení.</string>
@@ -306,7 +306,7 @@
     <string name="firewall_mode_smart_foreground_description">Povolí pouze aplikaci, která je aktuálně v popředí</string>
     
     <string name="firewall_mode_focus_tracker">Focus Tracker</string>
-    <string name="firewall_mode_focus_tracker_description">Zapnout bránu firewall, když není ShizuWall aktivní, a vypnout ji, když je aktivní.</string>
+    <string name="firewall_mode_focus_tracker_description">Zapnout bránu firewall, když není SfWall aktivní, a vypnout ji, když je aktivní.</string>
 
     <string name="firewall_mode_details_button">Jak tyto režimy fungují?</string>
     <string name="firewall_mode_details_title">Jak fungují režimy brány firewall</string>
@@ -315,9 +315,9 @@
     <string name="firewall_mode_whitelist_details">Výběr je obrácený: ve výchozím stavu jsou blokovány všechny aplikace a připojení si udrží jen ty, které zaškrtnete. Pozor: pokud je vypnuto „Zobrazit systémové aplikace“, systémové aplikace se v tomto režimu neblokují.</string>
     <string name="firewall_mode_screen_lock_details">Vybrané aplikace se zablokují při uzamčení obrazovky a odblokují po odemčení. Můžete nastavit prodlevu, aby krátké zhasnutí obrazovky blokování nespustilo. Stav zámku sleduje služba na pozadí, takže funguje i po restartu.</string>
     <string name="firewall_mode_smart_foreground_details">Připojení si udrží pouze aplikace, kterou právě používáte. Ostatní vybrané aplikace zůstávají blokované a přístup se přepne, jakmile přejdete do jiné aplikace. Služba na pozadí kontroluje aplikaci v popředí zhruba jednou za sekundu, takže musí běžet a spotřebuje trochu baterie.</string>
-    <string name="firewall_mode_focus_tracker_details">Brána firewall sleduje samotný ShizuWall: opuštění nebo minimalizace ShizuWall bránu firewall zapne, jeho opětovné otevření ji vypne. Hodí se, když má blokování pauzu přesně po dobu, kdy měníte nastavení.</string>
+    <string name="firewall_mode_focus_tracker_details">Brána firewall sleduje samotný SfWall: opuštění nebo minimalizace SfWall bránu firewall zapne, jeho opětovné otevření ji vypne. Hodí se, když má blokování pauzu přesně po dobu, kdy měníte nastavení.</string>
     <string name="firewall_mode_hybrid_details">Každá aplikace má vlastní režim místo jednoho pravidla pro všechny. U každé aplikace zvolíte Výchozí blokování (vždy blokováno), Chytré popředí (povoleno jen během používání) nebo Zámek obrazovky (blokováno při uzamčené obrazovce). Všechna pravidla běží současně.</string>
-    <string name="firewall_mode_details_foreground_note">Chytré popředí, Hybridní režim a Sledování zaměření potřebují rozpoznat aplikaci v popředí. Funguje to přes Shizuku nebo přes přístup k údajům o využití, který si ShizuWall v režimech LADB a Root uděluje sám pomocí privilegovaného shellu.</string>
+    <string name="firewall_mode_details_foreground_note">Chytré popředí, Hybridní režim a Sledování zaměření potřebují rozpoznat aplikaci v popředí. Funguje to přes Shizuku nebo přes přístup k údajům o využití, který si SfWall v režimech LADB a Root uděluje sám pomocí privilegovaného shellu.</string>
     <string name="firewall_mode_hybrid">Hybridní režim</string>
     <string name="firewall_mode_hybrid_description">Nastavit režim individuálně pro každou aplikaci</string>
     <string name="hybrid_mode_default_block">Výchozí blokování</string>
@@ -430,7 +430,7 @@
     <string name="app_info_internet_no">Bez oprávnění k internetu</string>
     <string name="app_info_mobile_only">Blokovat pouze mobilní data</string>
     <string name="app_info_wifi_only">Blokovat pouze na Wi‑Fi</string>
-    <string name="app_info_wifi_only_summary">Nepodporováno. ShizuWall nepoužívá VPN ani pravidla založená na rootu, takže nelze blokovat samotnou Wi‑Fi.</string>
+    <string name="app_info_wifi_only_summary">Nepodporováno. SfWall nepoužívá VPN ani pravidla založená na rootu, takže nelze blokovat samotnou Wi‑Fi.</string>
     <string name="app_info_block_all">Blokovat všechny sítě</string>
     <string name="app_info_block_all_summary">Blokuje se Wi‑Fi i mobilní data.</string>
     <string name="app_info_mobile_only_summary">Wi‑Fi zůstává povolená, i když je tato aplikace blokovaná. Blokují se jen měřené sítě: mobilní data a Wi‑Fi označené jako měřené, například hotspoty.</string>
@@ -442,7 +442,7 @@
     <string name="app_info_trackers_none">Nenalezeny žádné známé sledovače</string>
     <string name="app_info_trackers_count">Nalezeno sledovačů: %1$d</string>
     <string name="app_info_trackers_failed">Tuto aplikaci se nepodařilo prohlédnout</string>
-    <string name="app_info_trackers_note">Nalezeno analýzou kódu aplikace. ShizuWall nepoužívá VPN a nezkoumá provoz. Tyto sledovače jsou odstřiženy, dokud je aplikace blokována.</string>
+    <string name="app_info_trackers_note">Nalezeno analýzou kódu aplikace. SfWall nepoužívá VPN a nezkoumá provoz. Tyto sledovače jsou odstřiženy, dokud je aplikace blokována.</string>
     <string name="tracker_data_attribution">Data o sledovačích: Exodus Privacy, ODbL 1.0</string>
     <string name="show_other_profiles">Zobrazit aplikace z jiných profilů</string>
     <string name="main_profile">Hlavní profil</string>
@@ -476,22 +476,22 @@
     <string name="remember_deleted_apps">Pamatovat smazané aplikace</string>
     <string name="remember_deleted_apps_description">Zachovat stav blokování odebraných či zakázaných aplikací a obnovit jej při jejich návratu</string>
     <string name="foreground_detection_unavailable">Detekce aplikace v popředí není dostupná</string>
-    <string name="foreground_detection_unavailable_message">ShizuWall se nedokázal spojit s privilegovaným pomocníkem, který hlásí aplikaci v popředí, takže režimy Smart Foreground, Hybrid a Focus Tracker nemohou spravovat aplikace. Zkontrolujte, že je váš pracovní režim (Shizuku, LADB nebo Root) nastavený a běží.</string>
+    <string name="foreground_detection_unavailable_message">SfWall se nedokázal spojit s privilegovaným pomocníkem, který hlásí aplikaci v popředí, takže režimy Smart Foreground, Hybrid a Focus Tracker nemohou spravovat aplikace. Zkontrolujte, že je váš pracovní režim (Shizuku, LADB nebo Root) nastavený a běží.</string>
     <string name="empty_app_list_title">Žádné aplikace k zobrazení</string>
     <string name="empty_app_list_message">Zobrazují se pouze uživatelem nainstalované aplikace. Zapněte systémové aplikace, abyste viděli vše na tomto zařízení.</string>
     <string name="empty_app_list_action">Zobrazit systémové aplikace</string>
     <string name="empty_app_list_search_title">Žádné výsledky</string>
     <string name="empty_app_list_search_message">Vašemu hledání neodpovídá žádná aplikace.</string>
     <string name="backend_banner_title">Vyžadováno nastavení</string>
-    <string name="backend_banner_message_shizuku">ShizuWall potřebuje spuštěné Shizuku s uděleným oprávněním, než bude moci blokovat aplikace.</string>
-    <string name="backend_banner_message_ladb">ShizuWall potřebuje spuštěného místního démona ADB, než bude moci blokovat aplikace. Spusťte jej spárováním přes bezdrátové ladění.</string>
-    <string name="backend_banner_message_root">ShizuWall potřebuje root přístup, než bude moci blokovat aplikace.</string>
+    <string name="backend_banner_message_shizuku">SfWall potřebuje spuštěné Shizuku s uděleným oprávněním, než bude moci blokovat aplikace.</string>
+    <string name="backend_banner_message_ladb">SfWall potřebuje spuštěného místního démona ADB, než bude moci blokovat aplikace. Spusťte jej spárováním přes bezdrátové ladění.</string>
+    <string name="backend_banner_message_root">SfWall potřebuje root přístup, než bude moci blokovat aplikace.</string>
     <string name="backend_banner_action">Nastavit</string>
     <string name="app_unsupported_system_uid">Tato aplikace běží pod systémovým UID (pod 10000). Android vyjímá systémová UID z pravidel firewallu pro jednotlivé aplikace, proto ji nelze blokovat.</string>
     <string name="settings_category_security_title">Zabezpečení</string>
     <string name="settings_category_security_desc">Zámek aplikace, PIN a biometrie</string>
     <string name="app_lock_title">Zámek aplikace</string>
-    <string name="app_lock_description">Vyžadovat PIN nebo biometrii pro otevření ShizuWall</string>
+    <string name="app_lock_description">Vyžadovat PIN nebo biometrii pro otevření SfWall</string>
     <string name="app_lock_use_biometrics">Použít biometrii</string>
     <string name="app_lock_use_biometrics_description">Odemknout otiskem nebo obličejem místo zadávání PINu</string>
     <string name="app_lock_change_pin">Změnit PIN</string>
@@ -501,15 +501,15 @@
     <string name="app_lock_pin_mismatch">PINy se neshodují</string>
     <string name="app_lock_pin_length_required">Zadejte %1$d číslic</string>
     <string name="app_lock_pin_length">Délka PINu</string>
-    <string name="app_lock_pin_not_recoverable">PIN nelze obnovit. Pokud ho zapomenete, jediným řešením je vymazat data aplikace ShizuWall, čímž přijdete o všechna nastavení a profily.</string>
-    <string name="app_lock_scope_warning">Tento zámek pouze brání otevření ShizuWall. Pravidla firewallu jsou uložena v Androidu, takže je stále lze měnit z makro aplikací, ADB broadcastů, dlaždice Rychlých nastavení nebo widgetu.</string>
+    <string name="app_lock_pin_not_recoverable">PIN nelze obnovit. Pokud ho zapomenete, jediným řešením je vymazat data aplikace SfWall, čímž přijdete o všechna nastavení a profily.</string>
+    <string name="app_lock_scope_warning">Tento zámek pouze brání otevření SfWall. Pravidla firewallu jsou uložena v Androidu, takže je stále lze měnit z makro aplikací, ADB broadcastů, dlaždice Rychlých nastavení nebo widgetu.</string>
     <string name="app_lock_biometric_offer_title">Odemykat biometrikou?</string>
-    <string name="app_lock_biometric_offer_message">Pokud to zapnete, kdokoli může odemknout toto zařízení otiskem prstu nebo obličejem, může také otevřít ShizuWall a měnit firewall. Nechte vypnuté, pokud zařízení sdílíte a firewall máte ovládat jen vy.</string>
+    <string name="app_lock_biometric_offer_message">Pokud to zapnete, kdokoli může odemknout toto zařízení otiskem prstu nebo obličejem, může také otevřít SfWall a měnit firewall. Nechte vypnuté, pokud zařízení sdílíte a firewall máte ovládat jen vy.</string>
     <string name="app_lock_biometric_offer_enable">Použít biometriku</string>
     <string name="app_lock_biometric_offer_pin_only">Jen PIN</string>
     <string name="app_lock_wrong_pin">Nesprávný PIN</string>
     <string name="app_lock_locked_out">Příliš mnoho pokusů. Zkuste to za %1$d s</string>
-    <string name="app_lock_biometric_title">Odemknout ShizuWall</string>
+    <string name="app_lock_biometric_title">Odemknout SfWall</string>
     <string name="app_lock_use_pin">Použít PIN</string>
     <string name="app_lock_pin_saved">PIN uložen</string>
     <string name="app_lock_delete">Smazat</string>

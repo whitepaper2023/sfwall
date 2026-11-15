@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">ShizuWall</string>
+    <string name="app_name">SfWall</string>
     <string name="settings_category_appearance_title">Görünüm</string>
     <string name="settings_category_appearance_desc">Tema, renkler, yazı tipi, dil</string>
     <string name="settings_category_firewall_title">Güvenlik duvarı davranışı</string>
@@ -9,7 +9,7 @@
     <string name="settings_category_backend_desc">Shizuku, LADB, Root</string>
     <string name="settings_category_notifications_title">Bildirimler ve yüzen buton</string>
     <string name="settings_category_notifications_desc">İzleme, uyarılar, yüzen buton</string>
-    <string name="github_url">https://github.com/ahmetcanarslan/shizuwall</string>
+    <string name="github_url">https://github.com/whitepaper2023/sfwall</string>
     <string name="buymeacoffee_url">https://buymeacoffee.com/ahmetcanarslan</string>
     <string name="donate">Bağış Yap</string>
     <string name="show_system_apps">Sistem uygulamalarını göster</string>
@@ -42,10 +42,10 @@
     <string name="app_reset_complete">Uygulama sıfırlama tamamlandı. Kapanıyor…</string>
     <string name="reset_app_failed">Uygulama sıfırlama başarısız: %s</string>
     <string name="android11_unsupported_title">Android 11 uyumluluğu</string>
-    <string name="android11_unsupported_message">Android 11\'deki bazı cihazlar ShizuWall\'i desteklemiyor. Aşağıdaki gibi bir hata görürseniz:\n - no command found set chain3 - \nbu, cihazınızın desteklenmediği ve şu anda yapılacak bir şey olmadığı anlamına gelir.</string>
+    <string name="android11_unsupported_message">Android 11\'deki bazı cihazlar SfWall\'i desteklemiyor. Aşağıdaki gibi bir hata görürseniz:\n - no command found set chain3 - \nbu, cihazınızın desteklenmediği ve şu anda yapılacak bir şey olmadığı anlamına gelir.</string>
     <string name="dont_show_again">Bir daha gösterme</string>
     <string name="device_unsupported_title">Cihaz desteklenmiyor</string>
-    <string name="device_unsupported_message">Android sürümünüz ShizuWall\'ın kullandığı bağlantı güvenlik duvarı zincirini sağlamıyor. Bu durum Android 11–12\'de ve MIUI/HyperOS gibi bazı üretici ROM\'larında yaygındır. Komutu sistemin kendisi reddediyor; Shizuku, LADB veya root arasında geçiş yapmak işe yaramaz.</string>
+    <string name="device_unsupported_message">Android sürümünüz SfWall\'ın kullandığı bağlantı güvenlik duvarı zincirini sağlamıyor. Bu durum Android 11–12\'de ve MIUI/HyperOS gibi bazı üretici ROM\'larında yaygındır. Komutu sistemin kendisi reddediyor; Shizuku, LADB veya root arasında geçiş yapmak işe yaramaz.</string>
     <string name="adb_broadcast_usage_title">ADB Yayın Kullanımı</string>
     <string name="adb_broadcast_field_action">Eylem</string>
     <string name="adb_broadcast_field_component">Bileşen</string>
@@ -64,13 +64,13 @@
     <string name="adb_broadcast_dev_disable_framework">Güvenlik duvarı altyapısını devre dışı bırak</string>
     <string name="adb_broadcast_extras_summary" formatted="false">%1$s (boolean): true = etkinleştir, false = devre dışı bırak
 
-%2$s (string, isteğe bağlı): virgülle ayrılmış paket listesi. Belirtilmezse uygulama ShizuWall içinde kaydedilmiş seçili paketleri kullanır.</string>
+%2$s (string, isteğe bağlı): virgülle ayrılmış paket listesi. Belirtilmezse uygulama SfWall içinde kaydedilmiş seçili paketleri kullanır.</string>
     <string name="ok">Tamam</string>
     <string name="no_apps_selected">Hiç uygulama seçilmedi</string>
     <string name="shizuku_not_running">Shizuku çalışmıyor</string>
     <string name="shizuku_permission_required">Shizuku izni gerekli</string>
     <string name="firewall">Güvenlik Duvarı</string>
-    <string name="welcome_title">ShizuWall\'a Hoş Geldiniz</string>
+    <string name="welcome_title">SfWall\'a Hoş Geldiniz</string>
     <string name="welcome_message">Root veya vpn olmadan istenmeyen ağ bağlantılarını engelleyin</string>
     <string name="next">İleri</string>
     <string name="grant_permission">İzin Ver</string>
@@ -81,7 +81,7 @@
     <string name="sorting_onboarding_title">Sıralama ve Filtreleme</string>
     <string name="sorting_onboarding_message">Uygulamaların sıralamasını değiştirmek için sıralama simgesine dokunun. Sistem uygulamalarının ve profil uygulamalarının görünüp görünmeyeceğini de buradan ayarlayabilirsiniz.</string>
     <string name="onboarding_mode_selection_title">Çalışma Modunu Seçin</string>
-    <string name="onboarding_mode_selection_message">ShizuWall üç modda çalışabilir. Shizuku çoğu kullanıcı için önerilir. Cihazınız Shizuku\'yu desteklemiyorsa LADB veya Root modunu seçebilirsiniz. Çalışma Modu daha sonra değiştirilebilir.</string>
+    <string name="onboarding_mode_selection_message">SfWall üç modda çalışabilir. Shizuku çoğu kullanıcı için önerilir. Cihazınız Shizuku\'yu desteklemiyorsa LADB veya Root modunu seçebilirsiniz. Çalışma Modu daha sonra değiştirilebilir.</string>
     <string name="get_started">Başlayın</string>
     <string name="shizuku_service_dead">Shizuku servisi ölü</string>
     <string name="shizuku_update_required">Shizuku Güncellemesi Gerekli</string>
@@ -135,10 +135,10 @@
     <string name="working_mode_ladb">LADB</string>
     <string name="app_monitor_service">Yeni Uygulama Bildirimleri</string>
     <string name="app_monitor_service_description">Yeni bir uygulama yüklendiğinde bildirim göster</string>
-    <string name="app_monitor_whitelist_dependency">Beyaz Liste modunda yeni yüklenen uygulamaları engelleyen de bu servistir. Yeni uygulama bildirimleri, yeni uygulamaları otomatik engelleme ve firewall durum bildirimi kapalıysa servis durur ve yeni uygulamalar, firewall kapatılıp tekrar açılana ya da bir otomasyon uygulaması kurulumu shizuwall.APP_INSTALLED yayınıyla bildirene kadar izinli kalır.</string>
+    <string name="app_monitor_whitelist_dependency">Beyaz Liste modunda yeni yüklenen uygulamaları engelleyen de bu servistir. Yeni uygulama bildirimleri, yeni uygulamaları otomatik engelleme ve firewall durum bildirimi kapalıysa servis durur ve yeni uygulamalar, firewall kapatılıp tekrar açılana ya da bir otomasyon uygulaması kurulumu sfwall.APP_INSTALLED yayınıyla bildirene kadar izinli kalır.</string>
     <string name="auto_firewall_new_apps">Yeni Uygulamaları Otomatik Engelle</string>
     <string name="auto_firewall_new_apps_description">Yeni yüklenen uygulamaları otomatik olarak engelle (Beyaz Liste modu hariç)</string>
-    <string name="new_app_monitor_main_profile_only">Yeni uygulama algılama yalnızca ana profili kapsar ve bu seçenek açıkken çalışmaya devam eden arka plan uygulama izleme servisine ihtiyaç duyar. İş profili, klon alanı veya özel alandaki kurulumlar shizuwall.APP_INSTALLED yayını ile yine de bildirilebilir.</string>
+    <string name="new_app_monitor_main_profile_only">Yeni uygulama algılama yalnızca ana profili kapsar ve bu seçenek açıkken çalışmaya devam eden arka plan uygulama izleme servisine ihtiyaç duyar. İş profili, klon alanı veya özel alandaki kurulumlar sfwall.APP_INSTALLED yayını ile yine de bildirilebilir.</string>
     <string name="firewall_status_notification">Güvenlik Duvarı Durumu Bildirimi</string>
     <string name="firewall_status_notification_description">Geçerli güvenlik duvarı durumunu kalıcı bir bildirimde göster</string>
     <string name="firewall_status_notification_enabled_title">Güvenlik duvarı etkin</string>
@@ -195,7 +195,7 @@
     <string name="ladb_status_connected">Ladb Kablosuz Hata Ayıklamaya Bağlandı</string>
     <string name="ladb_status_disconnected">Bağlantı Kesildi</string>
     <string name="ladb_error_title">LADB hatası</string>
-    <string name="ladb_hint_connection_refused">Bağlantı reddedildi genellikle Kablosuz hata ayıklamanın KAPALI olduğu veya yanlış port kullandığınız anlamına gelir. Geliştirici seçenekleri → Kablosuz hata ayıklama → IP adresi ve port kısmında gösterilen portu kullanın (eşleştirme portunu değil). Ayrıca ShizuWall\'un Kablosuz hata ayıklamada izin verildiğinden emin olun.</string>
+    <string name="ladb_hint_connection_refused">Bağlantı reddedildi genellikle Kablosuz hata ayıklamanın KAPALI olduğu veya yanlış port kullandığınız anlamına gelir. Geliştirici seçenekleri → Kablosuz hata ayıklama → IP adresi ve port kısmında gösterilen portu kullanın (eşleştirme portunu değil). Ayrıca SfWall\'un Kablosuz hata ayıklamada izin verildiğinden emin olun.</string>
     <string name="ladb_pairing_channel_name">LADB eşleştirme</string>
     <string name="ladb_pairing_notification_title">Eşleştirme kodunu girin</string>
     <string name="ladb_pairing_notification_text">Dokunun ve Kablosuz hata ayıklama → Cihazı eşleştir kısmında gösterilen eşleştirme portunu ve kodunu girin.</string>
@@ -207,7 +207,7 @@
     <string name="ladb_pairing_result_success_title">LADB eşleşti</string>
     <string name="ladb_pairing_result_success_text">Eşleştirme başarılı. Şimdi bağlanabilirsiniz.</string>
     <string name="ladb_pairing_result_failed_title">LADB eşleştirmesi başarısız oldu</string>
-    <string name="ladb_pairing_result_failed_text">Hata günlüğünü görmek için ShizuWall\'u açın.</string>
+    <string name="ladb_pairing_result_failed_text">Hata günlüğünü görmek için SfWall\'u açın.</string>
     <string name="ladb_pairing_result_missing_code">Eksik eşleştirme kodu. Kablosuz hata ayıklama → Cihazı eşleştir kısmından girin.</string>
     <string name="ladb_pairing_result_missing_port">Eksik eşleştirme portu. Girin: PORT KOD (Kablosuz hata ayıklama → Cihazı eşleştir kısmından).</string>
     <string name="ladb_notification_permission_required">Eşleştirme kodu istemini göstermek için bildirim izni gereklidir.</string>
@@ -236,7 +236,7 @@
     <string name="failed_to_unblock_count">%d uygulamanın engeli kaldırılamadı</string>
     <string name="failed_to_unblock_app">%s engeli kaldırılamadı</string>
     <string name="notification_permission_required_title">Bildirim İzni Gerekli</string>
-    <string name="notification_permission_required_message">ShizuWall, eşleştirme kodu bildirimini göstermek için bildirim iznine ihtiyaç duyar.\n\nBu izin olmadan eşleştirme kodunu kolayca giremezsiniz.</string>
+    <string name="notification_permission_required_message">SfWall, eşleştirme kodu bildirimini göstermek için bildirim iznine ihtiyaç duyar.\n\nBu izin olmadan eşleştirme kodunu kolayca giremezsiniz.</string>
     <string name="cannot_continue">Devam Edilemiyor</string>
     <string name="notification_permission_required_ladb">LADB eşleştirme özelliğini kullanmak için bildirim izni gereklidir. Bu izin, önemli eşleştirme bilgilerini göstermemizi sağlar.\n\nLütfen devam etmek için bildirim izni verin.</string>
     <string name="enter_pairing_code_hint">Kablosuz hata ayıklama sayfasındaki eşleştirme kodunu bildirime girin.</string>
@@ -285,7 +285,7 @@
     <string name="firewall_mode_smart_foreground_description">Yalnızca şu anda ön plandaki uygulamaya izin ver</string>
     
     <string name="firewall_mode_focus_tracker">Odak Takipçisi</string>
-    <string name="firewall_mode_focus_tracker_description">ShizuWall odak dışı olduğunda güvenlik duvarını etkinleştir, odaklandığında ise devre dışı bırak.</string>
+    <string name="firewall_mode_focus_tracker_description">SfWall odak dışı olduğunda güvenlik duvarını etkinleştir, odaklandığında ise devre dışı bırak.</string>
     <string name="smart_foreground_notification_channel_name">Akıllı Ön Plan (Servis)</string>
     <string name="smart_foreground_notification_channel_description">Ön plan uygulamasını izlemek için arka plan servisi</string>
     <string name="smart_foreground_active">Akıllı Ön Plan Aktif</string>
@@ -312,9 +312,9 @@
     <string name="firewall_mode_whitelist_details">Seçim tersine döner: varsayılan olarak tüm uygulamalar engellenir ve yalnızca işaretlediğiniz uygulamalar ağ erişimini korur. «Sistem uygulamalarını göster» kapalıyken sistem uygulamalarının bu modda engellenmediğini unutmayın.</string>
     <string name="firewall_mode_screen_lock_details">Seçilen uygulamalar ekran kilitlendiğinde engellenir, kilidi açtığınızda engel kalkar. Kısa süreli ekran kapanmalarının engellemeyi tetiklememesi için bir gecikme ayarlayabilirsiniz. Kilit durumunu bir arka plan hizmeti izler, bu yüzden yeniden başlatmadan sonra da çalışmaya devam eder.</string>
     <string name="firewall_mode_smart_foreground_details">Yalnızca o an kullandığınız uygulama ağ erişimini korur. Seçili diğer tüm uygulamalar engelli kalır ve başka bir uygulamaya geçtiğiniz anda erişim ona geçer. Bir arka plan hizmeti ön plandaki uygulamayı yaklaşık saniyede bir kontrol eder; bu nedenle çalışır durumda kalmalıdır ve biraz fazla pil harcar.</string>
-    <string name="firewall_mode_focus_tracker_details">Güvenlik duvarı ShizuWall\'ın kendisini takip eder: ShizuWall\'dan çıkmak veya küçültmek güvenlik duvarını açar, tekrar açmak kapatır. Engellemenin tam olarak ayarları değiştirdiğiniz sürece duraklamasını istediğinizde işe yarar.</string>
+    <string name="firewall_mode_focus_tracker_details">Güvenlik duvarı SfWall\'ın kendisini takip eder: SfWall\'dan çıkmak veya küçültmek güvenlik duvarını açar, tekrar açmak kapatır. Engellemenin tam olarak ayarları değiştirdiğiniz sürece duraklamasını istediğinizde işe yarar.</string>
     <string name="firewall_mode_hybrid_details">Herkes için tek kural yerine her uygulama kendi modunu alır. Uygulama başına Varsayılan Engelleme (her zaman engelli), Akıllı Ön Plan (yalnızca kullanılırken izinli) veya Ekran Kilidi (ekran kilitliyken engelli) seçebilirsiniz. Bu kuralların hepsi aynı anda çalışır.</string>
-    <string name="firewall_mode_details_foreground_note">Akıllı Ön Plan, Hibrit ve Odak Takibi modlarının ön plandaki uygulamayı algılaması gerekir. Bu, Shizuku üzerinden ya da ShizuWall\'ın LADB ve Root modlarında ayrıcalıklı kabuk ile kendisine verdiği kullanım erişimi üzerinden çalışır.</string>
+    <string name="firewall_mode_details_foreground_note">Akıllı Ön Plan, Hibrit ve Odak Takibi modlarının ön plandaki uygulamayı algılaması gerekir. Bu, Shizuku üzerinden ya da SfWall\'ın LADB ve Root modlarında ayrıcalıklı kabuk ile kendisine verdiği kullanım erişimi üzerinden çalışır.</string>
     <string name="firewall_mode_hybrid">Hibrit Mod</string>
     <string name="firewall_mode_hybrid_description">Her uygulama için modu ayrı ayrı yapılandır</string>
     <string name="hybrid_mode_default_block">Varsayılan Engel</string>
@@ -332,7 +332,7 @@
     <string name="apply_root_rules_after_reboot">Yeniden başlatma sonrası güvenlik duvarı kurallarını uygula</string>
     <string name="apply_root_rules_after_reboot_description">Önyükleme tamamlandıktan sonra son etkin güvenlik duvarı kurallarını root ile yeniden uygula</string>
     <string name="working_mode_root">Root (su)</string>
-    <string name="root_not_found_message">Root bulunamadı, lütfen ShizuWall için root erişim izni verin.</string>
+    <string name="root_not_found_message">Root bulunamadı, lütfen SfWall için root erişim izni verin.</string>
     <string name="double_tap_or_long_press">Birden fazla uygulama seçmek için çift dokunun, seçimi kaldırmak için uzun basın</string>
     <string name="ladb_daemon_restart_required_title">LADB daemonunu yeniden başlat</string>
     <string name="ladb_daemon_restart_required_message">LADB daemonu yetkilendirme hatası verdiği veya yanıt vermeyi durdurduğu için güvenlik duvarı etkinleştirilemedi. LADB kurulumunu açın, Gelişmiş Modu etkinleştirin, ardından Daemonu Durdur ve Daemonu Başlat seçeneklerini kullanın.</string>
@@ -428,7 +428,7 @@
     <string name="app_info_internet_no">İnternet izni yok</string>
     <string name="app_info_mobile_only">Yalnızca mobil veride engelle</string>
     <string name="app_info_wifi_only">Yalnızca Wi‑Fi\'da engelle</string>
-    <string name="app_info_wifi_only_summary">Desteklenmiyor. ShizuWall VPN veya root tabanlı kurallar kullanmadığı için yalnızca Wi‑Fi engellenemez.</string>
+    <string name="app_info_wifi_only_summary">Desteklenmiyor. SfWall VPN veya root tabanlı kurallar kullanmadığı için yalnızca Wi‑Fi engellenemez.</string>
     <string name="app_info_block_all">Tüm ağları engelle</string>
     <string name="app_info_block_all_summary">Wi‑Fi ve mobil veri birlikte engellenir.</string>
     <string name="app_info_mobile_only_summary">Bu uygulama engellendiğinde Wi‑Fi serbest kalır. Yalnızca ölçülü ağlar engellenir: mobil veri ve hotspot gibi ölçülü olarak işaretli Wi‑Fi ağları.</string>
@@ -440,7 +440,7 @@
     <string name="app_info_trackers_none">Bilinen izleyici bulunamadı</string>
     <string name="app_info_trackers_count">%1$d izleyici bulundu</string>
     <string name="app_info_trackers_failed">Bu uygulama taranamadı</string>
-    <string name="app_info_trackers_note">Uygulamanın kodu taranarak bulundu. ShizuWall VPN kullanmaz ve trafiği incelemez. Bu uygulama engellendiğinde bu izleyiciler de kesilir.</string>
+    <string name="app_info_trackers_note">Uygulamanın kodu taranarak bulundu. SfWall VPN kullanmaz ve trafiği incelemez. Bu uygulama engellendiğinde bu izleyiciler de kesilir.</string>
     <string name="tracker_data_attribution">İzleyici verisi: Exodus Privacy, ODbL 1.0</string>
     <string name="show_other_profiles">Diğer profillerdeki uygulamalar</string>
     <string name="main_profile">Ana profil</string>
@@ -474,22 +474,22 @@
     <string name="remember_deleted_apps">Silinen uygulamaları hatırla</string>
     <string name="remember_deleted_apps_description">Kaldırılan veya devre dışı bırakılan uygulamaların engel durumunu koru ve geri geldiklerinde geri yükle</string>
     <string name="foreground_detection_unavailable">Ön plan tespiti kullanılamıyor</string>
-    <string name="foreground_detection_unavailable_message">ShizuWall, ön plandaki uygulamayı bildiren ayrıcalıklı yardımcıya ulaşamadı; bu yüzden Smart Foreground, Hybrid ve Focus Tracker modları uygulamaları yönetemez. Çalışma modunun (Shizuku, LADB veya Root) kurulu ve çalışır olduğunu kontrol et.</string>
+    <string name="foreground_detection_unavailable_message">SfWall, ön plandaki uygulamayı bildiren ayrıcalıklı yardımcıya ulaşamadı; bu yüzden Smart Foreground, Hybrid ve Focus Tracker modları uygulamaları yönetemez. Çalışma modunun (Shizuku, LADB veya Root) kurulu ve çalışır olduğunu kontrol et.</string>
     <string name="empty_app_list_title">Gösterilecek uygulama yok</string>
     <string name="empty_app_list_message">Yalnızca kullanıcı tarafından yüklenen uygulamalar listelenir. Bu cihazdaki her şeyi görmek için sistem uygulamalarını açın.</string>
     <string name="empty_app_list_action">Sistem uygulamalarını göster</string>
     <string name="empty_app_list_search_title">Sonuç yok</string>
     <string name="empty_app_list_search_message">Aramanızla eşleşen uygulama yok.</string>
     <string name="backend_banner_title">Kurulum gerekli</string>
-    <string name="backend_banner_message_shizuku">ShizuWall herhangi bir uygulamayı engelleyebilmek için Shizuku\'nun çalışmasına ve izin verilmesine ihtiyaç duyar.</string>
-    <string name="backend_banner_message_ladb">ShizuWall herhangi bir uygulamayı engelleyebilmek için yerel ADB arka plan servisinin çalışmasına ihtiyaç duyar. Başlatmak için Kablosuz hata ayıklama ile eşleştirin.</string>
-    <string name="backend_banner_message_root">ShizuWall herhangi bir uygulamayı engelleyebilmek için root erişimine ihtiyaç duyar.</string>
+    <string name="backend_banner_message_shizuku">SfWall herhangi bir uygulamayı engelleyebilmek için Shizuku\'nun çalışmasına ve izin verilmesine ihtiyaç duyar.</string>
+    <string name="backend_banner_message_ladb">SfWall herhangi bir uygulamayı engelleyebilmek için yerel ADB arka plan servisinin çalışmasına ihtiyaç duyar. Başlatmak için Kablosuz hata ayıklama ile eşleştirin.</string>
+    <string name="backend_banner_message_root">SfWall herhangi bir uygulamayı engelleyebilmek için root erişimine ihtiyaç duyar.</string>
     <string name="backend_banner_action">Kur</string>
     <string name="app_unsupported_system_uid">Bu uygulama bir sistem UID\'si (10000\'in altı) altında çalışıyor. Android, sistem UID\'lerini uygulama başına güvenlik duvarı kurallarından muaf tuttuğu için engellenemez.</string>
     <string name="settings_category_security_title">Güvenlik</string>
     <string name="settings_category_security_desc">Uygulama kilidi, PIN ve biyometri</string>
     <string name="app_lock_title">Uygulama kilidi</string>
-    <string name="app_lock_description">ShizuWall\'ı açmak için PIN veya biyometri iste</string>
+    <string name="app_lock_description">SfWall\'ı açmak için PIN veya biyometri iste</string>
     <string name="app_lock_use_biometrics">Biyometri kullan</string>
     <string name="app_lock_use_biometrics_description">PIN yazmak yerine parmak izi veya yüz ile aç</string>
     <string name="app_lock_change_pin">PIN\'i değiştir</string>
@@ -499,15 +499,15 @@
     <string name="app_lock_pin_mismatch">PIN\'ler eşleşmiyor</string>
     <string name="app_lock_pin_length_required">%1$d haneli PIN girin</string>
     <string name="app_lock_pin_length">PIN uzunluğu</string>
-    <string name="app_lock_pin_not_recoverable">PIN kurtarılamaz. Unutursanız tek yol ShizuWall uygulama verilerini silmektir; bu tüm ayarları ve profilleri siler.</string>
-    <string name="app_lock_scope_warning">Bu kilit yalnızca ShizuWall’ın açılmasını engeller. Güvenlik duvarı kuralları Android’de tutulur; bu yüzden makro uygulamaları, ADB yayınları, Hızlı Ayarlar kutucuğu veya ana ekran widget’ı ile hâlâ değiştirilebilir.</string>
+    <string name="app_lock_pin_not_recoverable">PIN kurtarılamaz. Unutursanız tek yol SfWall uygulama verilerini silmektir; bu tüm ayarları ve profilleri siler.</string>
+    <string name="app_lock_scope_warning">Bu kilit yalnızca SfWall’ın açılmasını engeller. Güvenlik duvarı kuralları Android’de tutulur; bu yüzden makro uygulamaları, ADB yayınları, Hızlı Ayarlar kutucuğu veya ana ekran widget’ı ile hâlâ değiştirilebilir.</string>
     <string name="app_lock_biometric_offer_title">Biyometri ile açılsın mı?</string>
-    <string name="app_lock_biometric_offer_message">Bunu açarsanız, bu cihazı parmak izi veya yüzüyle açabilen herkes ShizuWall’ı da açıp güvenlik duvarını değiştirebilir. Cihaz paylaşılıyorsa ve güvenlik duvarını yalnızca siz yönetecekseniz kapalı bırakın.</string>
+    <string name="app_lock_biometric_offer_message">Bunu açarsanız, bu cihazı parmak izi veya yüzüyle açabilen herkes SfWall’ı da açıp güvenlik duvarını değiştirebilir. Cihaz paylaşılıyorsa ve güvenlik duvarını yalnızca siz yönetecekseniz kapalı bırakın.</string>
     <string name="app_lock_biometric_offer_enable">Biyometri kullan</string>
     <string name="app_lock_biometric_offer_pin_only">Yalnızca PIN</string>
     <string name="app_lock_wrong_pin">Yanlış PIN</string>
     <string name="app_lock_locked_out">Çok fazla deneme. %1$d sn sonra tekrar deneyin</string>
-    <string name="app_lock_biometric_title">ShizuWall kilidini aç</string>
+    <string name="app_lock_biometric_title">SfWall kilidini aç</string>
     <string name="app_lock_use_pin">PIN kullan</string>
     <string name="app_lock_pin_saved">PIN kaydedildi</string>
     <string name="app_lock_delete">Sil</string>

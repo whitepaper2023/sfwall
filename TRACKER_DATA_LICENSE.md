@@ -1,6 +1,6 @@
 # Tracker Data License
 
-ShizuWall's source code is licensed under **GPLv3** (see [LICENSE.md](LICENSE.md)).
+SfWall's source code is licensed under **GPLv3** (see [LICENSE.md](LICENSE.md)).
 The tracker signature data shipped with the app is **not** code and is covered by
 a separate license, documented here.
 
@@ -24,7 +24,7 @@ Both files above are distributed under those same terms.
 > Tracker definitions are derived from the [Exodus Privacy](https://exodus-privacy.eu.org/)
 > database, licensed under ODbL v1.0.
 
-Exodus Privacy is a French non-profit association. ShizuWall is not affiliated
+Exodus Privacy is a French non-profit association. SfWall is not affiliated
 with, endorsed by, or connected to Exodus Privacy in any way — their data is
 simply used under the terms its license grants to everyone.
 
@@ -39,11 +39,11 @@ names, categories and websites are unchanged. The transformation is reproducible
 with [`tools/refresh_trackers.py`](tools/refresh_trackers.py).
 
 No definitions are added, removed or edited by hand: the Exodus Privacy database
-is the sole source, so what ShizuWall reports is exactly what upstream states.
+is the sole source, so what SfWall reports is exactly what upstream states.
 
 ## No runtime API access
 
-ShizuWall never contacts the Exodus Privacy API. The data ships as an asset and
+SfWall never contacts the Exodus Privacy API. The data ships as an asset and
 is refreshed manually before a release. This is deliberate: it keeps the app
 offline-only, and it respects the Exodus Privacy
 [API documentation](https://github.com/Exodus-Privacy/exodus/blob/v1/doc/api.md),

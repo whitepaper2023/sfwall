@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShizuWall</string>
+    <string name="app_name">SfWall</string>
     <string name="settings_category_appearance_title">外観</string>
     <string name="settings_category_appearance_desc">テーマ、色、フォント、言語</string>
     <string name="settings_category_firewall_title">ファイアウォールの動作</string>
@@ -8,7 +8,7 @@
     <string name="settings_category_backend_desc">Shizuku、LADB、Root</string>
     <string name="settings_category_notifications_title">通知とフローティングボタン</string>
     <string name="settings_category_notifications_desc">監視、アラート、オーバーレイボタン</string>
-    <string name="github_url">https://github.com/ahmetcanarslan/shizuwall</string>
+    <string name="github_url">https://github.com/whitepaper2023/sfwall</string>
     <string name="buymeacoffee_url">https://buymeacoffee.com/ahmetcanarslan</string>
     <string name="donate">寄付</string>
     <string name="show_system_apps">システムアプリを表示</string>
@@ -38,10 +38,10 @@
     <string name="reset">リセット</string>
     <string name="cancel">キャンセル</string>
     <string name="android11_unsupported_title">Android 11 の互換性</string>
-    <string name="android11_unsupported_message">Android 11 の一部のデバイスは ShizuWall をサポートしていません。次のようなエラーが表示される場合:\n - no command found set chain3 - \nお使いのデバイスは現在サポートされておらず、対応策はありません。</string>
+    <string name="android11_unsupported_message">Android 11 の一部のデバイスは SfWall をサポートしていません。次のようなエラーが表示される場合:\n - no command found set chain3 - \nお使いのデバイスは現在サポートされておらず、対応策はありません。</string>
     <string name="dont_show_again">次回から表示しない</string>
     <string name="device_unsupported_title">このデバイスは非対応です</string>
-    <string name="device_unsupported_message">お使いの Android ビルドには、ShizuWall が利用する接続ファイアウォールチェーンがありません。これは Android 11〜12 や MIUI/HyperOS などの一部メーカー ROM でよく見られます。コマンド自体をシステムが拒否しているため、Shizuku・LADB・root を切り替えても解決しません。</string>
+    <string name="device_unsupported_message">お使いの Android ビルドには、SfWall が利用する接続ファイアウォールチェーンがありません。これは Android 11〜12 や MIUI/HyperOS などの一部メーカー ROM でよく見られます。コマンド自体をシステムが拒否しているため、Shizuku・LADB・root を切り替えても解決しません。</string>
     <string name="firewall_cleanup_warning">警告: ファイアウォールのクリーンアップに失敗しました。インターネット接続を復元するには、デバイスを再起動してください。</string>
     <string name="app_reset_complete">アプリのリセットが完了しました。終了中…</string>
     <string name="reset_app_failed">アプリのリセットに失敗しました: %s</string>
@@ -63,13 +63,13 @@
     <string name="adb_broadcast_dev_disable_framework">ファイアウォール フレームワークを無効化</string>
     <string name="adb_broadcast_extras_summary" formatted="false">%1$s (boolean): true = 有効, false = 無効
 
-%2$s (string, オプション): カンマ区切りのパッケージ一覧。省略した場合、アプリは ShizuWall に保存された選択済みパッケージを使用します。</string>
+%2$s (string, オプション): カンマ区切りのパッケージ一覧。省略した場合、アプリは SfWall に保存された選択済みパッケージを使用します。</string>
     <string name="ok">OK</string>
     <string name="no_apps_selected">アプリが選択されていません</string>
     <string name="shizuku_not_running">Shizuku が実行されていません</string>
     <string name="shizuku_permission_required">Shizuku の権限が必要です</string>
     <string name="firewall">ファイアウォール</string>
-    <string name="welcome_title">ShizuWall へようこそ</string>
+    <string name="welcome_title">SfWall へようこそ</string>
     <string name="welcome_message">ルート権限や VPN なしで不要なネットワーク接続をブロックします</string>
     <string name="next">次へ</string>
     <string name="grant_permission">権限を許可</string>
@@ -80,7 +80,7 @@
     <string name="sorting_onboarding_title">並べ替えとフィルター</string>
     <string name="sorting_onboarding_message">並べ替えアイコンをタップするとアプリの並び順を変更できます。システムアプリやプロファイルアプリを表示するかどうかもここで選べます。</string>
     <string name="onboarding_mode_selection_title">動作モードの選択</string>
-    <string name="onboarding_mode_selection_message">ShizuWall は 3 つのモードで動作します。ほとんどのユーザーには Shizuku が推奨されます。デバイスが Shizuku をサポートしていない場合は、LADB モードまたは Root モードを選択できます。動作モードは後で変更できます</string>
+    <string name="onboarding_mode_selection_message">SfWall は 3 つのモードで動作します。ほとんどのユーザーには Shizuku が推奨されます。デバイスが Shizuku をサポートしていない場合は、LADB モードまたは Root モードを選択できます。動作モードは後で変更できます</string>
     <string name="get_started">使ってみる</string>
     <string name="shizuku_service_dead">Shizuku サービスが停止しています</string>
     <string name="shizuku_update_required">Shizuku のアップデートが必要です</string>
@@ -140,10 +140,10 @@
     <string name="working_mode_ladb">LADB (ベータ)</string>
     <string name="app_monitor_service">新しいアプリの通知</string>
     <string name="app_monitor_service_description">新しいアプリがインストールされたときに通知を表示する</string>
-    <string name="app_monitor_whitelist_dependency">ホワイトリストモードでは、新しくインストールされたアプリをブロックするのもこのサービスです。新しいアプリの通知、新しいアプリの自動ブロック、ファイアウォール状態の通知がすべてオフの場合、サービスは停止し、ファイアウォールをオフにして再度オンにするか、自動化アプリが shizuwall.APP_INSTALLED ブロードキャストでインストールを通知するまで、新しいアプリは許可されたままになります。</string>
+    <string name="app_monitor_whitelist_dependency">ホワイトリストモードでは、新しくインストールされたアプリをブロックするのもこのサービスです。新しいアプリの通知、新しいアプリの自動ブロック、ファイアウォール状態の通知がすべてオフの場合、サービスは停止し、ファイアウォールをオフにして再度オンにするか、自動化アプリが sfwall.APP_INSTALLED ブロードキャストでインストールを通知するまで、新しいアプリは許可されたままになります。</string>
     <string name="auto_firewall_new_apps">新しいアプリを自動ブロック</string>
     <string name="auto_firewall_new_apps_description">新しくインストールされたアプリを自動的にブロックする（ホワイトリストモード以外）</string>
-    <string name="new_app_monitor_main_profile_only">新しいアプリの検出はメインプロファイルのみが対象で、このオプションが有効な間は実行され続けるバックグラウンドの監視サービスが必要です。仕事用プロファイル、クローン領域、プライベートスペースへのインストールは shizuwall.APP_INSTALLED ブロードキャストで通知できます。</string>
+    <string name="new_app_monitor_main_profile_only">新しいアプリの検出はメインプロファイルのみが対象で、このオプションが有効な間は実行され続けるバックグラウンドの監視サービスが必要です。仕事用プロファイル、クローン領域、プライベートスペースへのインストールは sfwall.APP_INSTALLED ブロードキャストで通知できます。</string>
     <string name="firewall_status_notification">ファイアウォール状態の通知</string>
     <string name="firewall_status_notification_description">現在のファイアウォールの状態を常時通知で表示します</string>
     <string name="firewall_status_notification_enabled_title">ファイアウォール有効</string>
@@ -195,7 +195,7 @@
     <string name="ladb_status_connected">LADB がワイヤレスデバッグに接続されました</string>
     <string name="ladb_status_disconnected">切断済み</string>
     <string name="ladb_error_title">LADB エラー</string>
-    <string name="ladb_hint_connection_refused">「接続拒否」は通常、ワイヤレスデバッグがオフであるか、間違ったポートを使用していることを意味します。「開発者向けオプション」→「ワイヤレスデバッグ」→「IP アドレスとポート」に表示されているポートを使用してください（ペアリングポートではありません）。また、ワイヤレスデバッグで ShizuWall が許可されていることを確認してください。</string>
+    <string name="ladb_hint_connection_refused">「接続拒否」は通常、ワイヤレスデバッグがオフであるか、間違ったポートを使用していることを意味します。「開発者向けオプション」→「ワイヤレスデバッグ」→「IP アドレスとポート」に表示されているポートを使用してください（ペアリングポートではありません）。また、ワイヤレスデバッグで SfWall が許可されていることを確認してください。</string>
 
     <string name="ladb_pairing_channel_name">LADB ペアリング</string>
     <string name="ladb_pairing_notification_title">ペアリングコードを入力</string>
@@ -209,7 +209,7 @@
     <string name="ladb_pairing_result_success_title">LADB ペアリング完了</string>
     <string name="ladb_pairing_result_success_text">ペアリングに成功しました。接続可能です。</string>
     <string name="ladb_pairing_result_failed_title">LADB ペアリング失敗</string>
-    <string name="ladb_pairing_result_failed_text">エラーログを確認するには ShizuWall を開いてください。</string>
+    <string name="ladb_pairing_result_failed_text">エラーログを確認するには SfWall を開いてください。</string>
     <string name="ladb_pairing_result_missing_code">ペアリングコードがありません。「ワイヤレスデバッグ」→「デバイスのペアリング」から入力してください。</string>
     <string name="ladb_pairing_result_missing_port">ペアリングポートがありません。「ポート コード」(ワイヤレスデバッグ → デバイスのペアリング)を入力してください。</string>
     <string name="ladb_notification_permission_required">ペアリングコードの入力を促すために、通知の権限が必要です。</string>
@@ -238,7 +238,7 @@
     <string name="failed_to_unblock_count">%d 個のアプリのブロック解除に失敗しました</string>
     <string name="failed_to_unblock_app">%s のブロック解除に失敗しました</string>
     <string name="notification_permission_required_title">通知の権限が必要です</string>
-    <string name="notification_permission_required_message">ShizuWall がペアリングコードの通知を表示するには、通知の権限が必要です。\n\nこの権限がないと、ペアリングコードの入力が困難になります。</string>
+    <string name="notification_permission_required_message">SfWall がペアリングコードの通知を表示するには、通知の権限が必要です。\n\nこの権限がないと、ペアリングコードの入力が困難になります。</string>
     <string name="cannot_continue">続行できません</string>
     <string name="notification_permission_required_ladb">LADB ペアリング機能を使用するには通知の権限が必要です。この権限により、重要なペアリング情報を表示できます。\n\n続行するには通知の権限を許可してください。</string>
     <string name="enter_pairing_code_hint">ワイヤレスデバッグページのペアリングコードを通知に入力してください。</string>
@@ -287,7 +287,7 @@
     <string name="firewall_mode_smart_foreground_description">現在フォアグラウンドにあるアプリのみ許可</string>
     
     <string name="firewall_mode_focus_tracker">フォーカス・トラッカー</string>
-    <string name="firewall_mode_focus_tracker_description">ShizuWallがアクティブでないときはファイアウォールを有効にし、アクティブなときは無効にする。</string>
+    <string name="firewall_mode_focus_tracker_description">SfWallがアクティブでないときはファイアウォールを有効にし、アクティブなときは無効にする。</string>
     <string name="smart_foreground_notification_channel_name">スマートフォアグラウンド (サービス)</string>
     <string name="smart_foreground_notification_channel_description">フォアグラウンドアプリを監視するためのバックグラウンドサービス</string>
     <string name="smart_foreground_active">スマートフォアグラウンド アクティブ</string>
@@ -314,9 +314,9 @@
     <string name="firewall_mode_whitelist_details">選択が反転します。既定ですべてのアプリがブロックされ、チェックしたアプリだけがネットワークを使えます。「システムアプリを表示」がオフの場合、このモードではシステムアプリはブロックされません。</string>
     <string name="firewall_mode_screen_lock_details">選択したアプリは画面ロック時にブロックされ、ロック解除時に解除されます。短時間の画面オフでブロックされないように遅延を設定できます。バックグラウンドサービスがロック状態を監視するため、再起動後も動作します。</string>
     <string name="firewall_mode_smart_foreground_details">今使っているアプリだけがネットワークを使えます。他の選択済みアプリはブロックされたままで、別のアプリに移ると同時に許可も切り替わります。バックグラウンドサービスが約1秒ごとに前面アプリを確認するため、常時稼働が必要でバッテリーを少し多く使います。</string>
-    <string name="firewall_mode_focus_tracker_details">ファイアウォールが ShizuWall 自体に追従します。ShizuWall を離れる、または最小化するとファイアウォールがオンになり、再び開くとオフになります。設定を変更している間だけブロックを止めたいときに便利です。</string>
+    <string name="firewall_mode_focus_tracker_details">ファイアウォールが SfWall 自体に追従します。SfWall を離れる、または最小化するとファイアウォールがオンになり、再び開くとオフになります。設定を変更している間だけブロックを止めたいときに便利です。</string>
     <string name="firewall_mode_hybrid_details">すべてに同じルールを適用する代わりに、アプリごとにモードを設定します。アプリごとに、既定ブロック（常にブロック）、スマートフォアグラウンド（使用中のみ許可）、画面ロック（画面ロック中はブロック）から選べます。これらのルールは同時に動作します。</string>
-    <string name="firewall_mode_details_foreground_note">スマートフォアグラウンド、ハイブリッド、フォーカストラッカーは前面アプリの検出が必要です。検出は Shizuku 経由、または使用状況アクセス経由で行われます。使用状況アクセスは LADB／Root モードで ShizuWall が特権シェルを使って自身に付与します。</string>
+    <string name="firewall_mode_details_foreground_note">スマートフォアグラウンド、ハイブリッド、フォーカストラッカーは前面アプリの検出が必要です。検出は Shizuku 経由、または使用状況アクセス経由で行われます。使用状況アクセスは LADB／Root モードで SfWall が特権シェルを使って自身に付与します。</string>
     <string name="firewall_mode_hybrid">ハイブリッドモード</string>
     <string name="firewall_mode_hybrid_description">アプリごとにモードを個別に設定</string>
     <string name="hybrid_mode_default_block">デフォルトブロック</string>
@@ -334,7 +334,7 @@
     <string name="apply_root_rules_after_reboot">再起動後にファイアウォールルールを適用</string>
     <string name="apply_root_rules_after_reboot_description">起動完了後、最後に有効だったファイアウォールルールを root で再適用します</string>
     <string name="working_mode_root">Root (su)</string>
-    <string name="root_not_found_message">Root が見つかりません。ShizuWall に root 権限へのアクセスを許可してください。</string>
+    <string name="root_not_found_message">Root が見つかりません。SfWall に root 権限へのアクセスを許可してください。</string>
     <string name="double_tap_or_long_press">ダブルタップで複数のアプリを選択、長押しで複数のアプリの選択を解除</string>
     <string name="ladb_daemon_restart_required_title">LADB デーモンを再起動</string>
     <string name="ladb_daemon_restart_required_message">LADB デーモンの認証に失敗したか応答しなくなったため、ファイアウォールを有効にできませんでした。LADB セットアップを開き、詳細モードを有効にしてから、デーモン停止 と デーモン開始 を使用してください。</string>
@@ -430,7 +430,7 @@
     <string name="app_info_internet_no">インターネット権限なし</string>
     <string name="app_info_mobile_only">モバイルデータのみブロック</string>
     <string name="app_info_wifi_only">Wi‑Fi のみブロック</string>
-    <string name="app_info_wifi_only_summary">非対応です。ShizuWall は VPN も root ベースのルールも使用しないため、Wi‑Fi だけをブロックすることはできません。</string>
+    <string name="app_info_wifi_only_summary">非対応です。SfWall は VPN も root ベースのルールも使用しないため、Wi‑Fi だけをブロックすることはできません。</string>
     <string name="app_info_block_all">すべてのネットワークをブロック</string>
     <string name="app_info_block_all_summary">Wi‑Fi とモバイルデータの両方をブロックします。</string>
     <string name="app_info_mobile_only_summary">このアプリをブロックしている間も Wi‑Fi は許可されます。ブロックされるのは従量制ネットワーク(モバイルデータと、テザリングなど従量制に設定された Wi‑Fi)のみです。</string>
@@ -442,7 +442,7 @@
     <string name="app_info_trackers_none">既知のトラッカーは見つかりませんでした</string>
     <string name="app_info_trackers_count">%1$d 件のトラッカーを検出</string>
     <string name="app_info_trackers_failed">このアプリはスキャンできませんでした</string>
-    <string name="app_info_trackers_note">アプリのコードを調べて検出しました。ShizuWall は VPN を使わず通信を見ません。このアプリをブロックする間、これらのトラッカーも遮断されます。</string>
+    <string name="app_info_trackers_note">アプリのコードを調べて検出しました。SfWall は VPN を使わず通信を見ません。このアプリをブロックする間、これらのトラッカーも遮断されます。</string>
     <string name="tracker_data_attribution">トラッカーデータ: Exodus Privacy、ODbL 1.0</string>
     <string name="show_other_profiles">他のプロファイルのアプリを表示</string>
     <string name="main_profile">メインプロファイル</string>
@@ -491,7 +491,7 @@
     <string name="settings_category_security_title">セキュリティ</string>
     <string name="settings_category_security_desc">アプリロック、PIN、生体認証</string>
     <string name="app_lock_title">アプリロック</string>
-    <string name="app_lock_description">ShizuWall を開くときに PIN または生体認証を要求</string>
+    <string name="app_lock_description">SfWall を開くときに PIN または生体認証を要求</string>
     <string name="app_lock_use_biometrics">生体認証を使う</string>
     <string name="app_lock_use_biometrics_description">PIN を入力せず指紋や顔でロック解除</string>
     <string name="app_lock_change_pin">PIN を変更</string>
@@ -501,15 +501,15 @@
     <string name="app_lock_pin_mismatch">PIN が一致しません</string>
     <string name="app_lock_pin_length_required">%1$d 桁の PIN を入力</string>
     <string name="app_lock_pin_length">PIN の桁数</string>
-    <string name="app_lock_pin_not_recoverable">PIN は復元できません。忘れた場合は ShizuWall のアプリデータを削除するしかなく、すべての設定とプロファイルが失われます。</string>
-    <string name="app_lock_scope_warning">このロックは ShizuWall を開くことを防ぐだけです。ファイアウォールのルールは Android 側にあるため、マクロアプリ、ADB ブロードキャスト、クイック設定タイル、ウィジェットから変更できます。</string>
+    <string name="app_lock_pin_not_recoverable">PIN は復元できません。忘れた場合は SfWall のアプリデータを削除するしかなく、すべての設定とプロファイルが失われます。</string>
+    <string name="app_lock_scope_warning">このロックは SfWall を開くことを防ぐだけです。ファイアウォールのルールは Android 側にあるため、マクロアプリ、ADB ブロードキャスト、クイック設定タイル、ウィジェットから変更できます。</string>
     <string name="app_lock_biometric_offer_title">生体認証でロック解除しますか？</string>
-    <string name="app_lock_biometric_offer_message">有効にすると、指紋や顔でこの端末のロックを解除できる人は誰でも ShizuWall を開いてファイアウォールを変更できます。端末を共有していて自分だけが操作すべき場合はオフのままにしてください。</string>
+    <string name="app_lock_biometric_offer_message">有効にすると、指紋や顔でこの端末のロックを解除できる人は誰でも SfWall を開いてファイアウォールを変更できます。端末を共有していて自分だけが操作すべき場合はオフのままにしてください。</string>
     <string name="app_lock_biometric_offer_enable">生体認証を使う</string>
     <string name="app_lock_biometric_offer_pin_only">PIN のみ</string>
     <string name="app_lock_wrong_pin">PIN が違います</string>
     <string name="app_lock_locked_out">試行回数が多すぎます。%1$d 秒後に再試行してください</string>
-    <string name="app_lock_biometric_title">ShizuWall のロック解除</string>
+    <string name="app_lock_biometric_title">SfWall のロック解除</string>
     <string name="app_lock_use_pin">PIN を使う</string>
     <string name="app_lock_pin_saved">PIN を保存しました</string>
     <string name="app_lock_delete">削除</string>

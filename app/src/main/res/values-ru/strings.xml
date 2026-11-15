@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShizuWall</string>
+    <string name="app_name">SfWall</string>
     <string name="settings_category_appearance_title">Внешний вид</string>
     <string name="settings_category_appearance_desc">Тема, цвета, шрифт, язык</string>
     <string name="settings_category_firewall_title">Поведение брандмауэра</string>
@@ -8,7 +8,7 @@
     <string name="settings_category_backend_desc">Shizuku, LADB, Root</string>
     <string name="settings_category_notifications_title">Уведомления и плавающая кнопка</string>
     <string name="settings_category_notifications_desc">Мониторинг, оповещения, плавающая кнопка</string>
-    <string name="github_url">https://github.com/ahmetcanarslan/shizuwall</string>
+    <string name="github_url">https://github.com/whitepaper2023/sfwall</string>
     <string name="buymeacoffee_url">https://buymeacoffee.com/ahmetcanarslan</string>
     <string name="donate">Пожертвовать</string>
     <string name="show_system_apps">Показать системные приложения</string>
@@ -38,10 +38,10 @@
     <string name="reset">Сбросить</string>
     <string name="cancel">Отмена</string>
     <string name="android11_unsupported_title">Совместимость с Android 11</string>
-    <string name="android11_unsupported_message">Некоторые устройства на Android 11 не поддерживают ShizuWall. Если вы видите ошибку типа:\n - no command found set chain3 - \nэто означает, что ваше устройство не поддерживается, и в данный момент ничего нельзя сделать.</string>
+    <string name="android11_unsupported_message">Некоторые устройства на Android 11 не поддерживают SfWall. Если вы видите ошибку типа:\n - no command found set chain3 - \nэто означает, что ваше устройство не поддерживается, и в данный момент ничего нельзя сделать.</string>
     <string name="dont_show_again">Больше не показывать</string>
     <string name="device_unsupported_title">Устройство не поддерживается</string>
-    <string name="device_unsupported_message">Ваша сборка Android не предоставляет цепочку сетевого брандмауэра, на которую опирается ShizuWall. Это часто встречается на Android 11–12 и в некоторых прошивках производителей, например MIUI/HyperOS. Команду отклоняет сама система, поэтому переключение между Shizuku, LADB и root не поможет.</string>
+    <string name="device_unsupported_message">Ваша сборка Android не предоставляет цепочку сетевого брандмауэра, на которую опирается SfWall. Это часто встречается на Android 11–12 и в некоторых прошивках производителей, например MIUI/HyperOS. Команду отклоняет сама система, поэтому переключение между Shizuku, LADB и root не поможет.</string>
     <string name="firewall_cleanup_warning">Внимание: Очистка брандмауэра не удалась. Пожалуйста, ПЕРЕЗАГРУЗИТЕ устройство, чтобы восстановить доступ в Интернет.</string>
     <string name="app_reset_complete">Сброс приложения завершен. Закрытие…</string>
     <string name="reset_app_failed">Не удалось сбросить приложение: %s</string>
@@ -63,13 +63,13 @@
     <string name="adb_broadcast_dev_disable_framework">Отключить фреймворк брандмауэра</string>
     <string name="adb_broadcast_extras_summary" formatted="false">%1$s (boolean): true = включить, false = выключить
 
-%2$s (string, необязательно): список пакетов через запятую. Если не указано, приложение использует выбранные пакеты, сохраненные в ShizuWall.</string>
+%2$s (string, необязательно): список пакетов через запятую. Если не указано, приложение использует выбранные пакеты, сохраненные в SfWall.</string>
     <string name="ok">ОК</string>
     <string name="no_apps_selected">Приложения не выбраны</string>
     <string name="shizuku_not_running">Shizuku не запущен</string>
     <string name="shizuku_permission_required">Требуется разрешение Shizuku</string>
     <string name="firewall">Брандмауэр</string>
-    <string name="welcome_title">Добро пожаловать в ShizuWall</string>
+    <string name="welcome_title">Добро пожаловать в SfWall</string>
     <string name="welcome_message">Блокируйте нежелательные сетевые соединения без root-прав и VPN</string>
     <string name="next">Далее</string>
     <string name="grant_permission">Предоставить разрешение</string>
@@ -80,7 +80,7 @@
     <string name="sorting_onboarding_title">Сортировка и фильтры</string>
     <string name="sorting_onboarding_message">Нажмите значок сортировки, чтобы изменить порядок приложений. Там же можно выбрать, показывать ли системные приложения и приложения профилей.</string>
     <string name="onboarding_mode_selection_title">Выберите рабочий режим</string>
-    <string name="onboarding_mode_selection_message">ShizuWall может работать в трех режимах. Shizuku рекомендуется для большинства пользователей. Если ваше устройство не поддерживает Shizuku, вы можете выбрать режим LADB или Root. Рабочий режим можно изменить позже</string>
+    <string name="onboarding_mode_selection_message">SfWall может работать в трех режимах. Shizuku рекомендуется для большинства пользователей. Если ваше устройство не поддерживает Shizuku, вы можете выбрать режим LADB или Root. Рабочий режим можно изменить позже</string>
     <string name="get_started">Приступить к работе</string>
     <string name="shizuku_service_dead">Сервис Shizuku не отвечает</string>
     <string name="shizuku_update_required">Требуется обновление Shizuku</string>
@@ -140,10 +140,10 @@
     <string name="working_mode_ladb">LADB (Бета)</string>
     <string name="app_monitor_service">Уведомления о новых приложениях</string>
     <string name="app_monitor_service_description">Показывать уведомление при установке нового приложения</string>
-    <string name="app_monitor_whitelist_dependency">В режиме белого списка именно эта служба блокирует и вновь установленные приложения. Если уведомления о новых приложениях, автоблокировка новых приложений и уведомление о состоянии брандмауэра выключены, служба останавливается и новые приложения остаются разрешёнными, пока брандмауэр не будет выключен и снова включён или пока приложение-автоматизация не сообщит об установке широковещательным сигналом shizuwall.APP_INSTALLED.</string>
+    <string name="app_monitor_whitelist_dependency">В режиме белого списка именно эта служба блокирует и вновь установленные приложения. Если уведомления о новых приложениях, автоблокировка новых приложений и уведомление о состоянии брандмауэра выключены, служба останавливается и новые приложения остаются разрешёнными, пока брандмауэр не будет выключен и снова включён или пока приложение-автоматизация не сообщит об установке широковещательным сигналом sfwall.APP_INSTALLED.</string>
     <string name="auto_firewall_new_apps">Автоматически блокировать новые приложения</string>
     <string name="auto_firewall_new_apps_description">Автоматически блокировать новые установленные приложения (кроме режима белого списка)</string>
-    <string name="new_app_monitor_main_profile_only">Обнаружение новых приложений работает только в основном профиле и требует фоновой службы мониторинга, которая работает, пока этот параметр включён. Об установках в рабочем профиле, клонированном или частном пространстве всё равно можно сообщить широковещательным сигналом shizuwall.APP_INSTALLED.</string>
+    <string name="new_app_monitor_main_profile_only">Обнаружение новых приложений работает только в основном профиле и требует фоновой службы мониторинга, которая работает, пока этот параметр включён. Об установках в рабочем профиле, клонированном или частном пространстве всё равно можно сообщить широковещательным сигналом sfwall.APP_INSTALLED.</string>
     <string name="firewall_status_notification">Уведомление о состоянии брандмауэра</string>
     <string name="firewall_status_notification_description">Показывать постоянное уведомление с текущим состоянием брандмауэра</string>
     <string name="firewall_status_notification_enabled_title">Брандмауэр включён</string>
@@ -195,7 +195,7 @@
     <string name="ladb_status_connected">LADB подключен к беспроводной отладке</string>
     <string name="ladb_status_disconnected">Отключено</string>
     <string name="ladb_error_title">Ошибка LADB</string>
-    <string name="ladb_hint_connection_refused">Отказ в подключении обычно означает, что беспроводная отладка ВЫКЛЮЧЕНА или вы используете неправильный порт. Используйте порт, показанный в Параметры разработчика → Беспроводная отладка → IP-адрес и порт (не порт сопряжения). Также убедитесь, что ShizuWall разрешен в беспроводной отладке.</string>
+    <string name="ladb_hint_connection_refused">Отказ в подключении обычно означает, что беспроводная отладка ВЫКЛЮЧЕНА или вы используете неправильный порт. Используйте порт, показанный в Параметры разработчика → Беспроводная отладка → IP-адрес и порт (не порт сопряжения). Также убедитесь, что SfWall разрешен в беспроводной отладке.</string>
 
     <string name="ladb_pairing_channel_name">Сопряжение LADB</string>
     <string name="ladb_pairing_notification_title">Введите код сопряжения</string>
@@ -209,7 +209,7 @@
     <string name="ladb_pairing_result_success_title">LADB сопряжен</string>
     <string name="ladb_pairing_result_success_text">Сопряжение прошло успешно. Теперь вы можете подключиться.</string>
     <string name="ladb_pairing_result_failed_title">Сопряжение LADB не удалось</string>
-    <string name="ladb_pairing_result_failed_text">Откройте ShizuWall, чтобы просмотреть журнал ошибок.</string>
+    <string name="ladb_pairing_result_failed_text">Откройте SfWall, чтобы просмотреть журнал ошибок.</string>
     <string name="ladb_pairing_result_missing_code">Отсутствует код сопряжения. Введите его из Беспроводная отладка → Сопряжение устройства.</string>
     <string name="ladb_pairing_result_missing_port">Отсутствует порт сопряжения. Введите: ПОРТ КОД (из Беспроводная отладка → Сопряжение устройства).</string>
     <string name="ladb_notification_permission_required">Требуется разрешение на уведомления для отображения запроса на ввод кода сопряжения.</string>
@@ -238,7 +238,7 @@
     <string name="failed_to_unblock_count">Не удалось разблокировать %d приложений</string>
     <string name="failed_to_unblock_app">Не удалось разблокировать %s</string>
     <string name="notification_permission_required_title">Требуется разрешение на уведомления</string>
-    <string name="notification_permission_required_message">ShizuWall требуется разрешение на уведомления для отображения уведомления о коде сопряжения.\n\nБез этого разрешения вы не сможете легко ввести код сопряжения.</string>
+    <string name="notification_permission_required_message">SfWall требуется разрешение на уведомления для отображения уведомления о коде сопряжения.\n\nБез этого разрешения вы не сможете легко ввести код сопряжения.</string>
     <string name="cannot_continue">Невозможно продолжить</string>
     <string name="notification_permission_required_ladb">Для использования функции сопряжения LADB требуется разрешение на уведомления. Это разрешение позволяет нам показывать важную информацию о сопряжении.\n\nПожалуйста, предоставьте разрешение на уведомления, чтобы продолжить.</string>
     <string name="enter_pairing_code_hint">Введите код сопряжения со страницы беспроводной отладки в уведомление.</string>
@@ -287,7 +287,7 @@
     <string name="firewall_mode_smart_foreground_description">Разрешить только приложение на переднем плане</string>
 
     <string name="firewall_mode_focus_tracker">Отслеживание фокуса</string>
-    <string name="firewall_mode_focus_tracker_description">Включать брандмауэр, когда ShizuWall не находится в фокусе, и отключать, когда он находится в фокусе.</string>
+    <string name="firewall_mode_focus_tracker_description">Включать брандмауэр, когда SfWall не находится в фокусе, и отключать, когда он находится в фокусе.</string>
     <string name="smart_foreground_notification_channel_name">Умный передний план (Сервис)</string>
     <string name="smart_foreground_notification_channel_description">Фоновый сервис для мониторинга приложения на переднем плане</string>
     <string name="smart_foreground_active">Умный передний план активен</string>
@@ -314,9 +314,9 @@
     <string name="firewall_mode_whitelist_details">Выбор инвертирован: по умолчанию заблокированы все приложения, а доступ к сети сохраняют только отмеченные. Учтите: при отключённой опции «Показывать системные приложения» системные приложения в этом режиме не блокируются.</string>
     <string name="firewall_mode_screen_lock_details">Выбранные приложения блокируются при блокировке экрана и разблокируются после снятия блокировки. Можно задать задержку, чтобы короткое отключение экрана не запускало блокировку. За состоянием блокировки следит фоновая служба, поэтому режим работает и после перезагрузки.</string>
     <string name="firewall_mode_smart_foreground_details">Доступ к сети сохраняет только то приложение, которым вы пользуетесь сейчас. Остальные выбранные приложения остаются заблокированными, а доступ переключается, как только вы переходите в другое приложение. Фоновая служба проверяет активное приложение примерно раз в секунду, поэтому должна работать постоянно и немного расходует батарею.</string>
-    <string name="firewall_mode_focus_tracker_details">Брандмауэр следует за самим ShizuWall: выход из ShizuWall или его сворачивание включает брандмауэр, а повторное открытие — выключает. Удобно, когда блокировка должна приостанавливаться ровно на время изменения настроек.</string>
+    <string name="firewall_mode_focus_tracker_details">Брандмауэр следует за самим SfWall: выход из SfWall или его сворачивание включает брандмауэр, а повторное открытие — выключает. Удобно, когда блокировка должна приостанавливаться ровно на время изменения настроек.</string>
     <string name="firewall_mode_hybrid_details">У каждого приложения свой режим вместо одного правила для всех. Для каждого приложения можно выбрать «Блокировать по умолчанию» (всегда заблокировано), «Умный передний план» (разрешено только во время использования) или «Блокировка экрана» (заблокировано при заблокированном экране). Все эти правила работают одновременно.</string>
-    <string name="firewall_mode_details_foreground_note">Режимам «Умный передний план», «Гибридный» и «Отслеживание фокуса» нужно определять активное приложение. Это работает через Shizuku либо через доступ к данным использования, который ShizuWall выдаёт себе через привилегированную оболочку в режимах LADB и Root.</string>
+    <string name="firewall_mode_details_foreground_note">Режимам «Умный передний план», «Гибридный» и «Отслеживание фокуса» нужно определять активное приложение. Это работает через Shizuku либо через доступ к данным использования, который SfWall выдаёт себе через привилегированную оболочку в режимах LADB и Root.</string>
     <string name="firewall_mode_hybrid">Гибридный режим</string>
     <string name="firewall_mode_hybrid_description">Настроить режим индивидуально для каждого приложения</string>
     <string name="hybrid_mode_default_block">Блокировка по умолчанию</string>
@@ -334,7 +334,7 @@
     <string name="apply_root_rules_after_reboot">Применять правила брандмауэра после перезагрузки</string>
     <string name="apply_root_rules_after_reboot_description">Повторно применить последние активные правила брандмауэра с root после завершения загрузки</string>
     <string name="working_mode_root">Root (su)</string>
-    <string name="root_not_found_message">Root не найден. Пожалуйста, разрешите ShizuWall доступ к root-правам.</string>
+    <string name="root_not_found_message">Root не найден. Пожалуйста, разрешите SfWall доступ к root-правам.</string>
     <string name="double_tap_or_long_press">Дважды нажмите, чтобы выбрать несколько приложений, удерживайте, чтобы снять выделение с нескольких приложений</string>
     <string name="ladb_daemon_restart_required_title">Перезапустить демон LADB</string>
     <string name="ladb_daemon_restart_required_message">Не удалось включить брандмауэр, потому что демон LADB не прошел авторизацию или перестал отвечать. Откройте настройку LADB, включите расширенный режим, затем используйте Остановить демон и Запустить демон.</string>
@@ -432,7 +432,7 @@
     <string name="app_info_internet_no">Нет доступа в интернет</string>
     <string name="app_info_mobile_only">Блокировать только мобильные данные</string>
     <string name="app_info_wifi_only">Блокировать только в Wi‑Fi</string>
-    <string name="app_info_wifi_only_summary">Не поддерживается. ShizuWall не использует VPN или правила на основе root, поэтому заблокировать только Wi‑Fi нельзя.</string>
+    <string name="app_info_wifi_only_summary">Не поддерживается. SfWall не использует VPN или правила на основе root, поэтому заблокировать только Wi‑Fi нельзя.</string>
     <string name="app_info_block_all">Блокировать все сети</string>
     <string name="app_info_block_all_summary">Блокируются и Wi‑Fi, и мобильные данные.</string>
     <string name="app_info_mobile_only_summary">Wi‑Fi остаётся разрешённым, пока это приложение заблокировано. Блокируются только лимитные сети: мобильные данные и Wi‑Fi, отмеченные как лимитные, например точки доступа.</string>
@@ -444,7 +444,7 @@
     <string name="app_info_trackers_none">Известные трекеры не найдены</string>
     <string name="app_info_trackers_count">Найдено трекеров: %1$d</string>
     <string name="app_info_trackers_failed">Не удалось проверить это приложение</string>
-    <string name="app_info_trackers_note">Найдены при анализе кода приложения. ShizuWall не использует VPN и не анализирует трафик. Эти трекеры отрезаны, пока приложение заблокировано.</string>
+    <string name="app_info_trackers_note">Найдены при анализе кода приложения. SfWall не использует VPN и не анализирует трафик. Эти трекеры отрезаны, пока приложение заблокировано.</string>
     <string name="tracker_data_attribution">Данные о трекерах: Exodus Privacy, ODbL 1.0</string>
     <string name="show_other_profiles">Показывать приложения из других профилей</string>
     <string name="main_profile">Основной профиль</string>
@@ -478,22 +478,22 @@
     <string name="remember_deleted_apps">Запоминать удалённые приложения</string>
     <string name="remember_deleted_apps_description">Сохранять состояние блокировки удалённых или отключённых приложений и восстанавливать его при возврате</string>
     <string name="foreground_detection_unavailable">Определение активного приложения недоступно</string>
-    <string name="foreground_detection_unavailable_message">ShizuWall не смог связаться с привилегированным помощником, который сообщает активное приложение, поэтому режимы Smart Foreground, Hybrid и Focus Tracker не могут управлять приложениями. Проверьте, что рабочий режим (Shizuku, LADB или Root) настроен и работает.</string>
+    <string name="foreground_detection_unavailable_message">SfWall не смог связаться с привилегированным помощником, который сообщает активное приложение, поэтому режимы Smart Foreground, Hybrid и Focus Tracker не могут управлять приложениями. Проверьте, что рабочий режим (Shizuku, LADB или Root) настроен и работает.</string>
     <string name="empty_app_list_title">Нет приложений</string>
     <string name="empty_app_list_message">Показаны только установленные пользователем приложения. Включите системные приложения, чтобы увидеть всё на этом устройстве.</string>
     <string name="empty_app_list_action">Показать системные приложения</string>
     <string name="empty_app_list_search_title">Нет результатов</string>
     <string name="empty_app_list_search_message">Нет приложений, соответствующих запросу.</string>
     <string name="backend_banner_title">Требуется настройка</string>
-    <string name="backend_banner_message_shizuku">Чтобы блокировать приложения, ShizuWall нужен запущенный Shizuku с выданным разрешением.</string>
-    <string name="backend_banner_message_ladb">Чтобы блокировать приложения, ShizuWall нужен запущенный локальный демон ADB. Выполните сопряжение по беспроводной отладке, чтобы запустить его.</string>
-    <string name="backend_banner_message_root">Чтобы блокировать приложения, ShizuWall нужен root-доступ.</string>
+    <string name="backend_banner_message_shizuku">Чтобы блокировать приложения, SfWall нужен запущенный Shizuku с выданным разрешением.</string>
+    <string name="backend_banner_message_ladb">Чтобы блокировать приложения, SfWall нужен запущенный локальный демон ADB. Выполните сопряжение по беспроводной отладке, чтобы запустить его.</string>
+    <string name="backend_banner_message_root">Чтобы блокировать приложения, SfWall нужен root-доступ.</string>
     <string name="backend_banner_action">Настроить</string>
     <string name="app_unsupported_system_uid">Это приложение работает под системным UID (меньше 10000). Android исключает системные UID из правил брандмауэра для отдельных приложений, поэтому его нельзя заблокировать.</string>
     <string name="settings_category_security_title">Безопасность</string>
     <string name="settings_category_security_desc">Блокировка приложения, PIN-код и биометрия</string>
     <string name="app_lock_title">Блокировка приложения</string>
-    <string name="app_lock_description">Запрашивать PIN-код или биометрию при открытии ShizuWall</string>
+    <string name="app_lock_description">Запрашивать PIN-код или биометрию при открытии SfWall</string>
     <string name="app_lock_use_biometrics">Использовать биометрию</string>
     <string name="app_lock_use_biometrics_description">Разблокировка отпечатком или лицом вместо ввода PIN-кода</string>
     <string name="app_lock_change_pin">Изменить PIN-код</string>
@@ -503,15 +503,15 @@
     <string name="app_lock_pin_mismatch">PIN-коды не совпадают</string>
     <string name="app_lock_pin_length_required">Введите %1$d цифр</string>
     <string name="app_lock_pin_length">Длина PIN-кода</string>
-    <string name="app_lock_pin_not_recoverable">PIN-код нельзя восстановить. Если вы его забудете, единственный выход — очистить данные приложения ShizuWall, что удалит все настройки и профили.</string>
-    <string name="app_lock_scope_warning">Эта блокировка лишь мешает открыть ShizuWall. Правила брандмауэра хранятся в Android, поэтому их по-прежнему можно изменить через макрос-приложения, ADB-броадкасты, плитку быстрых настроек или виджет.</string>
+    <string name="app_lock_pin_not_recoverable">PIN-код нельзя восстановить. Если вы его забудете, единственный выход — очистить данные приложения SfWall, что удалит все настройки и профили.</string>
+    <string name="app_lock_scope_warning">Эта блокировка лишь мешает открыть SfWall. Правила брандмауэра хранятся в Android, поэтому их по-прежнему можно изменить через макрос-приложения, ADB-броадкасты, плитку быстрых настроек или виджет.</string>
     <string name="app_lock_biometric_offer_title">Разблокировать биометрией?</string>
-    <string name="app_lock_biometric_offer_message">Если включить, любой, кто может разблокировать это устройство отпечатком или лицом, также сможет открыть ShizuWall и изменить брандмауэр. Оставьте выключенным, если устройство общее и брандмауэром должны управлять только вы.</string>
+    <string name="app_lock_biometric_offer_message">Если включить, любой, кто может разблокировать это устройство отпечатком или лицом, также сможет открыть SfWall и изменить брандмауэр. Оставьте выключенным, если устройство общее и брандмауэром должны управлять только вы.</string>
     <string name="app_lock_biometric_offer_enable">Использовать биометрию</string>
     <string name="app_lock_biometric_offer_pin_only">Только PIN</string>
     <string name="app_lock_wrong_pin">Неверный PIN-код</string>
     <string name="app_lock_locked_out">Слишком много попыток. Повторите через %1$d с</string>
-    <string name="app_lock_biometric_title">Разблокировать ShizuWall</string>
+    <string name="app_lock_biometric_title">Разблокировать SfWall</string>
     <string name="app_lock_use_pin">Ввести PIN-код</string>
     <string name="app_lock_pin_saved">PIN-код сохранён</string>
     <string name="app_lock_delete">Удалить</string>
