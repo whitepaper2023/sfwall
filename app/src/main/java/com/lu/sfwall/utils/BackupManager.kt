@@ -1,5 +1,6 @@
 package com.lu.sfwall.utils
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -55,8 +56,10 @@ import java.util.Locale
  * understands this format (debug or release, old or new package).
  *
  * Import is a full replace: profiles, selection and the listed settings
- * become exactly what the backup holds. Apps the backup references but
- * this device does not have installed are dropped and counted.
+ * become exactly what the backup holds. Apps the backup references that
+ * cannot be used on this device — not installed, not blockable, or without
+ * the INTERNET permission — are dropped and counted, so the confirm dialog
+ * promises exactly the apps that stay selected afterwards.
  */
 object BackupManager {
 
@@ -418,18 +421,37 @@ object BackupManager {
     }
 
     /**
-     * Drops keys whose package is not installed on this device, and keys
-     * the firewall cannot block (the app itself, system apps, Shizuku).
-     * Only the not-installed keys are counted in [ImportPlan.droppedKeys].
+     * Keeps only keys the main list would keep selected. A key is kept when
+     * its package is installed, the firewall can block its UID, and the app
+     * declares the INTERNET permission — the same three conditions as
+     * [AppInfo.isSelectable] (hasInternet && isBlockable). The INTERNET
+     * check matters: MainActivity drops any selected app that lacks it when
+     * the list loads (dropUnsupportedSelections), so importing one would
+     * promise a restore the main list then silently undoes. Only the
+     * declaration is checked, never the grant state. Every rejected key is
+     * counted in [ImportPlan.droppedKeys], so the confirm dialog promises
+     * exactly the apps that stay selected afterwards.
      */
     fun prepareImport(context: Context, parsed: ParsedBackup): ImportPlan {
         val dropped = LinkedHashSet<String>()
+        val internetCache = HashMap<String, Boolean>()
         fun keep(key: String): Boolean {
             if (!isInstalled(context, key)) {
                 dropped.add(key)
                 return false
             }
-            return PerUidFirewall.isBlockableKey(context, key)
+            if (!PerUidFirewall.isBlockableKey(context, key)) {
+                dropped.add(key)
+                return false
+            }
+            val hasInternet = internetCache.getOrPut(AppKey.packageOf(key)) {
+                hasInternetPermission(context, key)
+            }
+            if (!hasInternet) {
+                dropped.add(key)
+                return false
+            }
+            return true
         }
         val selected = parsed.selectedApps.filter(::keep).toSet()
         val appModes = FirewallTargets.parseAppModes(parsed.appModesJson)
@@ -469,6 +491,25 @@ object BackupManager {
                     PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS
             )
             true
+        } catch (_: Exception) {
+            false
+        }
+    }
+
+    /**
+     * Whether the app behind this key declares the INTERNET permission,
+     * matching MainActivity's hasInternet (requestedPermissions contains
+     * INTERNET). Only the declaration matters; the grant state does not.
+     * A query failure is treated as no INTERNET: without proof the app
+     * declares it, the main list would not keep it selected either.
+     */
+    private fun hasInternetPermission(context: Context, key: String): Boolean {
+        return try {
+            val info = context.packageManager.getPackageInfo(
+                AppKey.packageOf(key),
+                PackageManager.GET_PERMISSIONS
+            )
+            info.requestedPermissions?.contains(Manifest.permission.INTERNET) == true
         } catch (_: Exception) {
             false
         }
