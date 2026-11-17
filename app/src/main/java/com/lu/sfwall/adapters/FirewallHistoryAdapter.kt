@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.lu.sfwall.R
+import com.lu.sfwall.ui.FirewallHistoryActivity
 import com.lu.sfwall.utils.FirewallHistory
 
 /**
