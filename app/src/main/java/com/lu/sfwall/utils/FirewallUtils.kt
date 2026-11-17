@@ -97,7 +97,12 @@ object FirewallUtils {
         return prefs.getStringSet(MainActivity.KEY_ACTIVE_PACKAGES, emptySet()) ?: emptySet()
     }
 
-    fun saveFirewallEnabled(context: Context, prefs: SharedPreferences, enabled: Boolean) {
+    fun saveFirewallEnabled(context: Context, prefs: SharedPreferences, enabled: Boolean, source: FirewallHistory.Source) {
+        // Log only a real state change: re-saving the same state (for example a
+        // mode-change re-apply while the firewall is already on) is not an event.
+        // loadFirewallEnabled() also returns false after a reboot even when the
+        // persisted flag is still true, so a re-enable after boot is a change.
+        val wasEnabled = loadFirewallEnabled(prefs)
         val elapsed = SystemClock.elapsedRealtime()
         val now = System.currentTimeMillis()
         val write: SharedPreferences.Editor.() -> Unit = {
@@ -112,6 +117,11 @@ object FirewallUtils {
                 .getSharedPreferences(MainActivity.PREF_NAME, Context.MODE_PRIVATE)
                 .edit().write()
         } catch (_: Exception) {
+        }
+
+        if (wasEnabled != enabled) {
+            val type = if (enabled) FirewallHistory.Type.ENABLED else FirewallHistory.Type.DISABLED
+            FirewallHistory.append(context, type, source)
         }
 
         val intent = Intent(context, FirewallWidgetProvider::class.java)
@@ -152,7 +162,7 @@ object FirewallUtils {
         return targets
     }
 
-    suspend fun toggle(context: Context, prefs: SharedPreferences, enable: Boolean): Boolean {
+    suspend fun toggle(context: Context, prefs: SharedPreferences, enable: Boolean, source: FirewallHistory.Source): Boolean {
         val targets = withContext(Dispatchers.Main) {
             when {
                 !checkBackendReady(context) -> null
@@ -160,7 +170,7 @@ object FirewallUtils {
                 else -> enableTargets(context, prefs)
             }
         } ?: return false
-        return if (enable) enable(context, prefs, targets) else disable(context, prefs)
+        return if (enable) enable(context, prefs, targets, source) else disable(context, prefs, source)
     }
 
     suspend fun applyDelta(
@@ -168,7 +178,8 @@ object FirewallUtils {
         prefs: SharedPreferences,
         keys: List<String>,
         block: Boolean,
-        syncSelection: Boolean = false
+        syncSelection: Boolean = false,
+        source: FirewallHistory.Source
     ): Boolean = withContext(Dispatchers.IO) {
         val candidates = keys.map { AppKey.normalize(it) }.flatMap { sharedUidKeys(context, it) }.distinct().filterNot { isSelfOrBackend(context, it) }
         val targets = if (block) candidates.filter { PerUidFirewall.isBlockableKey(context, it) } else candidates
@@ -184,7 +195,7 @@ object FirewallUtils {
             val applied = toApply.filterIndexed { index, _ -> results[index].isEffectivelySuccess }
             writeSets(prefs, applied, targets - (toApply - applied.toSet()).toSet(), block, syncSelection)
             if (block && syncSelection && !loadFirewallEnabled(prefs)) {
-                saveFirewallEnabled(context, prefs, true)
+                saveFirewallEnabled(context, prefs, true, source)
             }
             if (!block && !loadFirewallEnabled(prefs)) {
                 executor.exec(FirewallCommands.CHAIN3_DISABLE)
@@ -237,7 +248,7 @@ object FirewallUtils {
         edit.apply()
     }
 
-    private suspend fun enable(context: Context, prefs: SharedPreferences, targets: EnableTargets): Boolean = withContext(Dispatchers.IO) {
+    private suspend fun enable(context: Context, prefs: SharedPreferences, targets: EnableTargets, source: FirewallHistory.Source): Boolean = withContext(Dispatchers.IO) {
         val mode = firewallMode(prefs)
         val executor = ShellExecutorProvider.forContext(context)
         val successful = mutableListOf<String>()
@@ -256,7 +267,7 @@ object FirewallUtils {
             }
 
             if (chainOk && (successful.isNotEmpty() || mode.allowsDynamicSelection())) {
-                saveFirewallEnabled(context, prefs, true)
+                saveFirewallEnabled(context, prefs, true, source)
                 saveActivePackages(prefs, (successful + stuck).toSet())
                 if (prefs.getBoolean(FloatingButtonService.KEY_FLOATING_BUTTON_ENABLED, false)) {
                     withContext(Dispatchers.Main) { FloatingButtonService.start(context) }
@@ -271,7 +282,7 @@ object FirewallUtils {
         }
     }
 
-    private suspend fun disable(context: Context, prefs: SharedPreferences): Boolean = withContext(Dispatchers.IO) {
+    private suspend fun disable(context: Context, prefs: SharedPreferences, source: FirewallHistory.Source): Boolean = withContext(Dispatchers.IO) {
         val mode = firewallMode(prefs)
         stateLock.withLock {
             val toUnblock = loadActivePackages(prefs).toMutableList()
@@ -293,7 +304,7 @@ object FirewallUtils {
 
             val ok = chainOk && results.all { it.isEffectivelySuccess }
             if (ok) {
-                saveFirewallEnabled(context, prefs, false)
+                saveFirewallEnabled(context, prefs, false, source)
                 saveActivePackages(prefs, emptySet())
             } else {
                 withContext(Dispatchers.Main) {

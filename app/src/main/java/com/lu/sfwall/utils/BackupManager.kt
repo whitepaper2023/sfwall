@@ -31,7 +31,7 @@ import java.util.Locale
  * ```
  * {
  *   "format": "sfwall-backup", "version": 1,
- *   "exportedAt": <epoch ms>, "appVersion": "4.7.1",
+ *   "exportedAt": <epoch ms>, "appVersion": "4.7.2",
  *   "profiles": [<Profile JSON objects>],
  *   "activeProfileId": "<uuid>",               // absent when none active
  *   "selectedApps": {

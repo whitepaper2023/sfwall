@@ -32,6 +32,7 @@ import com.lu.sfwall.receivers.FirewallControlReceiver
 import com.lu.sfwall.services.AppMonitorService
 import com.lu.sfwall.utils.AppKey
 import com.lu.sfwall.utils.BroadcastAuth
+import com.lu.sfwall.utils.FirewallHistory
 import com.lu.sfwall.utils.FirewallUtils
 import com.lu.sfwall.widgets.FirewallWidgetProvider
 import com.lu.sfwall.widgets.ProfileWidgetProvider
@@ -249,10 +250,10 @@ class FirewallSettingsActivity : BaseActivity() {
         if (FirewallUtils.loadFirewallEnabled(sharedPreferences)) {
             setModeBusy(true)
             CoroutineScope(Dispatchers.IO).launch {
-                val ok = FirewallUtils.toggle(applicationContext, sharedPreferences, true)
+                val ok = FirewallUtils.toggle(applicationContext, sharedPreferences, true, FirewallHistory.Source.MANUAL)
                 if (!ok) {
                     sharedPreferences.edit().putString(MainActivity.KEY_FIREWALL_MODE, oldMode.name).apply()
-                    FirewallUtils.toggle(applicationContext, sharedPreferences, true)
+                    FirewallUtils.toggle(applicationContext, sharedPreferences, true, FirewallHistory.Source.MANUAL)
                 }
                 withContext(Dispatchers.Main) {
                     if (isDestroyed) return@withContext

@@ -81,6 +81,7 @@ class SfWallApp : Application() {
                     action = MainActivity.ACTION_FIREWALL_CONTROL
                     putExtra(MainActivity.EXTRA_FIREWALL_ENABLED, true)
                     putExtra(FirewallControlReceiver.EXTRA_AUTOMATION_EVENT, true)
+                    putExtra(FirewallControlReceiver.EXTRA_HISTORY_SOURCE, com.lu.sfwall.utils.FirewallHistory.Source.SHIZUKU_AUTO.key)
                 }
             )
         )

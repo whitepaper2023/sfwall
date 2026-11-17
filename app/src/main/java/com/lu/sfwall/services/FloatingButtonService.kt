@@ -10,6 +10,7 @@ import android.widget.ImageView
 import androidx.core.app.NotificationCompat
 import com.lu.sfwall.R
 import com.lu.sfwall.ui.MainActivity
+import com.lu.sfwall.utils.FirewallHistory
 import com.lu.sfwall.utils.FirewallUtils
 import kotlinx.coroutines.*
 
@@ -350,7 +351,7 @@ class FloatingButtonService : Service() {
     private fun onFabClicked() {
         val enable = !loadFirewallEnabled()
         scope.launch {
-            FirewallUtils.toggle(this@FloatingButtonService, sharedPreferences, enable)
+            FirewallUtils.toggle(this@FloatingButtonService, sharedPreferences, enable, FirewallHistory.Source.FLOATING_BUTTON)
             updateFabAppearance()
         }
     }

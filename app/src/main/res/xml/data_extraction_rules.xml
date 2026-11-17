@@ -2,15 +2,18 @@
 <!-- Data extraction rules (Android 12+; Android 11 and below uses backup_rules.xml).
      The automation token (SfWallSecrets) and the LADB daemon token
      (daemon_prefs) must never leave the device in a backup or device
-     transfer. Everything else (firewall settings, block list, profiles)
-     keeps backing up. -->
+     transfer. The firewall history log (firewall_history.json) is
+     device-local diagnostics and stays behind too. Everything else
+     (firewall settings, block list, profiles) keeps backing up. -->
 <data-extraction-rules>
     <cloud-backup>
         <exclude domain="sharedpref" path="SfWallSecrets.xml" />
         <exclude domain="sharedpref" path="daemon_prefs.xml" />
+        <exclude domain="file" path="firewall_history.json" />
     </cloud-backup>
     <device-transfer>
         <exclude domain="sharedpref" path="SfWallSecrets.xml" />
         <exclude domain="sharedpref" path="daemon_prefs.xml" />
+        <exclude domain="file" path="firewall_history.json" />
     </device-transfer>
 </data-extraction-rules>

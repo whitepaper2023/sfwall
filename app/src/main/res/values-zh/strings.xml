@@ -532,4 +532,33 @@
     <string name="update_check_failed">无法检查更新</string>
     <string name="update_skip_version">跳过此版本</string>
     <string name="auto_check_updates">检查更新</string>
+
+    <string name="history_title">运行记录</string>
+    <string name="history_desc">防火墙什么时候运行、什么时候被关掉</string>
+    <string name="history_status_running">运行中</string>
+    <string name="history_status_stopped">已关闭</string>
+    <string name="history_running_for">本次已运行 %1$s</string>
+    <string name="history_empty">暂无记录</string>
+    <string name="history_clear">清除记录</string>
+    <string name="history_clear_title">清除运行记录？</string>
+    <string name="history_clear_message">确定要清除全部运行记录吗？这不会影响防火墙开关状态。</string>
+    <string name="history_clear_confirm">清除</string>
+    <string name="history_event_enabled">已开启</string>
+    <string name="history_event_disabled">已关闭</string>
+    <string name="history_event_cleared">重启后规则被清除</string>
+    <string name="history_session_duration">本次运行了 %1$s</string>
+    <string name="history_source_manual">手动开关</string>
+    <string name="history_source_widget">小部件</string>
+    <string name="history_source_automation">自动化广播</string>
+    <string name="history_source_profile">Profile 切换</string>
+    <string name="history_source_tile">快捷设置磁贴</string>
+    <string name="history_source_floating_button">悬浮按钮</string>
+    <string name="history_source_shizuku_auto">Shizuku 启动自动开启</string>
+    <string name="history_source_boot_auto">开机自动开启</string>
+    <string name="history_source_system_reboot">系统重启</string>
+    <string name="history_source_system">系统</string>
+    <string name="history_unit_day">天</string>
+    <string name="history_unit_hour">小时</string>
+    <string name="history_unit_minute">分</string>
+    <string name="history_unit_second">秒</string>
 </resources>

@@ -61,6 +61,7 @@ class FirewallWidgetProvider : AppWidgetProvider() {
             val toggleIntent = Intent(context, FirewallControlReceiver::class.java).apply {
                 action = MainActivity.ACTION_FIREWALL_CONTROL
                 putExtra(MainActivity.EXTRA_FIREWALL_ENABLED, newState)
+                putExtra(FirewallControlReceiver.EXTRA_HISTORY_SOURCE, com.lu.sfwall.utils.FirewallHistory.Source.WIDGET.key)
             }
             context.sendBroadcast(BroadcastAuth.attachToken(context, toggleIntent))
         } else if (intent.action == MainActivity.ACTION_FIREWALL_STATE_CHANGED) {

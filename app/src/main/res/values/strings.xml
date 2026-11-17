@@ -543,4 +543,33 @@
     <string name="dismiss">Dismiss</string>
     <string name="update_skip_version">Skip this version</string>
     <string name="auto_check_updates">Check for updates</string>
+
+    <string name="history_title">Run history</string>
+    <string name="history_desc">When the firewall was started and stopped</string>
+    <string name="history_status_running">Running</string>
+    <string name="history_status_stopped">Stopped</string>
+    <string name="history_running_for">Running for %1$s</string>
+    <string name="history_empty">No records yet</string>
+    <string name="history_clear">Clear history</string>
+    <string name="history_clear_title">Clear run history?</string>
+    <string name="history_clear_message">Clear all run history? The firewall state is not affected.</string>
+    <string name="history_clear_confirm">Clear</string>
+    <string name="history_event_enabled">Enabled</string>
+    <string name="history_event_disabled">Disabled</string>
+    <string name="history_event_cleared">Rules cleared after reboot</string>
+    <string name="history_session_duration">Ran for %1$s</string>
+    <string name="history_source_manual">Manual toggle</string>
+    <string name="history_source_widget">Widget</string>
+    <string name="history_source_automation">Automation broadcast</string>
+    <string name="history_source_profile">Profile switch</string>
+    <string name="history_source_tile">Quick Settings tile</string>
+    <string name="history_source_floating_button">Floating button</string>
+    <string name="history_source_shizuku_auto">Auto-enable on Shizuku start</string>
+    <string name="history_source_boot_auto">Auto-enable on boot</string>
+    <string name="history_source_system_reboot">System reboot</string>
+    <string name="history_source_system">System</string>
+    <string name="history_unit_day">d</string>
+    <string name="history_unit_hour">h</string>
+    <string name="history_unit_minute">m</string>
+    <string name="history_unit_second">s</string>
 </resources>

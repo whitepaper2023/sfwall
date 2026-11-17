@@ -7,6 +7,7 @@ import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import com.lu.sfwall.R
 import com.lu.sfwall.ui.MainActivity
+import com.lu.sfwall.utils.FirewallHistory
 import com.lu.sfwall.utils.FirewallUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -49,7 +50,7 @@ class FirewallTileService : TileService() {
         super.onClick()
         val enable = !FirewallUtils.loadFirewallEnabled(sharedPreferences)
         scope.launch {
-            FirewallUtils.toggle(this@FirewallTileService, sharedPreferences, enable)
+            FirewallUtils.toggle(this@FirewallTileService, sharedPreferences, enable, FirewallHistory.Source.TILE)
             updateTile()
         }
     }

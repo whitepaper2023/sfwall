@@ -8,6 +8,7 @@ import com.lu.sfwall.FirewallMode
 import com.lu.sfwall.R
 import com.lu.sfwall.ui.MainActivity
 import com.lu.sfwall.utils.BroadcastAuth
+import com.lu.sfwall.utils.FirewallHistory
 import com.lu.sfwall.utils.FirewallUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,6 +24,12 @@ class FirewallControlReceiver : BroadcastReceiver() {
         private const val SHIZUKU_WAIT_MAX_ATTEMPTS = 10
         private const val SHIZUKU_WAIT_DELAY_MS = 300L
         const val EXTRA_AUTOMATION_EVENT = "com.lu.sfwall.EXTRA_AUTOMATION_EVENT"
+        /**
+         * Optional source marker for the run history, set by internal senders
+         * that know why the firewall is being toggled (widget, profile switch,
+         * Shizuku-start auto-enable). Absent means an automation broadcast.
+         */
+        const val EXTRA_HISTORY_SOURCE = "com.lu.sfwall.EXTRA_HISTORY_SOURCE"
     }
 
     private suspend fun waitForShizukuBinder() {
@@ -44,6 +51,8 @@ class FirewallControlReceiver : BroadcastReceiver() {
         val enabled = intent.getBooleanExtra(MainActivity.EXTRA_FIREWALL_ENABLED, false)
         val csv = intent.getStringExtra(MainActivity.EXTRA_PACKAGES_CSV)
         val automationEvent = intent.getBooleanExtra(EXTRA_AUTOMATION_EVENT, false)
+        val historySource = FirewallHistory.Source.fromKey(intent.getStringExtra(EXTRA_HISTORY_SOURCE))
+            ?: FirewallHistory.Source.AUTOMATION
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -55,14 +64,14 @@ class FirewallControlReceiver : BroadcastReceiver() {
                 android.util.Log.d(TAG, "state=$enabled delta=${keys?.size ?: "global"}")
 
                 if (keys == null) {
-                    FirewallUtils.toggle(context, prefs, enabled)
+                    FirewallUtils.toggle(context, prefs, enabled, historySource)
                     return@launch
                 }
                 val ready = withContext(Dispatchers.Main) {
                     FirewallUtils.checkBackendReady(context, showToast = !automationEvent)
                 }
                 if (!ready) return@launch
-                val ok = FirewallUtils.applyDelta(context, prefs, keys, enabled, syncSelection = !automationEvent)
+                val ok = FirewallUtils.applyDelta(context, prefs, keys, enabled, syncSelection = !automationEvent, source = historySource)
                 if (!ok && automationEvent) {
                     warnScreenLockFailure(context, FirewallUtils.firewallMode(prefs))
                 }

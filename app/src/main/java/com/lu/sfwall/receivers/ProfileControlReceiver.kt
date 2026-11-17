@@ -65,6 +65,7 @@ class ProfileControlReceiver : BroadcastReceiver() {
                         action = MainActivity.ACTION_FIREWALL_CONTROL
                         putExtra(MainActivity.EXTRA_FIREWALL_ENABLED, true)
                         putExtra(FirewallControlReceiver.EXTRA_AUTOMATION_EVENT, true)
+                        putExtra(FirewallControlReceiver.EXTRA_HISTORY_SOURCE, com.lu.sfwall.utils.FirewallHistory.Source.PROFILE.key)
                         addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES or Intent.FLAG_RECEIVER_FOREGROUND)
                     }
                     context.sendBroadcast(BroadcastAuth.attachToken(context, enableIntent))

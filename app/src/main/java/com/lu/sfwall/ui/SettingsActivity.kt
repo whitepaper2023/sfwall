@@ -111,6 +111,9 @@ class SettingsActivity : BaseActivity() {
         findViewById<LinearLayout>(R.id.rowFirewall).setOnClickListener {
             startActivity(Intent(this, FirewallSettingsActivity::class.java))
         }
+        findViewById<LinearLayout>(R.id.rowHistory).setOnClickListener {
+            startActivity(Intent(this, FirewallHistoryActivity::class.java))
+        }
         findViewById<LinearLayout>(R.id.rowBackend).setOnClickListener {
             startActivity(Intent(this, BackendSettingsActivity::class.java))
         }

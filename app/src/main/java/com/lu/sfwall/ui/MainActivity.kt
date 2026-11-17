@@ -60,6 +60,7 @@ import com.lu.sfwall.model.AppInfo
 import com.lu.sfwall.repo.FirewallStateRepository
 import com.lu.sfwall.daemon.PersistentDaemonManager
 import com.lu.sfwall.BuildConfig
+import com.lu.sfwall.utils.FirewallHistory
 import com.lu.sfwall.utils.FirewallUtils
 import com.lu.sfwall.utils.UpdateChecker
 import com.lu.sfwall.utils.WhitelistFilter
@@ -254,9 +255,9 @@ class MainActivity : BaseActivity() {
         val targetPkgs = getTargetPackagesToBlock(selectedPkgs)
         val allowPkgs = getWhitelistAllowPackages(selectedPkgs)
         when {
-            sharedPreferences.getBoolean(KEY_SKIP_ENABLE_CONFIRM, false) -> applyFirewallState(true, targetPkgs, allowPkgs)
+            sharedPreferences.getBoolean(KEY_SKIP_ENABLE_CONFIRM, false) -> applyFirewallState(true, targetPkgs, allowPkgs, FirewallHistory.Source.SHIZUKU_AUTO)
             lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) ->
-                showFirewallConfirmDialog(appList.filter { targetPkgs.contains(it.packageName) }, targetPkgs, allowPkgs)
+                showFirewallConfirmDialog(appList.filter { targetPkgs.contains(it.packageName) }, targetPkgs, allowPkgs, FirewallHistory.Source.SHIZUKU_AUTO)
             else -> {
                 pendingAutoEnable = true
                 pendingAutoEnableSelectedApps = selectedPkgs
@@ -1473,9 +1474,9 @@ class MainActivity : BaseActivity() {
             .show()
     }
 
-    private fun showFirewallConfirmDialog(selectedApps: List<AppInfo>, blockPkgs: List<String> = selectedApps.map { it.key }, whitelistAllowApps: List<String> = emptyList()) {
+    private fun showFirewallConfirmDialog(selectedApps: List<AppInfo>, blockPkgs: List<String> = selectedApps.map { it.key }, whitelistAllowApps: List<String> = emptyList(), source: FirewallHistory.Source = FirewallHistory.Source.MANUAL) {
         if (sharedPreferences.getBoolean(KEY_SKIP_ENABLE_CONFIRM, false)) {
-            applyFirewallState(true, blockPkgs, whitelistAllowApps)
+            applyFirewallState(true, blockPkgs, whitelistAllowApps, source)
             return
         }
 
@@ -1484,7 +1485,7 @@ class MainActivity : BaseActivity() {
             .setView(dialogView)
             .setCancelable(false)
             .setPositiveButton(getString(R.string.enable)) { _, _ ->
-                applyFirewallState(true, blockPkgs, whitelistAllowApps)
+                applyFirewallState(true, blockPkgs, whitelistAllowApps, source)
             }
             .setNegativeButton(getString(R.string.cancel)) { _, _ ->
                 setToggleChecked(false)
@@ -1814,7 +1815,7 @@ class MainActivity : BaseActivity() {
 
             if (isFirewallEnabled && !isFirewallProcessRunning && activeFirewallPackages.isEmpty() && !firewallMode.allowsDynamicSelection()) {
                 isFirewallEnabled = false
-                saveFirewallEnabled(false)
+                saveFirewallEnabled(false, FirewallHistory.Source.SYSTEM)
                 setToggleChecked(false)
                 applyListInteractionState()
                 
@@ -2155,7 +2156,8 @@ class MainActivity : BaseActivity() {
         return sharedPreferences.getStringSet(KEY_SELECTED_APPS, emptySet()) ?: emptySet()
     }
 
-    private fun saveFirewallEnabled(enabled: Boolean) = FirewallUtils.saveFirewallEnabled(this, sharedPreferences, enabled)
+    private fun saveFirewallEnabled(enabled: Boolean, source: FirewallHistory.Source = FirewallHistory.Source.MANUAL) =
+        FirewallUtils.saveFirewallEnabled(this, sharedPreferences, enabled, source)
 
     private fun loadFirewallEnabled(): Boolean = FirewallUtils.loadFirewallEnabled(sharedPreferences)
 
@@ -2163,7 +2165,7 @@ class MainActivity : BaseActivity() {
 
     private fun loadActivePackages(): Set<String> = FirewallUtils.loadActivePackages(sharedPreferences)
 
-    private fun applyFirewallState(enable: Boolean, packageNames: List<String>, whitelistAllowApps: List<String> = emptyList()) {
+    private fun applyFirewallState(enable: Boolean, packageNames: List<String>, whitelistAllowApps: List<String> = emptyList(), source: FirewallHistory.Source = FirewallHistory.Source.MANUAL) {
         if (enable && packageNames.isEmpty() && !firewallMode.allowsDynamicSelection()) return
 
         @Suppress("NAME_SHADOWING")
@@ -2225,7 +2227,7 @@ class MainActivity : BaseActivity() {
                         activeFirewallPackages.clear()
                         activeFirewallPackages.addAll(successful)
                         saveActivePackages(activeFirewallPackages)
-                        saveFirewallEnabled(true)
+                        saveFirewallEnabled(true, source)
 
                         setToggleChecked(true)
                         
@@ -2248,7 +2250,7 @@ class MainActivity : BaseActivity() {
                     if (successful.isNotEmpty() || installed.isEmpty()) {
                     isFirewallEnabled = false
                     profileEnableActive = false
-                    saveFirewallEnabled(false)
+                    saveFirewallEnabled(false, source)
                     setToggleChecked(false)
                     applyListInteractionState()
 

@@ -21,6 +21,7 @@ import com.lu.sfwall.shell.RootShellExecutor
 import com.lu.sfwall.shell.ShellExecutorProvider
 import com.lu.sfwall.ui.MainActivity
 import com.lu.sfwall.utils.AppKey
+import com.lu.sfwall.utils.FirewallHistory
 import com.lu.sfwall.utils.ShizukuPackageResolver
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -112,6 +113,9 @@ class BootReceiver : BroadcastReceiver() {
                 val elapsed = SystemClock.elapsedRealtime()
                 updateFirewallStateAfterReapply(dpPrefs, elapsed)
                 updateFirewallStateAfterReapply(normalPrefs, elapsed)
+                // The reboot wiped the rules; they were just re-applied at boot.
+                FirewallHistory.recordClearedAfterReboot(context)
+                FirewallHistory.append(context, FirewallHistory.Type.ENABLED, FirewallHistory.Source.BOOT_AUTO)
                 Log.d(TAG, "Successfully re-applied firewall rules after reboot via root")
                 maybeStartForegroundDetection(context, dpPrefs, normalPrefs)
                 return
@@ -127,12 +131,16 @@ class BootReceiver : BroadcastReceiver() {
         )
         if (workingMode == WorkingMode.SHIZUKU && autoEnableOnShizukuStart) {
             Log.d(TAG, "Keeping firewall state; SfWallApp re-enables it when Shizuku starts")
+            // Rules are gone even though the persisted state is kept: the
+            // re-enable after Shizuku starts will be logged as its own event.
+            FirewallHistory.recordClearedAfterReboot(context)
             maybeStartForegroundDetection(context, dpPrefs, normalPrefs)
             return
         }
 
         clearFirewallState(dpPrefs)
         clearFirewallState(normalPrefs)
+        FirewallHistory.recordClearedAfterReboot(context)
 
         val messageRes = if (shouldAttemptRootReapply) {
             R.string.firewall_reboot_apply_failed_message

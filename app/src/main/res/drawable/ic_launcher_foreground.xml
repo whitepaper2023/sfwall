@@ -5,27 +5,35 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
     <!-- SfWall launcher foreground: unplugged network plug above its socket,
-         red X on the socket. Content stays inside the 66dp adaptive-icon
-         safe zone (21..87). -->
-    <path
-        android:pathData="M54,23 L54,30"
-        android:strokeWidth="5"
-        android:strokeColor="#FFFFFF"
-        android:strokeLineCap="round" />
-    <path
-        android:pathData="M43,30 h22 a5,5 0 0 1 5,5 v18 a5,5 0 0 1 -5,5 h-22 a5,5 0 0 1 -5,-5 v-18 a5,5 0 0 1 5,-5 z"
-        android:fillColor="#FFFFFF" />
-    <path
-        android:pathData="M43,58 h6 v8 h-6 z M51,58 h6 v8 h-6 z M59,58 h6 v8 h-6 z"
-        android:fillColor="#FFFFFF" />
-    <path
-        android:pathData="M39,70 h30 a3,3 0 0 1 3,3 v10 a3,3 0 0 1 -3,3 h-30 a3,3 0 0 1 -3,-3 v-10 a3,3 0 0 1 3,-3 z"
-        android:strokeWidth="4"
-        android:strokeColor="#FFFFFF"
-        android:fillColor="@android:color/transparent" />
-    <path
-        android:pathData="M41,74 L67,82 M67,74 L41,82"
-        android:strokeWidth="4.5"
-        android:strokeColor="#E53935"
-        android:strokeLineCap="round" />
+         red X on the socket. Scaled to 0.8 around the center so the artwork
+         sits well inside the launcher mask (plug top ~y29, socket bottom
+         ~y80); 4.7.1 filled the safe zone edge to edge and looked cropped
+         on the vivo home screen. -->
+    <group
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:pivotX="54"
+        android:pivotY="54">
+        <path
+            android:pathData="M54,23 L54,30"
+            android:strokeWidth="5"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M43,30 h22 a5,5 0 0 1 5,5 v18 a5,5 0 0 1 -5,5 h-22 a5,5 0 0 1 -5,-5 v-18 a5,5 0 0 1 5,-5 z"
+            android:fillColor="#FFFFFF" />
+        <path
+            android:pathData="M43,58 h6 v8 h-6 z M51,58 h6 v8 h-6 z M59,58 h6 v8 h-6 z"
+            android:fillColor="#FFFFFF" />
+        <path
+            android:pathData="M39,70 h30 a3,3 0 0 1 3,3 v10 a3,3 0 0 1 -3,3 h-30 a3,3 0 0 1 -3,-3 v-10 a3,3 0 0 1 3,-3 z"
+            android:strokeWidth="4"
+            android:strokeColor="#FFFFFF"
+            android:fillColor="@android:color/transparent" />
+        <path
+            android:pathData="M41,74 L67,82 M67,74 L41,82"
+            android:strokeWidth="4.5"
+            android:strokeColor="#E53935"
+            android:strokeLineCap="round" />
+    </group>
 </vector>

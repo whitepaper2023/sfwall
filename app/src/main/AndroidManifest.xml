@@ -50,6 +50,10 @@
             android:parentActivityName=".ui.SettingsActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.FirewallHistoryActivity"
+            android:parentActivityName=".ui.SettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.BackendSettingsActivity"
             android:parentActivityName=".ui.SettingsActivity"
             android:exported="false" />
